@@ -40,15 +40,13 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "breadcrumb_path": "/mobile-blazor-bindings/breadcrumb/toc.json",
-      "extendBreadcrumb": true,
       "feedback_system": "None",
       "author": "Eilon",
       "ms.author": "elipton"
     },
     "fileMetadata": {},
     "template": [],
-    "dest": "mobile-blazor-bindings",
+    "dest": "docs",
     "markdownEngineName": "markdig"
   }
 }
