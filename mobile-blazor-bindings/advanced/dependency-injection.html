@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Dependency Injection - Mobile Blazor Bindings </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Dependency Injection - Mobile Blazor Bindings ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="dependency-injection">Dependency Injection</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This project is an experimental release. We hope you try out Experimental Mobile Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+</div>
+
+<p>Incorporating dependency injection into an application involves a few steps:</p>
+<ol>
+<li><p>Defining an interface of class for the service. The weather app sample foregoes interface definitions due to the simple nature of the app, but would otherwise have an interface named <code>IWeatherService</code> with methods on it such as <code>WeatherReport GetWeatherReport()</code>.</p>
+</li>
+<li><p>Implementing the service interface with a concrete implementation. For example:</p>
+<pre><code class="lang-c#">public class WeatherService : IWeatherService
+{
+    public WeatherReport GetWeatherReport()
+    {
+        // Get weather report data...
+        return weatherReport;
+    }
+}
+</code></pre>
+</li>
+<li><p>Registering the service with the host in <code>App.cs</code>'s constructor:</p>
+<pre><code class="lang-c#">var host = Host.CreateDefaultBuilder()
+    .ConfigureServices((hostContext, services) =&gt;
+    {
+        // Register app-specific services
+        services.AddSingleton&lt;IWeatherService, WeatherService&gt;();
+    })
+    .Build();
+</code></pre>
+<p>Several registration methods for services are available on the <a href="https://docs.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions"><code>ServiceCollectionServiceExtensions</code> class</a>.</p>
+</li>
+<li><p>Consuming the services. There are several ways to consume the services, and two of the most popular ways are:</p>
+<ol>
+<li><p>Constructor injection in custom types also registered in the dependency injection container. To consume a service in this way, add a constructor parameter to your class that uses the service, and when that class is retrieved from the DI container, it will have its parameters populated with other services from the DI container.</p>
+</li>
+<li><p>Consuming services in <code>.razor</code> files is done with the <code>@inject</code> directive, which is used in the <a href="https://github.com/xamarin/MobileBlazorBindings/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherApp.razor#L1"><code>MainPage.razor</code> file</a>:</p>
+<pre><code class="lang-c#">@inject WeatherService WeatherService
+</code></pre>
+<p>Learn more about the <code>@inject</code> directive in the <a href="https://docs.microsoft.com/aspnet/core/blazor/dependency-injection">Blazor documentation</a>.</p>
+</li>
+</ol>
+</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>In hybrid apps, services are shared between the native UI of the app, the web part of the app, and everywhere else. There are no special steps required to share services and state between areas of hybrid apps.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/mobile-blazor-bindings/advanced/dependency-injection.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

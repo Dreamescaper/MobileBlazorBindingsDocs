@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Grid Layout - Mobile Blazor Bindings </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Grid Layout - Mobile Blazor Bindings ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="grid-layout">Grid Layout</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This project is an experimental release. We hope you try out Experimental Mobile Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+</div>
+
+<p>The Grid is a layout that organizes its children into rows and columns, which can have proportional or absolute sizes. By default, a <code>Grid</code> contains one row and one column. In addition, a <code>Grid</code> can be used as a parent layout that contains other child layouts.</p>
+<p>The Grid layout should not be confused with tables, and is not intended to present tabular data. Unlike HTML tables, a <code>Grid</code> is intended for laying out content.</p>
+<p>To use the Grid you will need to define its <em>Layout</em> of columns and rows, and its <em>Contents</em> to display.</p>
+<p>The <em>layout</em> of the grid is defined using <code>ColumnDefinitions</code> and <code>RowDefinitions</code> to declare the sizes of the columns and rows. The <em>contents</em> of the grid define which controls go in which cells and are wrapped in a <code>&lt;GridCell&gt;</code> component to specify the column, row, column span, and row span.</p>
+<p>The properties and syntax for defining a grid's layout and contents changed after Preview 4 (version <code>0.4.74-preview</code>). Refer to the appropriate section below depending on the version you are using.</p>
+<h2 id="grid-syntax-for-latest-versions-preview-5-and-later">Grid syntax for latest versions (Preview 5 and later)</h2>
+<p>Starting with Preview 5 the syntax for the Grid component has been simplified:</p>
+<ol>
+<li>The <code>&lt;Layout&gt;</code> and <code>&lt;Contents&gt;</code> sections from the <code>&lt;Grid&gt;</code> have been removed</li>
+<li>The row and column definitions are now defined as comma-separated strings instead of as individual collection items</li>
+<li>The <code>&lt;GridCell&gt;</code> components are direct children of the <code>&lt;Grid&gt;</code> component</li>
+</ol>
+<p>The follow example shows a grid with three rows and two columns:</p>
+<pre><code class="lang-xml">&lt;Grid VerticalOptions=&quot;LayoutOptions.FillAndExpand&quot; RowDefinitions=&quot;Auto, Auto, Auto&quot; ColumnDefinitions=&quot;Auto, Auto&quot;&gt;
+    &lt;GridCell Row=&quot;0&quot; Column=&quot;0&quot; ColumnSpan=&quot;2&quot;&gt;
+        &lt;Label BackgroundColor=&quot;Color.LightBlue&quot; Text=&quot;Todo items&quot; FontSize=&quot;20&quot; /&gt;
+    &lt;/GridCell&gt;
+    &lt;GridCell Row=&quot;1&quot; Column=&quot;0&quot;&gt;
+        &lt;Switch IsToggled=&quot;true&quot; /&gt;
+    &lt;/GridCell&gt;
+    &lt;GridCell Row=&quot;1&quot; Column=&quot;1&quot;&gt;
+        &lt;Label Text=&quot;Use awesome Xamarin.Forms features&quot; FontSize=&quot;20&quot; /&gt;
+    &lt;/GridCell&gt;
+    &lt;GridCell Row=&quot;2&quot; Column=&quot;0&quot;&gt;
+        &lt;Switch IsToggled=&quot;true&quot; /&gt;
+    &lt;/GridCell&gt;
+    &lt;GridCell Row=&quot;2&quot; Column=&quot;1&quot;&gt;
+        &lt;Label Text=&quot;Delight our customers&quot; FontSize=&quot;20&quot; /&gt;
+    &lt;/GridCell&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h2 id="grid-syntax-for-preview-4-and-earlier">Grid syntax for Preview 4 and earlier</h2>
+<p>In Preview 4 and earlier the <code>Grid</code> component has two child properties:</p>
+<ol>
+<li>A <code>Layout</code> child property where you can define the <code>ColumnDefinition</code> and <code>RowDefinition</code> elements</li>
+<li>A <code>Contents</code> child property where you can define the contents of the grid's cells</li>
+</ol>
+<p>The following example shows a grid with three rows and two columns:</p>
+<pre><code class="lang-xml">&lt;Grid VerticalOptions=&quot;LayoutOptions.FillAndExpand&quot;&gt;
+    &lt;Layout&gt;
+        &lt;RowDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
+        &lt;RowDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
+        &lt;RowDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
+        &lt;ColumnDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
+        &lt;ColumnDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
+    &lt;/Layout&gt;
+    &lt;Contents&gt;
+        &lt;GridCell Row=&quot;0&quot; Column=&quot;0&quot; ColumnSpan=&quot;2&quot;&gt;
+            &lt;Label BackgroundColor=&quot;Color.LightBlue&quot; Text=&quot;Todo items&quot; FontSize=&quot;20&quot; /&gt;
+        &lt;/GridCell&gt;
+        &lt;GridCell Row=&quot;1&quot; Column=&quot;0&quot;&gt;
+            &lt;Switch IsToggled=&quot;true&quot; /&gt;
+        &lt;/GridCell&gt;
+        &lt;GridCell Row=&quot;1&quot; Column=&quot;1&quot;&gt;
+            &lt;Label Text=&quot;Use awesome Xamarin.Forms features&quot; FontSize=&quot;20&quot; /&gt;
+        &lt;/GridCell&gt;
+        &lt;GridCell Row=&quot;2&quot; Column=&quot;0&quot;&gt;
+            &lt;Switch IsToggled=&quot;true&quot; /&gt;
+        &lt;/GridCell&gt;
+        &lt;GridCell Row=&quot;2&quot; Column=&quot;1&quot;&gt;
+            &lt;Label Text=&quot;Delight our customers&quot; FontSize=&quot;20&quot; /&gt;
+        &lt;/GridCell&gt;
+    &lt;/Contents&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h2 id="more-information">More information</h2>
+<p>The Mobile Blazor Bindings Grid component is based on the Xamarin.Forms grid. More information on the Xamarin.Forms grid is available in the <a href="https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/layouts/grid">Xamarin.Forms Grid topic</a>.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/mobile-blazor-bindings/ui/grid-layout.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

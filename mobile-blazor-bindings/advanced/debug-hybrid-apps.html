@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Debug hybrid apps - Mobile Blazor Bindings </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Debug hybrid apps - Mobile Blazor Bindings ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="debug-hybrid-apps">Debug hybrid apps</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This project is an experimental release. We hope you try out Experimental Mobile Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+</div>
+
+<p>Debugging hybrid apps poses a challenge because of the mix of native UI components and web UI components.</p>
+<h2 id="debugging-net-code-in-hybrid-apps">Debugging .NET code in hybrid apps</h2>
+<p>The .NET code (for example, C#) can be debugging via the standard .NET debugging techniques, such as using Visual Studio to debug the app.</p>
+<h2 id="debugging-web-ui-in-hybrid-apps">Debugging web UI in hybrid apps</h2>
+<p>The web UI code in a hybrid app runs in a platform-specific browser view component. These components support various debugging techniques, typically using common browser developer tools.</p>
+<p>Common web-specific errors are:</p>
+<ul>
+<li>Missing/incorrect URLs causing resources to not be loaded</li>
+<li>JavaScript interop not working as expected</li>
+</ul>
+<h3 id="debug-android-hybrid-web-ui">Debug Android hybrid web UI</h3>
+<p>Pre-requisites:</p>
+<ul>
+<li>Have Google Chrome installed on your developer machine</li>
+</ul>
+<p>Steps:</p>
+<ol>
+<li>Launch the affected app in the Android emulator</li>
+<li>In Google Chrome on your developer machine navigate to <code>chrome://inspect/#devices</code></li>
+<li>Locate the appropriate &quot;Remote Target&quot; and select the desired inspector, which will then have various debugging options</li>
+</ol>
+<h3 id="debug-ios-hybrid-web-ui">Debug iOS hybrid web UI</h3>
+<p>TODO: Include Safari steps</p>
+<h3 id="debug-windows-hybrid-web-ui">Debug Windows hybrid web UI</h3>
+<p>Steps:</p>
+<ol>
+<li>Launch the affected app</li>
+<li>Right-click in any web view in the app and select <code>Inspect</code>, which will launch the developer tools</li>
+</ol>
+<h3 id="debug-macos-hybrid-web-ui">Debug macOS hybrid web UI</h3>
+<p>TODO: Include macOS steps</p>
+<h3 id="debug-tizen-hybrid-web-ui">Debug Tizen hybrid web UI</h3>
+<p>TODO: Include Tizen steps</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/mobile-blazor-bindings/advanced/debug-hybrid-apps.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

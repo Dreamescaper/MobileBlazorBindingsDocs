@@ -1,0 +1,902 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/MobileBlazorBindingsDocs/MobileBlazorBindingsDocs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Toc",
+      "source_relative_path": "mobile-blazor-bindings/TOC.yml",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/TOC.html",
+          "hash": "4eymHSPjDEkoD2IMdzmXPq5KPPLh7RI1ZAaf/fXa9Nw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/advanced/access-native-controls.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/advanced/access-native-controls.html",
+          "hash": "LHQfJwmFXO6YgfA4Ac2OVdjgcQ2aZJiCmj6iP20QTrc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/advanced/architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/advanced/architecture.html",
+          "hash": "A5YJq6UzAuRUOEph/tUQQE9W62+Ne+5D3o0S5U3dDs4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/advanced/backend-specific-services.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/advanced/backend-specific-services.html",
+          "hash": "w3SGtttxYF4RodZuB0djk0fFsOS1/VsH1uC5c1tvak8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/advanced/custom-components.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/advanced/custom-components.html",
+          "hash": "SGzX1/L4Me4tHQztzcsady7aUpZAW6vVBIupwmXFwQk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/advanced/debug-hybrid-apps.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/advanced/debug-hybrid-apps.html",
+          "hash": "/YFPu5AB3PuUbeQkbTRNotOkemO1LSB5iFER34PK3BY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/advanced/dependency-injection.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/advanced/dependency-injection.html",
+          "hash": "UywUNxrj3tR0bjkSq0DZHMYJTTIzjuleRCmTh1P6KM0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/advanced/integrate-into-existing-app.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/advanced/integrate-into-existing-app.html",
+          "hash": "C1a1vMLbglB1AwFwCJVGAyDPu/MrGD78YD/FmxTCU7g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/advanced/media/architecture/mobileblazorbindings-architecture-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/advanced/media/architecture/mobileblazorbindings-architecture-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/advanced/media/architecture/mobileblazorbindings-architecture-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/advanced/media/architecture/mobileblazorbindings-architecture-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/advanced/media/troubleshooting/ios-target-platform-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/advanced/media/troubleshooting/ios-target-platform-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/advanced/media/troubleshooting/ios-target-platform-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/advanced/media/troubleshooting/ios-target-platform-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/advanced/references.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/advanced/references.html",
+          "hash": "bqwGa9/1dqMUtkarskzkiPgeR3S6dsE3ppU6WLZc0X0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/advanced/template-options.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/advanced/template-options.html",
+          "hash": "dQsZ8awxgoq/MA2/8ce6VOIxGgFp1N94Lg8kBJgvdno="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/advanced/troubleshooting.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/advanced/troubleshooting.html",
+          "hash": "hy7Xbb4I798bJ8n6iNzmXAL0rMd8mM5zxBNxbMAu+dU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/advanced/uninstall.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/advanced/uninstall.html",
+          "hash": "JCtnAOShAqcIId6ufG+fUoHtrJLXuz6/8ARH4cGFkxM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/advanced/xamarin-essentials.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/advanced/xamarin-essentials.html",
+          "hash": "K868JUtkvXSNjBsYME4SKzWuDiJYQA/tugr+mfFUkk4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "mobile-blazor-bindings/breadcrumb/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/breadcrumb/toc.html",
+          "hash": "Rlp7gHX6O0RzH0vw8OWyoJ+f858mD7X2yYcn771mv7s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/contribute/build-from-source.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/contribute/build-from-source.html",
+          "hash": "KXJv9mLtR448IOPPyjxExjLNlKrnDwadNcP6lFP5jxc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/contribute/feedback.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/contribute/feedback.html",
+          "hash": "rOlZa9stwa6q9I9tYP18TgKqoCf1tDqT7kpWwWdh5Tk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/contribute/nightly-builds.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/contribute/nightly-builds.html",
+          "hash": "yZQSup+F/99PBaUuwBVEZX7t8b3nAQlstlnjuatsijs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/contribute/roadmap.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/contribute/roadmap.html",
+          "hash": "ZQ2aT6FkOvzwlsStS8GhAmEcy/sGHk6nbGM1BJGzSlQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/get-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/get-started.html",
+          "hash": "msH1obdYGbpFM7KK/ZxHuW8oUYPR7+7GCAxcau0pKQo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/index.html",
+          "hash": "HiOFjgdiWIw5pVNMSn5YP0f7Sq+/Bl/AqNUWh5m78GI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/media/index/hello-world-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/media/index/hello-world-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/media/index/hello-world-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/media/index/hello-world-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/media/index/ios-hybrid-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/media/index/ios-hybrid-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/media/index/ios-hybrid-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/media/index/ios-hybrid-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/migrate/preview1-to-preview2.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/migrate/preview1-to-preview2.html",
+          "hash": "RlVeLYxXC9ULy7GEyvRN9+5q0TFGDyvX3DYkHJv+PiQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/migrate/preview2-to-preview3.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/migrate/preview2-to-preview3.html",
+          "hash": "NlWvL7PVaJYrjBt4wtBhWa9A8xv90VQxzJm0IyebF3E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/migrate/preview3-to-preview4.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/migrate/preview3-to-preview4.html",
+          "hash": "AGXzvNmjoJU1+YMvSqjeMmuaTorMQ+gCMAjd+kcV0NU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/migrate/preview4-to-preview5.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/migrate/preview4-to-preview5.html",
+          "hash": "dfkhiRMjoq8x68XaFuzvhplfMRnT2W5ok72JofnHjuI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/ui/components-reference.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/ui/components-reference.html",
+          "hash": "XxnHG/3UaagV/sQnmr2o33YNKLsM7FxLYVSIqKvKr7A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/ui/css-styles.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/ui/css-styles.html",
+          "hash": "XCrwbn0/OicMMiH3oAhWin4YpMXIAV+xqffIes4AEAo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/ui/gestures.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/ui/gestures.html",
+          "hash": "JP/dnh8eL5Ci7TTuGlkyi/fqcrsA6APlH7VTY3LRmsQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/ui/grid-layout.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/ui/grid-layout.html",
+          "hash": "ocHVlQOttbSHOig/9ejAjFb3S9YmScWZjOGvX3ljkh4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/build-first-app.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/build-first-app.html",
+          "hash": "DrSGoHd282WYmwE6AJVWQ6+Mxr91HgWNASnF04tIoPg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/build-first-hybrid-app.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/build-first-hybrid-app.html",
+          "hash": "NzwqBvAiuFZ+EzteHfLngLuJ2oyb2H4MCSC7h+JWnFc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/hello-world.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/hello-world.html",
+          "hash": "DglOxpdX2qJsWG5xLsmgKxHPoO7437gJUwYMf48M3pU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/hybrid-hello-world.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/hybrid-hello-world.html",
+          "hash": "F2XBl7D+5ZrO8TVPzrseds/anM6KfpLPD0l+UjdARaQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/android-helloworld-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/android-helloworld-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/android-helloworld-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/android-helloworld-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/set-startup-project-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/set-startup-project-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/set-startup-project-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/set-startup-project-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/solution-explorer-with-all-projects-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/solution-explorer-with-all-projects-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/solution-explorer-with-all-projects-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/solution-explorer-with-all-projects-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/ios-hybrid-helloworld-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/ios-hybrid-helloworld-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/ios-hybrid-helloworld-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/ios-hybrid-helloworld-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/set-startup-hybrid-project-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/set-startup-hybrid-project-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/set-startup-hybrid-project-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/set-startup-hybrid-project-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/ios-shared-ui-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/ios-shared-ui-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/ios-shared-ui-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/ios-shared-ui-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/web-shared-ui-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/web-shared-ui-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/web-shared-ui-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/web-shared-ui-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell-navigation-parameter.gif",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell-navigation-parameter.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell-navigation.gif",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell-navigation.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell-tabs.gif",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell-tabs.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell.gif",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/skiasharp/skiasharp-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/skiasharp/skiasharp-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/skiasharp/skiasharp-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/skiasharp/skiasharp-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/todo-app/todoapp-completed-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/todo-app/todoapp-completed-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/todo-app/todoapp-completed-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/todo-app/todoapp-completed-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/weather-app/weather-app-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/weather-app/weather-app-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/weather-app/weather-app-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/media/weather-app/weather-app-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/shared-web-ui.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/shared-web-ui.html",
+          "hash": "snMdrMRFYSVlpJ9oW/NM/22b2wAOvSZRzUHt2I5p2zM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/shell-navigation-manager.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/shell-navigation-manager.html",
+          "hash": "RGCHfSdIgNMGNEvwRWQeOBT5DhKSYYVvKcWmWalFEFY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/skiasharp.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/skiasharp.html",
+          "hash": "dPX9+8DnXgfJAmCc+9Szs0EZuGdZoVcfCgJPXNMLmI0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/tizen.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/tizen.html",
+          "hash": "cE7G8JtdbIMS1UGevlscMa24jdt6b7rDDgD6vivaykM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/todo-app.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/todo-app.html",
+          "hash": "rgZnyBDdbgAOXMzJjd8Hi4OOzq2zdBQ43rR4MFfzARA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "mobile-blazor-bindings/walkthroughs/weather-app.md",
+      "output": {
+        ".html": {
+          "relative_path": "mobile-blazor-bindings/walkthroughs/weather-app.html",
+          "hash": "dQDrVypxu0sKItx/ZKEEIcg8xMrNIAmj4bfvEkp6250="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "znDVXfQBlSVU9NKBjR+V4VHZ/v6HY+T8UIEAnYfwLRI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 36,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

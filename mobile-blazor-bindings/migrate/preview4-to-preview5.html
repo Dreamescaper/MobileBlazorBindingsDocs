@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Migrate Mobile Blazor Bindings From Preview 4 to Preview 5 - Mobile Blazor Bindings </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Migrate Mobile Blazor Bindings From Preview 4 to Preview 5 - Mobile Blazor Bindings ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="migrate-mobile-blazor-bindings-from-preview-4-to-preview-5">Migrate Mobile Blazor Bindings From Preview 4 to Preview 5</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This project is an experimental release. We hope you try out Experimental Mobile Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+</div>
+
+<p>This article explains how to update an existing Mobile Blazor Bindings Preview 4 project to Mobile Blazor Bindings Preview 5. If your project is using an earlier preview, follow the previous migration guides and then proceed to this guide.</p>
+<p>For more information see the <a href="https://aka.ms/mbb-preview5-blog">announcement blog</a> and <a href="https://aka.ms/mbb-preview5-rel-notes">release notes</a>.</p>
+<h2 id="update-nuget-packages-to-preview-5-versions">Update NuGet packages to Preview 5 versions</h2>
+<p>The following NuGet package references need to be updated in all of your solution's projects:</p>
+<ol>
+<li><code>Microsoft.MobileBlazorBindings</code> version is <code>0.5.50-preview</code></li>
+<li><code>Xamarin.Forms</code> version is <code>4.8.0.1451</code> or greater</li>
+<li><code>Xamarin.Essentials</code> version is <code>1.5.3.2</code> or greater (if used in the project)</li>
+<li><code>Microsoft.Web.WebView2</code> - remove direct references to this package (from the Windows project) because it will be picked up transitively</li>
+</ol>
+<p>To update the package versions:</p>
+<ol>
+<li>Open your application's solution in Visual Studio</li>
+<li>In Solution Explorer, right-click on the solution node and select &quot;Manage NuGet Packages for Solution.&quot;</li>
+<li>Select the &quot;Updates&quot; tab</li>
+<li>Ensure that &quot;Include prerelease&quot; is checked</li>
+<li>Select all applicable packages to update, and ensure that the selected versions match the updated versions listed earlier</li>
+<li>Click &quot;Update&quot; and go through the proceeding dialogs. This operation can take a few minutes because it will download several NuGet packages and update all the relevant projects.</li>
+<li>It is recommended to Save All to ensure that all changes to CSPROJ files are committed to disk</li>
+</ol>
+<p>You should now be able to build and run your project on this preview.</p>
+<h2 id="non-hybrid-app-migration">Non-hybrid app migration</h2>
+<p>For non-hybrid apps the steps above cover the major changes regarding versions. The main other change is related to Grid layout syntax, which you can find below.</p>
+<h2 id="hybrid-app-migration">Hybrid app migration</h2>
+<p>A Blazor Hybrid app created with Mobile Blazor Bindings Preview 4 requires several changes to update to Preview 5. The simplest way to migrate is to create a new project using Preview 5 and copying over all customizations.</p>
+<p>To see all the changes in the default templates refer to <a href="https://github.com/Eilon/MobileBlazorBindingsMigration/compare/v0.4.74-preview...v0.5.50-preview">Changes from Preview 4 v0.4.74-preview to Preview 5 v0.5.50-preview</a></p>
+<p>If you want to make the changes individually, follow these steps:</p>
+<ol>
+<li><p>In the shared UI project:</p>
+<ol>
+<li><p>Move the <code>wwwroot</code> folder that contains static web assets to the root of the project (it used to be a sub-folder of the <code>WebUI</code> folder)</p>
+</li>
+<li><p>In <code>Main.razor</code> remove the <code>ContentRoot</code> property from the <code>&lt;BlazorWebView&gt;</code> control</p>
+</li>
+<li><p>In <code>App.cs</code> change the constructor to match this code (while preserving any customizations you have made, such as registering app-specific services):</p>
+<pre><code class="lang-csharp">public App(IFileProvider fileProvider = null)
+{
+    var hostBuilder = MobileBlazorBindingsHost.CreateDefaultBuilder()
+        .ConfigureServices((hostContext, services) =&gt;
+        {
+            // Adds web-specific services such as NavigationManager
+            services.AddBlazorHybrid();
+
+            // Register app-specific services
+            services.AddSingleton&lt;CounterState&gt;();
+        })
+        .UseWebRoot(&quot;wwwroot&quot;);
+
+    if (fileProvider != null)
+    {
+        hostBuilder.UseStaticFiles(fileProvider);
+    }
+    else
+    {
+        hostBuilder.UseStaticFiles();
+    }
+    var host = hostBuilder.Build();
+
+    MainPage = new ContentPage { Title = &quot;My Application&quot; };
+    host.AddComponent&lt;Main&gt;(parent: MainPage);
+}
+</code></pre>
+</li>
+<li><p>In the CSPROJ file remove the <code>&lt;WwwRootResourcePath&gt;</code> element and remove the <code>&lt;EmbeddedResource ... /&gt;</code> element that references it. (The project should no longer mention <code>WwwRootResourcePath</code> at all).</p>
+</li>
+<li><p>If the project has code that reads a static file in the project (such as the default template's <code>WebUI/Pages/FetchData.razor</code> file), do the following instead:</p>
+<ol>
+<li><p>Inject the file provider service by adding <code>@inject Microsoft.Extensions.FileProviders.IFileProvider FileProvider</code> to the <code>.razor</code> file</p>
+</li>
+<li><p>Try to open the file and read it by calling:</p>
+<pre><code class="lang-csharp">var fileInfo = FileProvider.GetFileInfo(&quot;_content/PROJECT_NAME/filename.json&quot;);
+if (fileInfo != null &amp;&amp; fileInfo.Exists)
+{
+    using (var stream = fileInfo.CreateReadStream())
+    {
+        var data = await JsonSerializer.DeserializeAsync&lt;DATA_TYPE&gt;(stream, ...);
+    }
+}
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>For Android:</p>
+<ol>
+<li>In <code>MainActivity.cs</code> add a constructor argument to the <code>App</code> constructor: <code>LoadApplication(new App(new AssetFileProvider(Assets, &quot;wwwroot&quot;)));</code>. Import any required namespaces, such as <code>Microsoft.MobileBlazorBindings.WebView.Android</code>.</li>
+<li>Create a folder in the Android project called <code>wwwroot</code> folder and copy the <code>wwwroot/index.html</code> file from the shared UI project there. Then right-click on the file and select Properties. Set its Build Action to <code>None</code> and set <code>Copy if newer</code>.</li>
+</ol>
+</li>
+<li><p>For iOS:</p>
+<ol>
+<li>Create a folder in the iOS project called <code>Resources/wwwroot</code> folder and copy the <code>wwwroot/index.html</code> file from the shared UI project there. Then right-click on the file and select Properties. Ensure that the Build Action is set to <code>Content</code>.</li>
+</ol>
+</li>
+<li><p>For macOS:</p>
+<ol>
+<li>Create a folder in the macOS project called <code>Resources/wwwroot</code> folder and copy the <code>wwwroot/index.html</code> file from the shared UI project there. Then right-click on the file and select Properties. Ensure that the Build Action is set to <code>Content</code>.</li>
+</ol>
+</li>
+<li><p>For Windows:</p>
+<ol>
+<li>Create a folder in the Windows project called <code>wwwroot</code> folder and copy the <code>wwwroot/index.html</code> file from the shared UI project there. Then right-click on the file and select Properties. Ensure that the Build Action is set to <code>Content</code> and set <code>Copy if newer</code>.</li>
+</ol>
+</li>
+<li><p>After completing the previous steps, you can go back to the shared UI project and delete <code>wwwroot/index.html</code> because it is now in the platform-specific projects</p>
+</li>
+</ol>
+<h2 id="breaking-change-grid-syntax-change-for-row-and-column-definitions">Breaking change: Grid syntax change for row and column definitions</h2>
+<p>The Grid control's syntax for row and column definitions has been simplified:</p>
+<ol>
+<li>Remove the <code>&lt;Layout&gt;</code> and <code>&lt;Contents&gt;</code> sections from the <code>&lt;Grid&gt;</code> control</li>
+<li>Have the grid's row and column definitions defined as comma-separated strings instead of as individual collection items</li>
+</ol>
+<p>In Preview 4 and earlier the Grid had <code>&lt;Layout&gt;</code> and <code>&lt;Contents&gt;</code> sections, and multiple <code>&lt;RowDefinition&gt;</code>/<code>&lt;ColumnDefinition&gt;</code> items:</p>
+<pre><code class="lang-xml">&lt;Grid VerticalOptions=&quot;LayoutOptions.FillAndExpand&quot;&gt;
+    &lt;Layout&gt;
+        &lt;RowDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
+        &lt;RowDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
+        &lt;RowDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
+        &lt;ColumnDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
+        &lt;ColumnDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
+    &lt;/Layout&gt;
+    &lt;Contents&gt;
+        &lt;GridCell Row=&quot;0&quot; Column=&quot;0&quot; ColumnSpan=&quot;2&quot;&gt;
+            &lt;Label BackgroundColor=&quot;Color.LightBlue&quot; Text=&quot;Todo items&quot; FontSize=&quot;20&quot; /&gt;
+        &lt;/GridCell&gt;
+        &lt;GridCell Row=&quot;1&quot; Column=&quot;0&quot;&gt;
+            &lt;Switch IsToggled=&quot;true&quot; /&gt;
+        &lt;/GridCell&gt;
+        &lt;GridCell Row=&quot;1&quot; Column=&quot;1&quot;&gt;
+            &lt;Label Text=&quot;Use awesome Xamarin.Forms features&quot; FontSize=&quot;20&quot; /&gt;
+        &lt;/GridCell&gt;
+        &lt;GridCell Row=&quot;2&quot; Column=&quot;0&quot;&gt;
+            &lt;Switch IsToggled=&quot;true&quot; /&gt;
+        &lt;/GridCell&gt;
+        &lt;GridCell Row=&quot;2&quot; Column=&quot;1&quot;&gt;
+            &lt;Label Text=&quot;Delight our customers&quot; FontSize=&quot;20&quot; /&gt;
+        &lt;/GridCell&gt;
+    &lt;/Contents&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>Starting in Preview5 the <code>&lt;Layout&gt;</code> and <code>&lt;Content&gt;</code> sections are removed, and all row/column definitions are specified as strings (9 lines of markup REMOVED!):</p>
+<pre><code class="lang-xml">&lt;Grid VerticalOptions=&quot;LayoutOptions.FillAndExpand&quot; RowDefinitions=&quot;Auto, Auto, Auto&quot; ColumnDefinitions=&quot;Auto, Auto&quot;&gt;
+    &lt;GridCell Row=&quot;0&quot; Column=&quot;0&quot; ColumnSpan=&quot;2&quot;&gt;
+        &lt;Label BackgroundColor=&quot;Color.LightBlue&quot; Text=&quot;Todo items&quot; FontSize=&quot;20&quot; /&gt;
+    &lt;/GridCell&gt;
+    &lt;GridCell Row=&quot;1&quot; Column=&quot;0&quot;&gt;
+        &lt;Switch IsToggled=&quot;true&quot; /&gt;
+    &lt;/GridCell&gt;
+    &lt;GridCell Row=&quot;1&quot; Column=&quot;1&quot;&gt;
+        &lt;Label Text=&quot;Use awesome Xamarin.Forms features&quot; FontSize=&quot;20&quot; /&gt;
+    &lt;/GridCell&gt;
+    &lt;GridCell Row=&quot;2&quot; Column=&quot;0&quot;&gt;
+        &lt;Switch IsToggled=&quot;true&quot; /&gt;
+    &lt;/GridCell&gt;
+    &lt;GridCell Row=&quot;2&quot; Column=&quot;1&quot;&gt;
+        &lt;Label Text=&quot;Delight our customers&quot; FontSize=&quot;20&quot; /&gt;
+    &lt;/GridCell&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>For more Grid information, refer to the <a href="../ui/grid-layout.html">Grid Layout</a> topic.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/mobile-blazor-bindings/migrate/preview4-to-preview5.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

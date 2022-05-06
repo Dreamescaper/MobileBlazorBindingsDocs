@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Migrate Mobile Blazor Bindings From Preview 2 to Preview 3 - Mobile Blazor Bindings </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Migrate Mobile Blazor Bindings From Preview 2 to Preview 3 - Mobile Blazor Bindings ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="migrate-mobile-blazor-bindings-from-preview-2-to-preview-3">Migrate Mobile Blazor Bindings From Preview 2 to Preview 3</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This project is an experimental release. We hope you try out Experimental Mobile Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+</div>
+
+<p>This article explains how to update an existing Mobile Blazor Bindings Preview 2 project to Mobile Blazor Bindings Preview 3. If your project is using Preview 1, migrate to Preview 2 using the <a href="preview1-to-preview2.html">previous migration guide</a>, and then proceed to this guide.</p>
+<p>For more information see the <a href="https://aka.ms/mbb-preview3-blog">announcement blog</a> and <a href="https://aka.ms/mbb-preview3-rel-notes">release notes</a>.</p>
+<h2 id="update-nuget-packages-to-preview-3-versions">Update NuGet packages to Preview 3 versions</h2>
+<p>The following NuGet package references need to be updated in all of your solution's projects:</p>
+<ol>
+<li><code>Microsoft.MobileBlazorBindings</code> version is 0.3.26-preview</li>
+<li><code>Xamarin.Forms</code> version is 4.5.0.356 or greater</li>
+<li><code>Xamarin.Essentials</code> version is 1.5.0 or greater (if used in the project)</li>
+</ol>
+<p>To update the package versions:</p>
+<ol>
+<li>Open your application's solution in Visual Studio</li>
+<li>In Solution Explorer, right-click on the solution node and select &quot;Manage NuGet Packages for Solution.&quot;</li>
+<li>Select the &quot;Updates&quot; tab</li>
+<li>Ensure that &quot;Include prerelease&quot; is checked</li>
+<li>Select all applicable packages to update, and ensure that the selected versions match the updated versions listed earlier</li>
+<li>Click &quot;Update&quot; and go through the proceeding dialogs. This operation can take a few minutes because it will download several NuGet packages and update all the relevant projects.</li>
+<li>It is recommended to Save All to ensure that all changes to CSPROJ files are committed to disk</li>
+</ol>
+<p>You should now be able to build and run your project on this preview.</p>
+<h2 id="breaking-change-class-and-styleclass-properties-use-spaces-as-separators">Breaking change: 'class' and 'StyleClass' properties use spaces as separators</h2>
+<p>The <code>class</code> and <code>StyleClass</code> properties were changed to use spaces as separators instead of commas. This change was made so that the syntax matches the HTML syntax for specifying CSS classes.</p>
+<p>Before (with comma separators):</p>
+<pre><code class="lang-xml">&lt;Label class=&quot;successText, bannerText&quot; Text=&quot;You win!&quot; /&gt;
+</code></pre>
+<p>After (with space separators):</p>
+<pre><code class="lang-xml">&lt;Label class=&quot;successText bannerText&quot; Text=&quot;You win!&quot; /&gt;
+</code></pre>
+<h2 id="changes-to-label-component-syntax-remove-certain-tags-inline-text">Changes to Label component syntax (remove certain tags, inline text)</h2>
+<p>While most <code>&lt;Label&gt;</code> components use the <code>Text=&quot;abc&quot;</code> property, the <code>&lt;Label&gt;</code> component also has an optional syntax where you can define complex strings as a sequence of string spans, each with its own styles. The syntax for the <code>&lt;Label&gt;</code> component has been simplified to remove unnecessary tags for complex strings and create cleaner markup.</p>
+<p>There are two changes for this improvement:</p>
+<ol>
+<li>A <code>&lt;Span&gt;</code> tag's <code>Text</code> property can be set inline instead of as a property.</li>
+<li>The <code>&lt;FormattedText&gt;</code>, <code>&lt;FormattedString&gt;</code>, and <code>&lt;Spans&gt;</code> tags are no longer used.</li>
+</ol>
+<p>Before (with many tags and using the <code>Text</code> property):</p>
+<pre><code class="lang-xml">&lt;Label FontSize=&quot;12&quot;&gt;
+    &lt;FormattedText&gt;
+        &lt;FormattedString&gt;
+            &lt;Spans&gt;
+                &lt;Span Text=&quot;This text is large... &quot; FontSize=&quot;50&quot; /&gt;
+                &lt;Span Text=&quot;and this is plain... &quot; /&gt;
+                &lt;Span Text=&quot;and this is green!&quot;
+                        TextColor=&quot;Color.Green&quot; /&gt;
+            &lt;/Spans&gt;
+        &lt;/FormattedString&gt;
+    &lt;/FormattedText&gt;
+&lt;/Label&gt;
+</code></pre>
+<p>After (with fewer tags and using inline text):</p>
+<pre><code class="lang-xml">&lt;Label FontSize=&quot;12&quot;&gt;
+    &lt;Span FontSize=&quot;50&quot;&gt;This text is large... &lt;/Span&gt;
+    &lt;Span&gt;and this is plain... &lt;/Span&gt;
+    &lt;Span TextColor=&quot;Color.Green&quot;&gt;and this is green!&lt;/Span&gt;
+&lt;/Label&gt;
+</code></pre>
+<h2 id="optional-use-inner-text-of-button-instead-of-text-property">Optional: Use inner text of Button instead of Text property</h2>
+<p>The <code>&lt;Button&gt;</code> component now allows setting the <code>Text</code> property via inline text in addition to setting the <code>Text</code> property. This change is optional and both syntaxes are supported.</p>
+<p>Before (using the <code>Text</code> property, still works):</p>
+<pre><code class="lang-xml">&lt;Button Text=&quot;Hello, world!&quot; /&gt;
+</code></pre>
+<p>After (using inline text):</p>
+<pre><code class="lang-xml">&lt;Button&gt;Hello, world!&lt;/Button&gt;
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/mobile-blazor-bindings/migrate/preview2-to-preview3.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Troubleshooting - Mobile Blazor Bindings </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Troubleshooting - Mobile Blazor Bindings ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="troubleshooting-mobile-blazor-bindings">Troubleshooting Mobile Blazor Bindings</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This project is an experimental release. We hope you try out Experimental Mobile Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+</div>
+<h2 id="trying-to-run-on-ios-getting-no-ios-code-signing-key-error">Trying to run on iOS, getting &quot;no iOS code signing key&quot; error</h2>
+<p>If you choose to run the iOS project, you might get an error indicating that there are no iOS code signing keys. That could mean you are trying to deploy to a physical iOS device (such as an iPhone) but without the right configuration. If you intend to use the iOS Simulator, iPhoneSimulator target platform is selected.</p>
+<p><a href="media/troubleshooting/ios-target-platform-expanded.png#lightbox"> <img src="media/troubleshooting/ios-target-platform-inline.png" alt="iPhone and iPhoneSimulator target platform selection"> </a></p>
+<h2 id="hybrid-app-doesnt-show-html-web-ui-content">Hybrid app doesn't show HTML web UI content</h2>
+<p>HTML web UI content not showing up could be caused by several reasons. Check each of these in your app:</p>
+<ol>
+<li><p>Check for a browser version mismatch. The web UI is shown in a browser component that is hosted inside the native app. The browser component can be dependent on the installed web browsers on the device.</p>
+<p>For WPF (Windows), check that you have <a href="https://www.microsoftedgeinsider.com/download">Microsoft Edge Canary Channel</a>. This version of Microsoft Edge installs side-by-side with other Microsoft Edge installations.</p>
+</li>
+<li><p>Check for script errors in the browser component. Check the <a href="debug-hybrid-apps.html">debug hybrid apps</a> topic to learn how to check for browser script errors.</p>
+</li>
+<li><p>Check that the platform-specific project calls the appropriate <code>WebView</code> <code>BlazorHybrid</code> <code>Init</code> method (some variations may be expected):</p>
+<ul>
+<li><p>Android: In the <code>MainActivity.cs</code> file <code>OnCreate</code> method call <code>BlazorHybridAndroid.Init()</code>:</p>
+<pre><code class="lang-csharp">   protected override void OnCreate(Bundle savedInstanceState)
+   {
+       Microsoft.MobileBlazorBindings.WebView.Android.BlazorHybridAndroid.Init();
+   ...
+     ```
+
+</code></pre>
+</li>
+<li><p>iOS: In the <code>Main.cs</code> file <code>Main</code> method call <code>BlazorHybridIOS.Init()</code>:</p>
+<pre><code class="lang-csharp">   static void Main(string[] args)
+   {
+       Microsoft.MobileBlazorBindings.WebView.iOS.BlazorHybridIOS.Init();
+       ...
+</code></pre>
+</li>
+<li><p>Windows: In the <code>App.cs</code> file <code>MainWindow</code> constructor call <code>BlazorHybridWindows.Init()</code>:</p>
+<pre><code class="lang-csharp">   public MainWindow()
+   {
+       Microsoft.MobileBlazorBindings.WebView.Windows.BlazorHybridWindows.Init();
+       ...
+</code></pre>
+</li>
+<li><p>macOS: In the <code>Main.cs</code> file <code>Main</code> method call <code>BlazorHybridMacOS.Init()</code>:</p>
+<pre><code class="lang-csharp">   private static void Main(string[] args)
+   {
+       Microsoft.MobileBlazorBindings.WebView.macOS.BlazorHybridMacOS.Init();
+       ...
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="hybrid-app-not-loading-static-assets-such-as-css-and-images">Hybrid app not loading static assets such as CSS and images</h2>
+<p>If your hybrid app is displaying the HTML rendered content but without the CSS and images, it could mean that the static assets are not being found.</p>
+<p>These are some possible causes and fixes:</p>
+<ul>
+<li><p>Ensure that the correct path is being used. Static assets are referenced using the Blazor static file path pattern, which is <code>_content/&lt;PROJECT_NAME&gt;/path/to/the/file.css</code>. For example, in a project named <code>MySampleProject</code> a CSS file located in <code>wwwroot/css/bootstrap/bootstrap.min.css</code> would be referenced as <code>_content/MySampleProject/css/bootstrap/bootstrap.min.css</code>.</p>
+</li>
+<li><p>For Android, iOS, and macOS, make sure that the platform-specific project has a <em>direct</em> reference to the project or package that contains the static assets. The type of CSPROJ file that they use requires that the reference be direct (project-to-project) instead of merely transitive (that is, project-to-project-to-project). (Windows projects do not require this.)</p>
+</li>
+</ul>
+<h2 id="css-styles-not-working">CSS styles not working</h2>
+<p>Refer to the <a href="../ui/css-styles.html#troubleshooting">CSS troubleshooting section</a>.</p>
+<h2 id="where-to-go-for-more-solutions">Where to go for more solutions</h2>
+<p>If you're still stuck or have a question, reach out on the <a href="https://github.com/xamarin/MobileBlazorBindings">GitHub repo</a> by logging an issue.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/mobile-blazor-bindings/advanced/troubleshooting.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
