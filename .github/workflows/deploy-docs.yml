@@ -1,0 +1,38 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy GitHub pages
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Download DocFX
+        run: |
+          mkdir .tools/docfx
+          Invoke-WebRequest -Uri "https://github.com/dotnet/docfx/releases/download/v${env:DOCFXVERSION}/docfx.zip" -OutFile ".tools/docfx/docfx.zip"
+          [System.IO.Compression.ZipFile]::ExtractToDirectory(".tools/docfx/docfx.zip", ".tools/docfx" )
+        env:
+          DOCFXVERSION: 2.58
+      
+      - name: Build doc
+        run: .tools/docfx/docfx.exe build ./mobile-blazor-bindings/docfx.json
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
