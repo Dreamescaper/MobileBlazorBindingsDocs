@@ -29,7 +29,7 @@ jobs:
           DOCFXVERSION: 2.58
       
       - name: Build doc
-        run: .tools/docfx/docfx.exe build ./mobile-blazor-bindings/docfx.json
+        run: .tools/docfx/docfx.exe build ./docfx.json
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
