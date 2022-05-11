@@ -23,6 +23,7 @@
     "resource": [
       {
         "files": [
+          "index.html",
           "**/*.png",
           "**/*.jpg",
           "**/*.gif"
@@ -40,6 +41,8 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "_disableNavbar": true,
+      "_appFooter":"",
       "feedback_system": "None",
       "author": "Eilon",
       "ms.author": "elipton"
