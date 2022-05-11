@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Gestures - Maui Blazor Bindings </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Gestures - Maui Blazor Bindings ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="gestures">Gestures</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+</div>
+<h2 id="overview">Overview</h2>
+<p>Gesture recognizers can be used to detect user interaction with views in applications.</p>
+<p>Gesture recognizers are attached to a control and specify which gestures to respond to along with an event to handle the response. Gestures such as tap, pinch, pan, and swipe are supported. Gestures can be added to any component that derives from <code>View</code> or <code>GestureElement</code>. See the <a href="components-reference.html">components reference</a> for more details.</p>
+<h2 id="add-a-gesture-to-a-component">Add a gesture to a component</h2>
+<p>The following sample adds a tap gesture to a <code>Label</code> component and updates its text when it is tapped.</p>
+<pre><code class="lang-xml">&lt;ContentView&gt;
+    &lt;Label Text=&quot;@($&quot;I was tapped {count} times&quot;)&quot; FontSize=&quot;40&quot;&gt;
+        &lt;TapGestureRecognizer OnTapped=&quot;@OnLabelTapped&quot; /&gt;
+    &lt;/Label&gt;
+&lt;/ContentView&gt;
+
+@code
+{
+    int count;
+
+    void OnLabelTapped()
+    {
+        count++;
+        StateHasChanged();
+    }
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The event handler code ends with calling <code>StateHasChanged()</code> to tell Blazor to re-render the component. Otherwise the count will be incremented and the change will not be shown.</p>
+</div>
+<h2 id="supported-gestures">Supported gestures</h2>
+<p>The following example shows the syntax of the supported gestures and their respective events:</p>
+<pre><code class="lang-xml">&lt;ContentView&gt;
+    &lt;StackLayout&gt;
+
+        &lt;Label Text=&quot;...&quot;&gt;
+            &lt;TapGestureRecognizer NumberOfTapsRequired=&quot;1&quot; OnTapped=&quot;@OnLabelTapped&quot; /&gt;
+            &lt;PanGestureRecognizer OnPanUpdated=&quot;@OnLabelPanned&quot; /&gt;
+            &lt;SwipeGestureRecognizer Direction=&quot;SwipeDirection.Left&quot; OnSwiped=&quot;@OnLabelSwiped&quot; /&gt;
+            &lt;SwipeGestureRecognizer Direction=&quot;SwipeDirection.Right&quot; OnSwiped=&quot;@OnLabelSwiped&quot; /&gt;
+            &lt;PinchGestureRecognizer OnPinchUpdated=&quot;@OnLabelPinched&quot; /&gt;
+        &lt;/Label&gt;
+
+    &lt;/StackLayout&gt;
+&lt;/ContentView&gt;
+
+@code
+{
+    void OnLabelTapped()
+    {
+        // TODO: Response to tap gesture
+
+        StateHasChanged();
+    }
+
+    void OnLabelPanned(PanUpdatedEventArgs e)
+    {
+        // TODO: Response to pan gesture
+
+        // Check e.StatusType, e.TotalX, and e.TotalY
+
+        StateHasChanged();
+    }
+
+    void OnLabelSwiped(SwipedEventArgs e)
+    {
+        // TODO: Response to swipe gesture
+
+        // Check e.Direction
+
+        StateHasChanged();
+    }
+
+    void OnLabelPinched(PinchGestureUpdatedEventArgs e)
+    {
+        // TODO: Response to pinch gesture
+
+        // Check e.Scale, e.ScaleOrigin, and e.Status
+
+        StateHasChanged();
+    }
+}
+</code></pre>
+<h2 id="more-information">More information</h2>
+<p>See the <a href="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/gestures/">Xamarin.Forms gestures documentation</a> for more information and examples.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/maui-blazor-bindings/ui/gestures.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

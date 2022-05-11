@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Walkthrough: Build your first hybrid app with Maui Blazor Bindings - Maui Blazor Bindings </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Walkthrough: Build your first hybrid app with Maui Blazor Bindings - Maui Blazor Bindings ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="build-your-first-hybrid-app">Build your first hybrid app</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+</div>
+
+<p>The easiest way to get started with Experimental Maui Blazor Bindings to build hybrid apps is to create the initial project from the command line. This template supports creating apps for Android, iOS, WPF (Windows), and macOS.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have not yet done so, check the <a href="../get-started.html">pre-requisites and template installation instructions</a>.</p>
+</div>
+<ol>
+<li><p>Open a command prompt or shell window</p>
+</li>
+<li><p>Create your project by running this command:</p>
+<pre><code class="lang-shell">dotnet new blazorhybrid -o FirstBlazorHybridApp
+</code></pre>
+<p>This will create a folder named <code>FirstBlazorHybridApp</code> with the solution file (SLN) and five projects in sub-directories:</p>
+<ol>
+<li><code>FirstBlazorHybridApp/FirstBlazorHybridApp.csproj</code> - this is the shared project that will contain the hybrid UI and logic of your application. That is, it will contain both native UI and web UI all using Razor syntax.</li>
+<li><code>FirstBlazorHybridApp.Android/FirstBlazorHybridApp.Android.csproj</code> - this is the &quot;backend&quot; project for targeting Android devices. On Windows or Mac you can run this project to launch the app in the Android Emulator.</li>
+<li><code>FirstBlazorHybridApp.iOS/FirstBlazorHybridApp.iOS.csproj</code> - this is the &quot;backend&quot; project for targeting iOS devices. On Mac you can run this project to launch the app in the iOS Simulator. On Windows you can run it as well if you have a <a href="https://docs.microsoft.com/xamarin/ios/get-started/installation/windows/connecting-to-mac/">Mac that is paired</a>.</li>
+<li><code>FirstBlazorHybridApp.Windows/FirstBlazorHybridApp.Windows.csproj</code> - this is the &quot;backend&quot; project for targeting Windows devices using Windows Presentation Foundation (WPF). On Windows you can run this project to launch the app.</li>
+<li><code>FirstBlazorHybridApp.macOS/FirstBlazorHybridApp.macOS.csproj</code> - this is the &quot;backend&quot; project for targeting macOS devices. On Mac you can run this project to launch the app.</li>
+</ol>
+</li>
+<li><p>You are now ready to open the solution in Visual Studio. To open the solution you can double-click the SLN file on your disk, or you can first open Visual Studio 2019, select <code>File</code> / <code>Open</code> / <code>Project/Solution</code>, and then navigate to the new folder you created and select <code>FirstBlazorHybridApp.sln</code>. The solution in Visual Studio should look like this:</p>
+<p><a href="media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-expanded.png#lightbox"> <img src="media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-inline.png" alt="Solution Explorer with all 5 projects"> </a></p>
+</li>
+<li><p>To run the project, you'll need to set one of the &quot;backend&quot; projects as your startup project. In Solution Explorer, right-click on the Android, iOS, Windows, or macOS project and select <code>Set as StartUp Project</code>.</p>
+<p><a href="media/build-first-hybrid-app/set-startup-hybrid-project-expanded.png#lightbox"> <img src="media/build-first-hybrid-app/set-startup-hybrid-project-inline.png" alt="Set startup project in Solution Explorer"> </a></p>
+</li>
+<li><p>Press <kbd>F5</kbd> to launch the project in the emulator or on a device (depending on the chosen project) with the debugger attached (or press <kbd>Ctrl</kbd>+<kbd>F5</kbd> to run without the debugger)</p>
+<ul>
+<li>Tip: If you want to run the iOS project on the iOS Simulator, ensure that you select the <code>iPhoneSimulator</code> target from the Visual Studio toolbar instead of <code>iPhone</code>.</li>
+</ul>
+</li>
+<li><p>Your first application will launch in an emulator or on a device and look like this:</p>
+<p><a href="media/build-first-hybrid-app/ios-hybrid-helloworld-expanded.png#lightbox"> <img src="media/build-first-hybrid-app/ios-hybrid-helloworld-inline.png" alt="Hello World hybrid app running in the iOS Simulator"> </a></p>
+</li>
+<li><p>Congratulations, you've created and run your first Experimental Maui Blazor Bindings hybrid app!</p>
+</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you're experiencing a problem, refer to the <a href="../advanced/troubleshooting.html">troubleshooting guide</a>.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>See the <a href="../advanced/template-options.html">advanced template options</a> topic for more options when creating a new project.</p>
+</div>
+<h2 id="next-steps">Next steps</h2>
+<ul>
+<li>To learn more about how this works, go to the <a href="hybrid-hello-world.html">Hybrid Hello World Walkthrough</a>.</li>
+<li>To learn how to share the web UI with a Blazor Web App, go to the <a href="shared-web-ui.html">Shared Web UI Walkthrough</a>.</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/maui-blazor-bindings/walkthroughs/build-first-hybrid-app.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

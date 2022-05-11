@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CSS Styles - Maui Blazor Bindings </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="CSS Styles - Maui Blazor Bindings ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="css-styles">CSS Styles</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+</div>
+<h2 id="overview">Overview</h2>
+<p>Applications built using Maui Blazor Bindings have an assortment of styles that can be applied to control the appearance of the UI. These styles can be applied directly to components or they can be applied using Cascading Style Sheets (CSS). Some of the advantages of using CSS instead of direct styles is that it enables better separation of concerns (that is, keeping component styles separate from their layout and functionality) and allowing possible sharing of CSS with other media (for example, a web app).</p>
+<h2 id="including-css-in-a-project">Including CSS in a project</h2>
+<p>To add CSS to a Maui Blazor Bindings project:</p>
+<ol>
+<li><p>In the shared UI project of your application right-click on any folder and select Add --&gt; Add New Item and select the Style Sheet item type (if you can't find it, use the search feature to find <code>style sheet</code>).</p>
+</li>
+<li><p>Choose an appropriate name for your style sheet and press Add.</p>
+</li>
+<li><p>Edit the contents of the CSS file as needed (see below for supported styles). For example, to set all labels to have a <code>large</code> font size:</p>
+<pre><code class="lang-css">label {
+    font-size: large;
+}
+</code></pre>
+</li>
+<li><p>Open the <code>.razor</code> file where you want to use the CSS.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Many apps will have a single CSS file that is included in the main page of the application.</p>
+</div>
+</li>
+<li><p>Add the following markup to the <code>.razor</code> file, typically at the top level of the file. Changing the name and path of the CSS file to match what you created:</p>
+<pre><code class="lang-xml">&lt;StyleSheet Resource=&quot;folder/MyStyles.css&quot; Assembly=&quot;GetType().Assembly&quot;&gt;&lt;/StyleSheet&gt;
+</code></pre>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>CSS support requires referencing Xamarin.Forms 4.5 or newer. To update this reference, manage the NuGet packages for the solution and ensure that the solution is using a version of Xamarin.Forms that is 4.5 or newer. Future versions of Maui Blazor Bindings will include this version by default.</p>
+</div>
+<h2 id="applying-css-to-components">Applying CSS to components</h2>
+<p>CSS styles are declared in the CSS file using standard CSS syntax. Styles are specified using selectors, which allow applying styles based on element type, base class, name, class attribute, and several other means (see below for Xamarin.Forms reference).</p>
+<p>In the <code>.razor</code> file on each component that allows CSS styles you can set the class or name via the <code>class</code> and <code>StyleId</code> properties, respectively.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Elements that support CSS styles also have a <code>StyleClass</code> property, which is equivalent to the <code>class</code> property. If you need to use the <code>class</code> property programmatically from C#, either use the escape syntax <code>@class</code>, such as <code>myElement.@class</code>, or use the <code>StyleClass</code> property, such as <code>myElement.StyleClass</code>.</p>
+</div>
+<p>Example CSS file:</p>
+<pre><code class="lang-css">/* this rule applies to all labels */
+label {
+    font-size: large;
+}
+
+/* these rules apply only when this class is specified */
+.happyText {
+    color: green;
+}
+
+.sadText {
+    color: red;
+}
+</code></pre>
+<p>Example Razor file snippet:</p>
+<pre><code class="lang-xml">&lt;Label Text=&quot;Seattle&quot; /&gt; @* no class specified, so only 'label' rule applied *@
+&lt;Label class=&quot;happyText&quot; Text=&quot;Weather: good&quot; /&gt; @* class is specified, so 'label' rule and '.happyText' rules applied *@
+&lt;Label class=&quot;sadText&quot; Text=&quot;Traffic: bad&quot; /&gt; @* class is specified, so 'label' rule and '.sadText' rules applied *@
+</code></pre>
+<h2 id="supported-css-styles">Supported CSS styles</h2>
+<p>Because the built-in UI components are based on Xamarin.Forms controls, refer to <a href="https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/styles/css/">Styling Xamarin.Forms apps using CSS</a> to learn more about this feature and which styles can be applied to which components.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="set-build-action-to-embedded-resource">Set Build Action to Embedded resource</h3>
+<p>When adding a new CSS file in Visual Studio, the CSS file should automatically have its <code>Build Action</code> set to <code>Embedded resource</code> to ensure it is included in the built project. If it isn't, right-click on the CSS file, select Properties, and set <code>Build Action</code> to <code>Embedded resource</code>.</p>
+<h3 id="use-correct-path-syntax-for-css-in-sub-folders">Use correct path syntax for CSS in sub-folders</h3>
+<p>If the CSS file is located in a folder, specify its name using its path with forward-slashes as the path separators. For example, if the CSS file is <code>&lt;PROJECT ROOT&gt;/assets/styles/MyApp.css</code>, then the markup to include it in a <code>.razor</code> file is:</p>
+<pre><code class="lang-xml">&lt;StyleSheet Resource=&quot;assets/styles/MyApp.css&quot; Assembly=&quot;GetType().Assembly&quot;&gt;&lt;/StyleSheet&gt;
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/maui-blazor-bindings/ui/css-styles.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

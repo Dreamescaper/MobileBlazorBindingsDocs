@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Custom components - Maui Blazor Bindings </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Custom components - Maui Blazor Bindings ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="custom-components">Custom components</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+</div>
+
+<p>You can write reusable custom components either using Blazor components or by wrapping existing Xamarin.Forms components.</p>
+<h2 id="blazor-components">Blazor components</h2>
+<p>You can create a reusable Blazor component by writing a <code>.razor</code> file just like you would in an application. The component can be shipped as a NuGet package so that it is easily reusable in other projects.</p>
+<p>To learn more about component libraries, check out the <a href="https://docs.microsoft.com/aspnet/core/blazor/class-libraries&amp;tabs=visual-studio">ASP.NET Core Razor components class libraries</a>.</p>
+<p>More details coming soon!</p>
+<h2 id="wrapping-xamarinforms-components">Wrapping Xamarin.Forms components</h2>
+<p>To make a Xamarin.Forms element available in Blazor markup you need to implement two types of classes:</p>
+<ol>
+<li>A component representing the markup that the developer will use in the <code>.razor</code> file. This type will need to derive from <code>NativeControlComponentBase</code> or one of its derived classes.</li>
+<li>An element handler representing the UI component that will be created when the component is used. This type will either implement the <code>IXamarinFormsElementHandler</code> interface or derive from one of the existing handler types that implement the interface.</li>
+</ol>
+<p>An example that shows how to wrap the popular <a href="https://github.com/sthewissen/Xamarin.Forms.PancakeView"><code>PancakeView</code> component</a> is available <a href="https://github.com/xamarin/MobileBlazorBindings/tree/master/samples/MobileBlazorBindingsWeather/Microsoft.MobileBlazorBindings.PancakeView">here</a>.</p>
+<p>The component uses a static constructor to register the component mapping to the element handler, as seen <a href="https://github.com/xamarin/MobileBlazorBindings/blob/master/samples/MobileBlazorBindingsWeather/Microsoft.MobileBlazorBindings.PancakeView/Elements/PancakeView.cs#L11-L15">here</a>.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/maui-blazor-bindings/advanced/custom-components.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Walkthrough: Hybrid Hello World - Maui Blazor Bindings </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Walkthrough: Hybrid Hello World - Maui Blazor Bindings ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="hybrid-hello-world---how-does-it-work">Hybrid Hello World - how does it work?</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+</div>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This page is a continuation of the <a href="build-first-hybrid-app.html">Build your first hybrid app</a> walkthrough. We recommend you complete that walkthrough before continuing.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For a simpler example, start with the <a href="build-first-app.html">Build your first app</a> walkthrough and the subsequent <a href="hello-world.html">Hello World Walkthrough</a> that show some more basic features of Blazor.</p>
+</div>
+<p>Let's take a look at the initial project that was created in the previous walkthrough to understand more about how to use Experimental Maui Blazor Bindings for hybrid apps.</p>
+<p>The main project to look at is the shared project that contains the <code>.razor</code> files. The platform-specific projects contain only minimal code specific to Experimental Maui Blazor Bindings.</p>
+<p>These are the notable files and folders in the shared project:</p>
+<h2 id="root-folder">Root folder</h2>
+<ul>
+<li><code>_Imports.razor</code> - Contains common directives that are applied to all other <code>.razor</code> files in this folder and its sub-folders. Sub-folders can have their own <code>_Imports.razor</code> files with additional directives. The most common directive type in this file is the <code>@using</code> directive, which is used to import a namespace into <code>.razor</code> files, exactly the same as a C# <code>using</code> statement.</li>
+<li><code>App.cs</code> - Contains the main UI entry point of the application, represented by a class that derives from the <a href="https://docs.microsoft.com/dotnet/api/xamarin.forms.application"><code>Xamarin.Forms.Application</code></a> base class. The constructor of this class instantiates a <a href="https://docs.microsoft.com/aspnet/core/fundamentals/host/generic-host">host</a>, adds services to the host, and then uses the host to add a Blazor component named <code>Main</code> to the main application page.</li>
+<li><code>CounterState.cs</code> - Contains a service that tracks a counter value and offers related APIs. This service is used in both the native and HTML parts of the app.</li>
+<li><code>Main.razor</code> - Contains the main Blazor UI component of the app. It contains some native UI and also a <code>BlazorWebView</code> component that hosts the HTML part of the app.</li>
+</ul>
+<h3 id="webui-and-wwwroot-folders">WebUI and wwwroot folders</h3>
+<p>These folders contain the web part of the app, which is what makes this a hybrid app. The files and folders here closely match what is found a a Blazor web app.</p>
+<ul>
+<li><code>WebUI/_Imports.razor</code> - Contains common directives for the web part of the app.</li>
+<li><code>WebUI/App.razor</code> - Contains the main entry point for the web part of the app.</li>
+<li><code>WebUI/Pages</code> folder - Contains navigable pages authored using Blazor web syntax. The <code>.razor</code> files here all render HTML and share app state with the rest of the app.</li>
+<li><code>WebUI/Shared</code> folder - Contains shared reusable UI components authored using Blazor web syntax. The <code>.razor</code> files here all render HTML and are used in other pages in the app. This folder also contains the <code>MainLayout</code> component that defines the overall shape of the web part of the app.</li>
+<li><code>wwwroot</code> folder - Contains static web assets used in the web part of the app. This is typically CSS files and images.</li>
+</ul>
+<p>Let's dive into the interesting files.</p>
+<h2 id="appcs-entry-point"><code>App.cs</code> entry point</h2>
+<p>The entry point for the app's UI is in this page. It sets up the services for the app and then initializes the UI by attaching a Maui Blazor Bindings component to the <code>MainPage</code> element.</p>
+<p>Two sets of services are registered:</p>
+<ol>
+<li><code>services.AddBlazorHybrid()</code> adds the services required by Maui Blazor Bindings to host Blazor Web components in the native UI.</li>
+<li><code>services.AddSingleton&lt;CounterState&gt;()</code> adds an app-specific service that can be consumed from anywhere in the application, including code files, Blazor components, and other services. This is a singleton service, meaning that at most one instance of it will be created, thus allowing the state to be shared.</li>
+</ol>
+<p>Learn more about services and DI in the <a href="../advanced/dependency-injection.html">dependency injection topic</a>.</p>
+<h2 id="mainrazor-native-ui-page"><code>Main.razor</code> native UI page</h2>
+<p>This is the main native UI page of the app. It contains several native UI components, such as <code>&lt;Label&gt;</code> and <code>&lt;Button&gt;</code>. It also contains a <code>&lt;BlazorWebView&gt;</code> component that hosts the Blazor web content:</p>
+<pre><code class="lang-xml">&lt;BlazorWebView VerticalOptions=&quot;LayoutOptions.FillAndExpand&quot;&gt;
+    &lt;FirstBlazorHybridApp.WebUI.App /&gt;
+&lt;/BlazorWebView&gt;
+</code></pre>
+<p>A few other interesting things:</p>
+<ul>
+<li>The <code>&lt;FirstBlazorHybridApp.WebUI.App /&gt;</code> tag is how the native part of the app references the web part of the app.</li>
+<li>The <code>@inject</code> directive is used to reference the <code>CounterState</code> service.</li>
+<li>The <code>OnInitialized</code> and <code>Dispose</code> methods are implemented to attach/detach a <code>StateChanged</code> event handler so that this UI page refreshes whenever the <code>CounterState</code> service indicates that the counter has changed.</li>
+</ul>
+<h2 id="counterstatecs-service"><code>CounterState.cs</code> service</h2>
+<p>This class defines a service that is registered in <code>App.cs</code>. It contains state, APIs, and events used to track and report the state of the counter. Various UI components in the app use this service to display their UI and know when to refresh it,</p>
+<p>Learn more about services and DI in the <a href="../advanced/dependency-injection.html">dependency injection topic</a>.</p>
+<h2 id="webuiapprazor-web-entry-point"><code>WebUI/App.razor</code> web entry point</h2>
+<p>This file is the main Blazor entry point for the web part of the application. It uses standard Blazor features, such as the <a href="https://docs.microsoft.com/aspnet/core/blazor/fundamentals/routing">Router</a>. This component determines which Blazor web page to display based on the current route (or show an error if none are found).</p>
+<h2 id="webuisharedmainlayoutrazor-web-layout"><code>WebUI/Shared/MainLayout.razor</code> web layout</h2>
+<p>Common to most Blazor web apps, this component defines the overall layout of the web part of the app. Here you can include common elements such as navigation, headers, and footers that are used in the web part of the app.</p>
+<h2 id="webuipagesindexrazor-web-page"><code>WebUI/Pages/Index.razor</code> web page</h2>
+<p>Contains a navigable page of web content. The <code>Index</code> page is usually the default page that is loaded prior to any navigation</p>
+<h2 id="wwwroot-static-web-assets-folder"><code>wwwroot</code> static web assets folder</h2>
+<p>This folder contains static web assets used in the web part of the app. That is, these files are served as-is by the web browser component. They are referenced using the Blazor static file path pattern, which is <code>_content/&lt;PROJECT_NAME&gt;/path/to/the/file.css</code>. For example, in this project a CSS file located in <code>wwwroot/css/bootstrap/bootstrap.min.css</code> would be referenced as <code>_content/FirstBlazorHybridApp/css/bootstrap/bootstrap.min.css</code>.</p>
+<p>These files get embedded in the application and are handled by Maui Blazor Bindings automatically. Files in this folder can be read from code by using the <code>IFileProvider</code> service and calling  <code>FileProvider.GetFileInfo(&quot;_content/&lt;PROJECT_NAME&gt;/path/to/the/file.txt&quot;)</code>, as seen in the app's <code>WebUI/Pages/FetchData.razor</code> file.</p>
+<p>This project contains the Bootstrap CSS library to provide styles for common UI scenarios.</p>
+<h2 id="indexhtml-file-in-the-androidiosmacoswindows-projects"><code>index.html</code> file in the Android/iOS/macOS/Windows projects</h2>
+<p>Each platform-specific project contains an <code>index.html</code> file that is the container page for the Blazor web UI, and includes references to the CSS files.</p>
+<p>The location of the file on each platform is as follows:</p>
+<ul>
+<li>Android: <code>wwwroot/index.html</code></li>
+<li>iOS: <code>Resources/wwwroot/index.html</code></li>
+<li>macOS: <code>Resources/wwwroot/index.html</code></li>
+<li>Windows: <code>wwwroot/index.html</code></li>
+</ul>
+<h2 id="other-files">Other files</h2>
+<p>We encourage you to explore all the files in the application to learn their contents and how they interact.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/maui-blazor-bindings/walkthroughs/hybrid-hello-world.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

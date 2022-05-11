@@ -4,200 +4,11 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
-      "type": "Toc",
-      "source_relative_path": "mobile-blazor-bindings/TOC.yml",
-      "output": {
-        ".html": {
-          "relative_path": "mobile-blazor-bindings/TOC.html",
-          "hash": "4eymHSPjDEkoD2IMdzmXPq5KPPLh7RI1ZAaf/fXa9Nw="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/advanced/access-native-controls.md",
-      "output": {
-        ".html": {
-          "relative_path": "mobile-blazor-bindings/advanced/access-native-controls.html",
-          "hash": "LHQfJwmFXO6YgfA4Ac2OVdjgcQ2aZJiCmj6iP20QTrc="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/advanced/architecture.md",
-      "output": {
-        ".html": {
-          "relative_path": "mobile-blazor-bindings/advanced/architecture.html",
-          "hash": "A5YJq6UzAuRUOEph/tUQQE9W62+Ne+5D3o0S5U3dDs4="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/advanced/backend-specific-services.md",
-      "output": {
-        ".html": {
-          "relative_path": "mobile-blazor-bindings/advanced/backend-specific-services.html",
-          "hash": "w3SGtttxYF4RodZuB0djk0fFsOS1/VsH1uC5c1tvak8="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/advanced/custom-components.md",
-      "output": {
-        ".html": {
-          "relative_path": "mobile-blazor-bindings/advanced/custom-components.html",
-          "hash": "SGzX1/L4Me4tHQztzcsady7aUpZAW6vVBIupwmXFwQk="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/advanced/debug-hybrid-apps.md",
-      "output": {
-        ".html": {
-          "relative_path": "mobile-blazor-bindings/advanced/debug-hybrid-apps.html",
-          "hash": "/YFPu5AB3PuUbeQkbTRNotOkemO1LSB5iFER34PK3BY="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/advanced/dependency-injection.md",
-      "output": {
-        ".html": {
-          "relative_path": "mobile-blazor-bindings/advanced/dependency-injection.html",
-          "hash": "UywUNxrj3tR0bjkSq0DZHMYJTTIzjuleRCmTh1P6KM0="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/advanced/integrate-into-existing-app.md",
-      "output": {
-        ".html": {
-          "relative_path": "mobile-blazor-bindings/advanced/integrate-into-existing-app.html",
-          "hash": "C1a1vMLbglB1AwFwCJVGAyDPu/MrGD78YD/FmxTCU7g="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/advanced/media/architecture/mobileblazorbindings-architecture-expanded.png",
+      "source_relative_path": "index.html",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/advanced/media/architecture/mobileblazorbindings-architecture-expanded.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/advanced/media/architecture/mobileblazorbindings-architecture-inline.png",
-      "output": {
-        "resource": {
-          "relative_path": "mobile-blazor-bindings/advanced/media/architecture/mobileblazorbindings-architecture-inline.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/advanced/media/troubleshooting/ios-target-platform-expanded.png",
-      "output": {
-        "resource": {
-          "relative_path": "mobile-blazor-bindings/advanced/media/troubleshooting/ios-target-platform-expanded.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/advanced/media/troubleshooting/ios-target-platform-inline.png",
-      "output": {
-        "resource": {
-          "relative_path": "mobile-blazor-bindings/advanced/media/troubleshooting/ios-target-platform-inline.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/advanced/references.md",
-      "output": {
-        ".html": {
-          "relative_path": "mobile-blazor-bindings/advanced/references.html",
-          "hash": "bqwGa9/1dqMUtkarskzkiPgeR3S6dsE3ppU6WLZc0X0="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/advanced/template-options.md",
-      "output": {
-        ".html": {
-          "relative_path": "mobile-blazor-bindings/advanced/template-options.html",
-          "hash": "dQsZ8awxgoq/MA2/8ce6VOIxGgFp1N94Lg8kBJgvdno="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/advanced/troubleshooting.md",
-      "output": {
-        ".html": {
-          "relative_path": "mobile-blazor-bindings/advanced/troubleshooting.html",
-          "hash": "hy7Xbb4I798bJ8n6iNzmXAL0rMd8mM5zxBNxbMAu+dU="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/advanced/uninstall.md",
-      "output": {
-        ".html": {
-          "relative_path": "mobile-blazor-bindings/advanced/uninstall.html",
-          "hash": "JCtnAOShAqcIId6ufG+fUoHtrJLXuz6/8ARH4cGFkxM="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/advanced/xamarin-essentials.md",
-      "output": {
-        ".html": {
-          "relative_path": "mobile-blazor-bindings/advanced/xamarin-essentials.html",
-          "hash": "K868JUtkvXSNjBsYME4SKzWuDiJYQA/tugr+mfFUkk4="
+          "relative_path": "index.html"
         }
       },
       "is_incremental": false,
@@ -205,10 +16,210 @@
     },
     {
       "type": "Toc",
-      "source_relative_path": "mobile-blazor-bindings/breadcrumb/toc.yml",
+      "source_relative_path": "maui-blazor-bindings/TOC.yml",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/breadcrumb/toc.html",
+          "relative_path": "maui-blazor-bindings/TOC.html",
+          "hash": "49R2EMbf3Et5jY7A67MmXmoWrXguLpSPilxFlp76RoM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/advanced/access-native-controls.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/advanced/access-native-controls.html",
+          "hash": "dUkICnH2FJRdqf+nw5vcpiPUb+tBDbpfCIzAyH4Q9Ks="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/advanced/architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/advanced/architecture.html",
+          "hash": "6h74vldJHCX5qoWAbFkYAE3fxwx+xfcg3SzOuPpLQIU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/advanced/backend-specific-services.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/advanced/backend-specific-services.html",
+          "hash": "fwbQ2qXHQS1qCaYYt28U0PliLlLDmUyPaz2IJ46yJ9k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/advanced/custom-components.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/advanced/custom-components.html",
+          "hash": "vORkAVZHgHgqk4cAV1ZZpyzBAA91YtcCVXiL5UQySU4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/advanced/debug-hybrid-apps.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/advanced/debug-hybrid-apps.html",
+          "hash": "SyGCa7zWQs0ZBaTtLdOi772zOvSWEf/OS1NwxEeeS/Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/advanced/dependency-injection.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/advanced/dependency-injection.html",
+          "hash": "NGDk9bBkfn823zTCWy+3/C75vAYjUeuq7mRyS/pZwDw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/advanced/integrate-into-existing-app.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/advanced/integrate-into-existing-app.html",
+          "hash": "z0/DdHUUnjsjgj/ZQ9PtdOmrtxgFD/sE028SaEAFdt8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/advanced/media/architecture/mobileblazorbindings-architecture-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/advanced/media/architecture/mobileblazorbindings-architecture-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/advanced/media/architecture/mobileblazorbindings-architecture-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/advanced/media/architecture/mobileblazorbindings-architecture-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/advanced/media/troubleshooting/ios-target-platform-expanded.png",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/advanced/media/troubleshooting/ios-target-platform-expanded.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/advanced/media/troubleshooting/ios-target-platform-inline.png",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/advanced/media/troubleshooting/ios-target-platform-inline.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/advanced/references.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/advanced/references.html",
+          "hash": "TkiOIuUIdg6usprHGiOowW6gc4KCb5bSV0eHu8fZhrI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/advanced/template-options.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/advanced/template-options.html",
+          "hash": "FPDPmprvfpLf77KUNH5c0pwQ/YGqd1nUWpnJLK+AP7g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/advanced/troubleshooting.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/advanced/troubleshooting.html",
+          "hash": "9N7/tlJmDL3n94fzMguvyNiNiF8D/IukHrBaR51KmlI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/advanced/uninstall.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/advanced/uninstall.html",
+          "hash": "FadAZFi5nb/g75lfqKX2RMtAu4qFMsgNUznb+b42Lbw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/advanced/xamarin-essentials.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/advanced/xamarin-essentials.html",
+          "hash": "n7js2v+D8My4sZOxCsvFzq/zD9Uq/Uqv4H5OkiYEK0o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "maui-blazor-bindings/breadcrumb/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/breadcrumb/toc.html",
           "hash": "Rlp7gHX6O0RzH0vw8OWyoJ+f858mD7X2yYcn771mv7s="
         }
       },
@@ -217,11 +228,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/contribute/build-from-source.md",
+      "source_relative_path": "maui-blazor-bindings/contribute/build-from-source.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/contribute/build-from-source.html",
-          "hash": "KXJv9mLtR448IOPPyjxExjLNlKrnDwadNcP6lFP5jxc="
+          "relative_path": "maui-blazor-bindings/contribute/build-from-source.html",
+          "hash": "l7r8syAzML9afVFblo8U32brZe/lABennurP77dFxpk="
         }
       },
       "is_incremental": false,
@@ -229,11 +240,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/contribute/feedback.md",
+      "source_relative_path": "maui-blazor-bindings/contribute/feedback.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/contribute/feedback.html",
-          "hash": "rOlZa9stwa6q9I9tYP18TgKqoCf1tDqT7kpWwWdh5Tk="
+          "relative_path": "maui-blazor-bindings/contribute/feedback.html",
+          "hash": "DD5HbEBZM9DIKilFYLdK6Ex2TLDEhMOvf+rwArtw240="
         }
       },
       "is_incremental": false,
@@ -241,11 +252,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/contribute/nightly-builds.md",
+      "source_relative_path": "maui-blazor-bindings/contribute/nightly-builds.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/contribute/nightly-builds.html",
-          "hash": "yZQSup+F/99PBaUuwBVEZX7t8b3nAQlstlnjuatsijs="
+          "relative_path": "maui-blazor-bindings/contribute/nightly-builds.html",
+          "hash": "oz2i7ZN6C2PWTle5mL0AgLozstOl5L+Nlc1urxlvwWo="
         }
       },
       "is_incremental": false,
@@ -253,11 +264,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/contribute/roadmap.md",
+      "source_relative_path": "maui-blazor-bindings/contribute/roadmap.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/contribute/roadmap.html",
-          "hash": "ZQ2aT6FkOvzwlsStS8GhAmEcy/sGHk6nbGM1BJGzSlQ="
+          "relative_path": "maui-blazor-bindings/contribute/roadmap.html",
+          "hash": "DFFKD1noMXwc7tPclyNGFSXUwSqFpA/qNGspbOx9l9M="
         }
       },
       "is_incremental": false,
@@ -265,11 +276,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/get-started.md",
+      "source_relative_path": "maui-blazor-bindings/get-started.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/get-started.html",
-          "hash": "msH1obdYGbpFM7KK/ZxHuW8oUYPR7+7GCAxcau0pKQo="
+          "relative_path": "maui-blazor-bindings/get-started.html",
+          "hash": "MLFE5Kj17T8JF/8KXj9S704RwAs8UQhU+JIe1XF74gc="
         }
       },
       "is_incremental": false,
@@ -277,11 +288,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/index.md",
+      "source_relative_path": "maui-blazor-bindings/index.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/index.html",
-          "hash": "HiOFjgdiWIw5pVNMSn5YP0f7Sq+/Bl/AqNUWh5m78GI="
+          "relative_path": "maui-blazor-bindings/index.html",
+          "hash": "0PLd5Hxgn6GTCrr/NDpdsKFl4puULTzGdqh5Ivo+M1c="
         }
       },
       "is_incremental": false,
@@ -289,10 +300,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/media/index/hello-world-expanded.png",
+      "source_relative_path": "maui-blazor-bindings/media/index/hello-world-expanded.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/media/index/hello-world-expanded.png"
+          "relative_path": "maui-blazor-bindings/media/index/hello-world-expanded.png"
         }
       },
       "is_incremental": false,
@@ -300,10 +311,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/media/index/hello-world-inline.png",
+      "source_relative_path": "maui-blazor-bindings/media/index/hello-world-inline.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/media/index/hello-world-inline.png"
+          "relative_path": "maui-blazor-bindings/media/index/hello-world-inline.png"
         }
       },
       "is_incremental": false,
@@ -311,10 +322,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/media/index/ios-hybrid-expanded.png",
+      "source_relative_path": "maui-blazor-bindings/media/index/ios-hybrid-expanded.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/media/index/ios-hybrid-expanded.png"
+          "relative_path": "maui-blazor-bindings/media/index/ios-hybrid-expanded.png"
         }
       },
       "is_incremental": false,
@@ -322,10 +333,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/media/index/ios-hybrid-inline.png",
+      "source_relative_path": "maui-blazor-bindings/media/index/ios-hybrid-inline.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/media/index/ios-hybrid-inline.png"
+          "relative_path": "maui-blazor-bindings/media/index/ios-hybrid-inline.png"
         }
       },
       "is_incremental": false,
@@ -333,11 +344,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/migrate/preview1-to-preview2.md",
+      "source_relative_path": "maui-blazor-bindings/migrate/preview1-to-preview2.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/migrate/preview1-to-preview2.html",
-          "hash": "RlVeLYxXC9ULy7GEyvRN9+5q0TFGDyvX3DYkHJv+PiQ="
+          "relative_path": "maui-blazor-bindings/migrate/preview1-to-preview2.html",
+          "hash": "Fn8TubVQ6+ziAg5I9My1Ui1ydDdwd3r3pXqi+3BMe4c="
         }
       },
       "is_incremental": false,
@@ -345,11 +356,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/migrate/preview2-to-preview3.md",
+      "source_relative_path": "maui-blazor-bindings/migrate/preview2-to-preview3.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/migrate/preview2-to-preview3.html",
-          "hash": "NlWvL7PVaJYrjBt4wtBhWa9A8xv90VQxzJm0IyebF3E="
+          "relative_path": "maui-blazor-bindings/migrate/preview2-to-preview3.html",
+          "hash": "bIvGPGMNGYmfamUTY0c8V152fmDlucdkXDKw8gnDUGI="
         }
       },
       "is_incremental": false,
@@ -357,11 +368,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/migrate/preview3-to-preview4.md",
+      "source_relative_path": "maui-blazor-bindings/migrate/preview3-to-preview4.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/migrate/preview3-to-preview4.html",
-          "hash": "AGXzvNmjoJU1+YMvSqjeMmuaTorMQ+gCMAjd+kcV0NU="
+          "relative_path": "maui-blazor-bindings/migrate/preview3-to-preview4.html",
+          "hash": "pRJdie0iUFVfg8VzBUtgPTAtCE86Ala7oocA6w1o07g="
         }
       },
       "is_incremental": false,
@@ -369,11 +380,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/migrate/preview4-to-preview5.md",
+      "source_relative_path": "maui-blazor-bindings/migrate/preview4-to-preview5.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/migrate/preview4-to-preview5.html",
-          "hash": "dfkhiRMjoq8x68XaFuzvhplfMRnT2W5ok72JofnHjuI="
+          "relative_path": "maui-blazor-bindings/migrate/preview4-to-preview5.html",
+          "hash": "+M2h76V9Yz1JmSyLyCnnSrh7DvcWQemIL2A9mI7bVRQ="
         }
       },
       "is_incremental": false,
@@ -381,11 +392,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/ui/components-reference.md",
+      "source_relative_path": "maui-blazor-bindings/ui/components-reference.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/ui/components-reference.html",
-          "hash": "XxnHG/3UaagV/sQnmr2o33YNKLsM7FxLYVSIqKvKr7A="
+          "relative_path": "maui-blazor-bindings/ui/components-reference.html",
+          "hash": "A8B2Qm6rNYJBO18r6CgTBI5su0j6C0iJAN+wnbluaXo="
         }
       },
       "is_incremental": false,
@@ -393,11 +404,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/ui/css-styles.md",
+      "source_relative_path": "maui-blazor-bindings/ui/css-styles.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/ui/css-styles.html",
-          "hash": "XCrwbn0/OicMMiH3oAhWin4YpMXIAV+xqffIes4AEAo="
+          "relative_path": "maui-blazor-bindings/ui/css-styles.html",
+          "hash": "DWCWncYxCSIHiWY4Bpha/AN66NzLmiaOE0UXgQBfCQQ="
         }
       },
       "is_incremental": false,
@@ -405,11 +416,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/ui/gestures.md",
+      "source_relative_path": "maui-blazor-bindings/ui/gestures.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/ui/gestures.html",
-          "hash": "JP/dnh8eL5Ci7TTuGlkyi/fqcrsA6APlH7VTY3LRmsQ="
+          "relative_path": "maui-blazor-bindings/ui/gestures.html",
+          "hash": "JTpVVtShOAH/yN7Vq5BnsIEYkv+mYQw+k7McYhaVcHg="
         }
       },
       "is_incremental": false,
@@ -417,11 +428,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/ui/grid-layout.md",
+      "source_relative_path": "maui-blazor-bindings/ui/grid-layout.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/ui/grid-layout.html",
-          "hash": "ocHVlQOttbSHOig/9ejAjFb3S9YmScWZjOGvX3ljkh4="
+          "relative_path": "maui-blazor-bindings/ui/grid-layout.html",
+          "hash": "KWZs+w3ewiQ47ODb6hYhhzoIzTvaL7dKzCxW3F9/V14="
         }
       },
       "is_incremental": false,
@@ -429,11 +440,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/build-first-app.md",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/build-first-app.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/build-first-app.html",
-          "hash": "DrSGoHd282WYmwE6AJVWQ6+Mxr91HgWNASnF04tIoPg="
+          "relative_path": "maui-blazor-bindings/walkthroughs/build-first-app.html",
+          "hash": "1YTrITF0+g4LnaNrmDMPBaZuHoFUaKmZ7r9Y5hX8++8="
         }
       },
       "is_incremental": false,
@@ -441,11 +452,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/build-first-hybrid-app.md",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/build-first-hybrid-app.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/build-first-hybrid-app.html",
-          "hash": "NzwqBvAiuFZ+EzteHfLngLuJ2oyb2H4MCSC7h+JWnFc="
+          "relative_path": "maui-blazor-bindings/walkthroughs/build-first-hybrid-app.html",
+          "hash": "zan2UI2Ak17HTOCkrfTN0o2MQTCZWQnxIt9vyhSFD50="
         }
       },
       "is_incremental": false,
@@ -453,11 +464,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/hello-world.md",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/hello-world.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/hello-world.html",
-          "hash": "DglOxpdX2qJsWG5xLsmgKxHPoO7437gJUwYMf48M3pU="
+          "relative_path": "maui-blazor-bindings/walkthroughs/hello-world.html",
+          "hash": "A1XNk4v35AbEmntIY3xt1287tdl36f1bLllbsavzZ+w="
         }
       },
       "is_incremental": false,
@@ -465,11 +476,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/hybrid-hello-world.md",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/hybrid-hello-world.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/hybrid-hello-world.html",
-          "hash": "F2XBl7D+5ZrO8TVPzrseds/anM6KfpLPD0l+UjdARaQ="
+          "relative_path": "maui-blazor-bindings/walkthroughs/hybrid-hello-world.html",
+          "hash": "BAD5KOv5ScWsvvMdw7QLEEatvGncYbWg5PfSKpk56zs="
         }
       },
       "is_incremental": false,
@@ -477,10 +488,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/android-helloworld-expanded.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-app/android-helloworld-expanded.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/android-helloworld-expanded.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-app/android-helloworld-expanded.png"
         }
       },
       "is_incremental": false,
@@ -488,10 +499,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/android-helloworld-inline.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-app/android-helloworld-inline.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/android-helloworld-inline.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-app/android-helloworld-inline.png"
         }
       },
       "is_incremental": false,
@@ -499,10 +510,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/set-startup-project-expanded.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-app/set-startup-project-expanded.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/set-startup-project-expanded.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-app/set-startup-project-expanded.png"
         }
       },
       "is_incremental": false,
@@ -510,10 +521,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/set-startup-project-inline.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-app/set-startup-project-inline.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/set-startup-project-inline.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-app/set-startup-project-inline.png"
         }
       },
       "is_incremental": false,
@@ -521,10 +532,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/solution-explorer-with-all-projects-expanded.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-app/solution-explorer-with-all-projects-expanded.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/solution-explorer-with-all-projects-expanded.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-app/solution-explorer-with-all-projects-expanded.png"
         }
       },
       "is_incremental": false,
@@ -532,10 +543,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/solution-explorer-with-all-projects-inline.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-app/solution-explorer-with-all-projects-inline.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-app/solution-explorer-with-all-projects-inline.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-app/solution-explorer-with-all-projects-inline.png"
         }
       },
       "is_incremental": false,
@@ -543,10 +554,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/ios-hybrid-helloworld-expanded.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-hybrid-app/ios-hybrid-helloworld-expanded.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/ios-hybrid-helloworld-expanded.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-hybrid-app/ios-hybrid-helloworld-expanded.png"
         }
       },
       "is_incremental": false,
@@ -554,10 +565,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/ios-hybrid-helloworld-inline.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-hybrid-app/ios-hybrid-helloworld-inline.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/ios-hybrid-helloworld-inline.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-hybrid-app/ios-hybrid-helloworld-inline.png"
         }
       },
       "is_incremental": false,
@@ -565,10 +576,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/set-startup-hybrid-project-expanded.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-hybrid-app/set-startup-hybrid-project-expanded.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/set-startup-hybrid-project-expanded.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-hybrid-app/set-startup-hybrid-project-expanded.png"
         }
       },
       "is_incremental": false,
@@ -576,10 +587,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/set-startup-hybrid-project-inline.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-hybrid-app/set-startup-hybrid-project-inline.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/set-startup-hybrid-project-inline.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-hybrid-app/set-startup-hybrid-project-inline.png"
         }
       },
       "is_incremental": false,
@@ -587,10 +598,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-expanded.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-expanded.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-expanded.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-expanded.png"
         }
       },
       "is_incremental": false,
@@ -598,10 +609,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-inline.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-inline.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-inline.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/build-first-hybrid-app/solution-explorer-with-all-hybrid-projects-inline.png"
         }
       },
       "is_incremental": false,
@@ -609,10 +620,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/ios-shared-ui-expanded.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/shared-web-ui/ios-shared-ui-expanded.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/ios-shared-ui-expanded.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/shared-web-ui/ios-shared-ui-expanded.png"
         }
       },
       "is_incremental": false,
@@ -620,10 +631,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/ios-shared-ui-inline.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/shared-web-ui/ios-shared-ui-inline.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/ios-shared-ui-inline.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/shared-web-ui/ios-shared-ui-inline.png"
         }
       },
       "is_incremental": false,
@@ -631,10 +642,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/web-shared-ui-expanded.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/shared-web-ui/web-shared-ui-expanded.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/web-shared-ui-expanded.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/shared-web-ui/web-shared-ui-expanded.png"
         }
       },
       "is_incremental": false,
@@ -642,10 +653,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/web-shared-ui-inline.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/shared-web-ui/web-shared-ui-inline.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shared-web-ui/web-shared-ui-inline.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/shared-web-ui/web-shared-ui-inline.png"
         }
       },
       "is_incremental": false,
@@ -653,10 +664,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell-navigation-parameter.gif",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/shell-navigation/shell-navigation-parameter.gif",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell-navigation-parameter.gif"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/shell-navigation/shell-navigation-parameter.gif"
         }
       },
       "is_incremental": false,
@@ -664,10 +675,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell-navigation.gif",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/shell-navigation/shell-navigation.gif",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell-navigation.gif"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/shell-navigation/shell-navigation.gif"
         }
       },
       "is_incremental": false,
@@ -675,10 +686,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell-tabs.gif",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/shell-navigation/shell-tabs.gif",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell-tabs.gif"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/shell-navigation/shell-tabs.gif"
         }
       },
       "is_incremental": false,
@@ -686,10 +697,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell.gif",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/shell-navigation/shell.gif",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/shell-navigation/shell.gif"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/shell-navigation/shell.gif"
         }
       },
       "is_incremental": false,
@@ -697,10 +708,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/skiasharp/skiasharp-expanded.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/skiasharp/skiasharp-expanded.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/skiasharp/skiasharp-expanded.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/skiasharp/skiasharp-expanded.png"
         }
       },
       "is_incremental": false,
@@ -708,10 +719,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/skiasharp/skiasharp-inline.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/skiasharp/skiasharp-inline.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/skiasharp/skiasharp-inline.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/skiasharp/skiasharp-inline.png"
         }
       },
       "is_incremental": false,
@@ -719,10 +730,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/todo-app/todoapp-completed-expanded.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/todo-app/todoapp-completed-expanded.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/todo-app/todoapp-completed-expanded.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/todo-app/todoapp-completed-expanded.png"
         }
       },
       "is_incremental": false,
@@ -730,10 +741,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/todo-app/todoapp-completed-inline.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/todo-app/todoapp-completed-inline.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/todo-app/todoapp-completed-inline.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/todo-app/todoapp-completed-inline.png"
         }
       },
       "is_incremental": false,
@@ -741,10 +752,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/weather-app/weather-app-expanded.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/weather-app/weather-app-expanded.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/weather-app/weather-app-expanded.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/weather-app/weather-app-expanded.png"
         }
       },
       "is_incremental": false,
@@ -752,10 +763,10 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/media/weather-app/weather-app-inline.png",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/media/weather-app/weather-app-inline.png",
       "output": {
         "resource": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/media/weather-app/weather-app-inline.png"
+          "relative_path": "maui-blazor-bindings/walkthroughs/media/weather-app/weather-app-inline.png"
         }
       },
       "is_incremental": false,
@@ -763,11 +774,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/shared-web-ui.md",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/shared-web-ui.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/shared-web-ui.html",
-          "hash": "snMdrMRFYSVlpJ9oW/NM/22b2wAOvSZRzUHt2I5p2zM="
+          "relative_path": "maui-blazor-bindings/walkthroughs/shared-web-ui.html",
+          "hash": "mm1mCm3tmzJoi9Rop3a3Kj38AuTdwJtzA7f/hqkjhTo="
         }
       },
       "is_incremental": false,
@@ -775,11 +786,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/shell-navigation-manager.md",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/shell-navigation-manager.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/shell-navigation-manager.html",
-          "hash": "RGCHfSdIgNMGNEvwRWQeOBT5DhKSYYVvKcWmWalFEFY="
+          "relative_path": "maui-blazor-bindings/walkthroughs/shell-navigation-manager.html",
+          "hash": "GJUbpCYXPMP9JacaFazg+Rs5s7AsDNL9qLumVpOd50w="
         }
       },
       "is_incremental": false,
@@ -787,11 +798,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/skiasharp.md",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/skiasharp.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/skiasharp.html",
-          "hash": "dPX9+8DnXgfJAmCc+9Szs0EZuGdZoVcfCgJPXNMLmI0="
+          "relative_path": "maui-blazor-bindings/walkthroughs/skiasharp.html",
+          "hash": "wUDGKHkhvS50Uj9eF0BmoarM8ByIxj0AOOWV9dD3/zU="
         }
       },
       "is_incremental": false,
@@ -799,11 +810,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/tizen.md",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/tizen.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/tizen.html",
-          "hash": "cE7G8JtdbIMS1UGevlscMa24jdt6b7rDDgD6vivaykM="
+          "relative_path": "maui-blazor-bindings/walkthroughs/tizen.html",
+          "hash": "DBrULujtpbrIhnSiIeRK1D4ahqXoaycvJcwomBtQIUM="
         }
       },
       "is_incremental": false,
@@ -811,11 +822,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/todo-app.md",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/todo-app.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/todo-app.html",
-          "hash": "rgZnyBDdbgAOXMzJjd8Hi4OOzq2zdBQ43rR4MFfzARA="
+          "relative_path": "maui-blazor-bindings/walkthroughs/todo-app.html",
+          "hash": "WyVfNsTU9/GMEDdFyLDB5CfFpO3IAN4nBT+izpAb1tg="
         }
       },
       "is_incremental": false,
@@ -823,11 +834,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "mobile-blazor-bindings/walkthroughs/weather-app.md",
+      "source_relative_path": "maui-blazor-bindings/walkthroughs/weather-app.md",
       "output": {
         ".html": {
-          "relative_path": "mobile-blazor-bindings/walkthroughs/weather-app.html",
-          "hash": "dQDrVypxu0sKItx/ZKEEIcg8xMrNIAmj4bfvEkp6250="
+          "relative_path": "maui-blazor-bindings/walkthroughs/weather-app.html",
+          "hash": "wU5/OMBa183EoMTiv6URtCjr/ukVWpD7JgCZEDwJb6U="
         }
       },
       "is_incremental": false,
@@ -842,7 +853,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "znDVXfQBlSVU9NKBjR+V4VHZ/v6HY+T8UIEAnYfwLRI="
+          "hash": "7NGD+Hz20ZF422nET/60mzmXY0bc5lFp1seorlaxoV4="
         }
       },
       "is_incremental": false,
