@@ -20,7 +20,7 @@
       "output": {
         ".html": {
           "relative_path": "maui-blazor-bindings/TOC.html",
-          "hash": "49R2EMbf3Et5jY7A67MmXmoWrXguLpSPilxFlp76RoM="
+          "hash": "4Vg2KokEe/PaytXJBT4l/uKjLQwII1/ZVrAKZFk2/pw="
         }
       },
       "is_incremental": false,
@@ -385,6 +385,18 @@
         ".html": {
           "relative_path": "maui-blazor-bindings/migrate/preview4-to-preview5.html",
           "hash": "+M2h76V9Yz1JmSyLyCnnSrh7DvcWQemIL2A9mI7bVRQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/release-notes/preview-6.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/release-notes/preview-6.html",
+          "hash": "qpJjaU0wBKH/pcnzQheafrSvUdDSiQsvwj/MEWb/TXE="
         }
       },
       "is_incremental": false,
@@ -874,7 +886,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 36,
+          "total_file_count": 37,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
