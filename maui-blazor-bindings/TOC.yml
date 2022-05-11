@@ -1,0 +1,82 @@
+- name: Maui Blazor Bindings
+  href: index.md
+- name: Get Started
+  href: get-started.md
+- name: Walkthroughs
+  items:
+  - name: Build your first app
+    href: walkthroughs/build-first-app.md
+  - name: Hello World
+    href: walkthroughs/hello-world.md
+  - name: Todo App
+    href: walkthroughs/todo-app.md
+  - name: Weather App
+    href: walkthroughs/weather-app.md
+  - name: Build your first hybrid app
+    href: walkthroughs/build-first-hybrid-app.md
+  - name: Hybrid Hello World
+    href: walkthroughs/hybrid-hello-world.md
+  - name: Shared Web UI
+    href: walkthroughs/shared-web-ui.md
+  - name: Shell Navigation Manager
+    href: walkthroughs/shell-navigation-manager.md
+  - name: SkiaSharp
+    href: walkthroughs/skiasharp.md
+  - name: Tizen
+    href: walkthroughs/tizen.md
+- name: User Interface
+  items:
+  - name: Components reference
+    href: ui/components-reference.md
+  - name: CSS styles
+    href: ui/css-styles.md
+  - name: Grid layout
+    href: ui/grid-layout.md
+  - name: Gestures
+    href: ui/gestures.md
+- name: Advanced
+  items:
+  - name: Blazor and Razor references
+    href: advanced/references.md
+  - name: Dependency Injection
+    href: advanced/dependency-injection.md
+  - name: Backend-specific services
+    href: advanced/backend-specific-services.md
+  - name: Custom components
+    href: advanced/custom-components.md
+  - name: Access native controls
+    href: advanced/access-native-controls.md
+  - name: Xamarin.Essentials
+    href: advanced/xamarin-essentials.md
+  - name: Integrate into existing app
+    href: advanced/integrate-into-existing-app.md
+  - name: Debug hybrid apps
+    href: advanced/debug-hybrid-apps.md
+  - name: Architecture
+    href: advanced/architecture.md
+  - name: Advanced template options
+    href: advanced/template-options.md
+  - name: Uninstall
+    href: advanced/uninstall.md
+  - name: Troubleshooting
+    href: advanced/troubleshooting.md
+- name: Migration
+  items:
+  - name: From Preview 1 to Preview 2
+    href: migrate/preview1-to-preview2.md
+  - name: From Preview 2 to Preview 3
+    href: migrate/preview2-to-preview3.md
+  - name: From Preview 3 to Preview 4
+    href: migrate/preview3-to-preview4.md
+  - name: From Preview 4 to Preview 5
+    href: migrate/preview4-to-preview5.md
+- name: Contribute
+  items:
+  - name: Build from source
+    href: contribute/build-from-source.md
+  - name: Use nightly builds
+    href: contribute/nightly-builds.md
+  - name: Roadmap
+    href: contribute/roadmap.md
+  - name: Feedback
+    href: contribute/feedback.md

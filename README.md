@@ -1,13 +1,13 @@
-# Mobile Blazor Bindings docs
+# Maui Blazor Bindings docs
 
-Welcome to the docs for [Mobile Blazor Bindings](https://github.com/xamarin/MobileBlazorBindings).
+Welcome to the docs for [Maui Blazor Bindings](https://github.com/xamarin/MobileBlazorBindings).
 
 You can find the published docs here: https://docs.microsoft.com/mobile-blazor-bindings/
 
 ## Other resources
 
-* [GitHub repo for the Mobile Blazor Bindings source code](https://github.com/xamarin/MobileBlazorBindings)
-* Mobile Blazor Bindings announcements
+* [GitHub repo for the Maui Blazor Bindings source code](https://github.com/xamarin/MobileBlazorBindings)
+* Maui Blazor Bindings announcements
   * [Preview 1 - January 2020](https://devblogs.microsoft.com/aspnet/mobile-blazor-bindings-experiment/)
   * [Preview 2 - February 2020](https://devblogs.microsoft.com/aspnet/mobile-blazor-bindings-feb-2020-update/)
   * [Preview 3 - May 2020](https://devblogs.microsoft.com/aspnet/announcing-experimental-mobile-blazor-bindings-may-update/)
