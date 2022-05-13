@@ -12,7 +12,7 @@ This article explains how to update an existing Maui Blazor Bindings Preview 1 p
 
 ## Update NuGet packages to 0.2.42-preview
 
-In each project file (`.csproj`) update the `Microsoft.MobileBlazorBindings` package reference's `Version` attribute to `0.2.42-preview`.
+In each project file (`.csproj`) update the `BlazorBindings.Maui` package reference's `Version` attribute to `0.2.42-preview`.
 
 ## Update App.cs to use new host and set MainPage
 

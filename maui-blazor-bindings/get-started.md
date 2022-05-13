@@ -33,7 +33,7 @@ Experimental Maui Blazor Bindings requires the following software:
 1. Install the Experimental Maui Blazor Bindings project templates by running this command:
 
     ```shell
-    dotnet new -i Microsoft.MobileBlazorBindings.Templates::0.5.50-preview
+    dotnet new -i BlazorBindings.Maui.Templates::0.5.50-preview
     ```
 
 ## Next steps

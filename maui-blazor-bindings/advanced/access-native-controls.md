@@ -26,7 +26,7 @@ Maui Blazor Bindings controls have a `NativeControl` property to access the Xama
 
 To access the native control in a `.razor` page:
 
-1. Declare a field in the `@code{}` block of the type of the element. For the built-in components, the element types are in the `Microsoft.MobileBlazorBindings.Elements` namespace. For a Button control this would be `Microsoft.MobileBlazorBindings.Elements.Button incrementButton;`.
+1. Declare a field in the `@code{}` block of the type of the element. For the built-in components, the element types are in the `BlazorBindings.Maui.Elements` namespace. For a Button control this would be `BlazorBindings.Maui.Elements.Button incrementButton;`.
 1. Use the `@ref` attribute directive on the control to associate it with the field you created. For example, `<Button @ref="incrementButton" ... />`.
 1. Use the field's `NativeControl` property to access the Xamarin.Forms native control and its properties and methods. For example, `incrementButton.NativeControl.Rotation = 0;`.
 
@@ -39,7 +39,7 @@ Here is a complete example that shows how to apply a rotation animation to a but
 </StackLayout>
 
 @code {
-    Microsoft.MobileBlazorBindings.Elements.Button incrementButton;
+    BlazorBindings.Maui.Elements.Button incrementButton;
 
     int counter;
 
@@ -65,7 +65,7 @@ If the `NativeControl` property exists but is null then the control either doesn
 
 ### Getting type/namespace conflicts between Blazor controls and other controls and elements
 
-The various controls and elements of each layer often use the same type names, but in different namespaces. For this reason you need to be careful which namespaces are imported in which files. For example, in the sample above, the `Microsoft.MobileBlazorBindings.Elements` is not imported (either via a `using` directive, or in the `_Imports.razor` file) because that would create conflicts with other namespaces. When using element references, it is recommended to use the fully-qualified namespace name, such as `Microsoft.MobileBlazorBindings.Elements.Button`.
+The various controls and elements of each layer often use the same type names, but in different namespaces. For this reason you need to be careful which namespaces are imported in which files. For example, in the sample above, the `BlazorBindings.Maui.Elements` is not imported (either via a `using` directive, or in the `_Imports.razor` file) because that would create conflicts with other namespaces. When using element references, it is recommended to use the fully-qualified namespace name, such as `BlazorBindings.Maui.Elements.Button`.
 
 ## More information
 

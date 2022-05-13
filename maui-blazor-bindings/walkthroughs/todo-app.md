@@ -8,7 +8,7 @@ ms.prod: aspnet-core
 
 [!INCLUDE [experiment-warning](../includes/experiment-warning.md)]
 
-The completed Todo app sample is available [here](https://github.com/xamarin/MobileBlazorBindings/tree/master/samples/MobileBlazorBindingsTodoSample). The sample uses dependency injection, platform-specific services, a SQLite database for storage, modal dialogs, custom images, and many more features. This sample shows how to render a dynamically growing list of `Todo` items.
+The completed Todo app sample is available [here](https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/MobileBlazorBindingsTodoSample). The sample uses dependency injection, platform-specific services, a SQLite database for storage, modal dialogs, custom images, and many more features. This sample shows how to render a dynamically growing list of `Todo` items.
 
 To build a simple Todo app, start with the project you've already created in the [Build your first app](build-first-app.md) section. All the changes will be in the `FirstMobileBlazorBindingsApp` project.
 

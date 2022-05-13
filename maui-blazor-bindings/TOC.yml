@@ -12,12 +12,6 @@
     href: walkthroughs/todo-app.md
   - name: Weather App
     href: walkthroughs/weather-app.md
-  - name: Build your first hybrid app
-    href: walkthroughs/build-first-hybrid-app.md
-  - name: Hybrid Hello World
-    href: walkthroughs/hybrid-hello-world.md
-  - name: Shared Web UI
-    href: walkthroughs/shared-web-ui.md
   - name: Shell Navigation Manager
     href: walkthroughs/shell-navigation-manager.md
   - name: SkiaSharp

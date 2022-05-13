@@ -31,7 +31,7 @@ HTML web UI content not showing up could be caused by several reasons. Check eac
       ```csharp
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Microsoft.MobileBlazorBindings.WebView.Android.BlazorHybridAndroid.Init();
+            BlazorBindings.Maui.WebView.Android.BlazorHybridAndroid.Init();
         ...
           ```
 
@@ -40,7 +40,7 @@ HTML web UI content not showing up could be caused by several reasons. Check eac
       ```csharp
         static void Main(string[] args)
         {
-            Microsoft.MobileBlazorBindings.WebView.iOS.BlazorHybridIOS.Init();
+            BlazorBindings.Maui.WebView.iOS.BlazorHybridIOS.Init();
             ...
       ```
 
@@ -49,7 +49,7 @@ HTML web UI content not showing up could be caused by several reasons. Check eac
       ```csharp
         public MainWindow()
         {
-            Microsoft.MobileBlazorBindings.WebView.Windows.BlazorHybridWindows.Init();
+            BlazorBindings.Maui.WebView.Windows.BlazorHybridWindows.Init();
             ...
       ```
 
@@ -58,7 +58,7 @@ HTML web UI content not showing up could be caused by several reasons. Check eac
       ```csharp
         private static void Main(string[] args)
         {
-            Microsoft.MobileBlazorBindings.WebView.macOS.BlazorHybridMacOS.Init();
+            BlazorBindings.Maui.WebView.macOS.BlazorHybridMacOS.Init();
             ...
       ```
 
@@ -78,4 +78,4 @@ Refer to the [CSS troubleshooting section](../ui/css-styles.md#troubleshooting).
 
 ## Where to go for more solutions
 
-If you're still stuck or have a question, reach out on the [GitHub repo](https://github.com/xamarin/MobileBlazorBindings) by logging an issue.
+If you're still stuck or have a question, reach out on the [GitHub repo](https://github.com/Dreamescaper/BlazorBindings.Maui) by logging an issue.

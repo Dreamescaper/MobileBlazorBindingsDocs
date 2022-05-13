@@ -9,7 +9,7 @@ ms.prod: aspnet-core
 
 [!INCLUDE [experiment-warning](../includes/experiment-warning.md)]
 
-Skia is a 2D graphics library maintained by Google that can be used in .NET applications using the [SkiaSharp](https://github.com/mono/SkiaSharp) library. SkiaSharp is available in Maui Blazor Bindings apps using the `Microsoft.MobileBlazorBindings.SkiaSharp` NuGet package, which is built on top of `SkiaSharp.Views.Forms`.
+Skia is a 2D graphics library maintained by Google that can be used in .NET applications using the [SkiaSharp](https://github.com/mono/SkiaSharp) library. SkiaSharp is available in Maui Blazor Bindings apps using the `BlazorBindings.Maui.SkiaSharp` NuGet package, which is built on top of `SkiaSharp.Views.Forms`.
 
 This guide covers the basics of how to add a Skia Sharp Canvas to a Razor Component for use in a Maui Blazor Bindings app, all other API are exactly the same and are covered in [SkiaSharp Graphics in Xamarin.Forms](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/).
 
@@ -17,7 +17,7 @@ This guide covers the basics of how to add a Skia Sharp Canvas to a Razor Compon
 
 To get started install the following NuGet packages:
 
-1. Into the .NET Standard project with your Razor files install the `Microsoft.MobileBlazorBindings.SkiaSharp` NuGet package.
+1. Into the .NET Standard project with your Razor files install the `BlazorBindings.Maui.SkiaSharp` NuGet package.
 1. Install the platform-specific NuGet packages in each platform project:
     1. Android, iOS, macOS, and Windows projects: install the `SkiaSharp.Views.Forms` NuGet package.
     1. Windows projects: install the `SkiaSharp.Views.WPF` and `SkiaSharp.Views.Forms.WPF` NuGet packages.
@@ -25,7 +25,7 @@ To get started install the following NuGet packages:
 In the `_Imports.razor` file at the root of the project add the following lines to import the SkiaSharp components and APIs into all Razor files:
 
 ```c#
-@using Microsoft.MobileBlazorBindings.SkiaSharp
+@using BlazorBindings.Maui.SkiaSharp
 @using SkiaSharp
 @using SkiaSharp.Views.Forms
 ```
@@ -117,7 +117,7 @@ Or you could draw a line graph along with a face with this code:
 
 [ ![SkiaSharp Canvas inside a Maui Blazor Bindings App running on an iPhone Simulator](./media/skiasharp/skiasharp-inline.png) ](./media/skiasharp/skiasharp-expanded.png#lightbox)
 
-That's all you need to get SkiaSharp running in a Maui Blazor Bindings app. From here on, everything is the same as in the [Xamarin.Forms SkiaSharp docs](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/). For a sample of SkiaSharp in Mobile Bindings check out the `SkiaCanvasDemo.razor` and `SkiaCanvasDemo.razor.cs` in the [Controls Gallery Sample](https://github.com/xamarin/MobileBlazorBindings/tree/master/samples/ControlGallery/ControlGallery/Views).
+That's all you need to get SkiaSharp running in a Maui Blazor Bindings app. From here on, everything is the same as in the [Xamarin.Forms SkiaSharp docs](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/). For a sample of SkiaSharp in Mobile Bindings check out the `SkiaCanvasDemo.razor` and `SkiaCanvasDemo.razor.cs` in the [Controls Gallery Sample](https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/ControlGallery/ControlGallery/Views).
 
 ## Troubleshooting
 

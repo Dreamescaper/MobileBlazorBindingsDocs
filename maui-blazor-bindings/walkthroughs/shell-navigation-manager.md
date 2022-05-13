@@ -19,7 +19,7 @@ Internally it is implemented using Xamarin.Forms Shell URI Navigation. Shell has
 
 For more details on Shell, check out the [Xamarin Forms documentation](https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/). Details of routing in Blazor are in the [ASP.NET Core documentation](https://docs.microsoft.com/aspnet/core/blazor/fundamentals/routing)
 
-For a sample of ShellNavigationManager see the [Xaminals sample in the Maui Blazor Bindings repo](https://github.com/xamarin/MobileBlazorBindings/tree/master/samples/MobileBlazorBindingsXaminals).
+For a sample of ShellNavigationManager see the [Xaminals sample in the Maui Blazor Bindings repo](https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/MobileBlazorBindingsXaminals).
 
 ## Setup
 

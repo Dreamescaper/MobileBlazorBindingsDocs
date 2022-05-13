@@ -16,7 +16,7 @@ For more information see the [announcement blog](https://aka.ms/mbb-preview3-blo
 
 The following NuGet package references need to be updated in all of your solution's projects:
 
-1. `Microsoft.MobileBlazorBindings` version is 0.3.26-preview
+1. `BlazorBindings.Maui` version is 0.3.26-preview
 1. `Xamarin.Forms` version is 4.5.0.356 or greater
 1. `Xamarin.Essentials` version is 1.5.0 or greater (if used in the project)
 

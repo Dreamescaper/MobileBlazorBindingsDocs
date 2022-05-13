@@ -8,7 +8,7 @@ ms.prod: aspnet-core
 
 [!INCLUDE [experiment-warning](../includes/experiment-warning.md)]
 
-The completed Weather app sample is available [here](https://github.com/xamarin/MobileBlazorBindings/tree/master/samples/MobileBlazorBindingsWeather). The sample uses a 3rd party Xamarin.Forms component, the `Grid` component, two-way bindings, component initialization logic, dependency injection, CSS styles, and many more features.
+The completed Weather app sample is available [here](https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/MobileBlazorBindingsWeather). The sample uses a 3rd party Xamarin.Forms component, the `Grid` component, two-way bindings, component initialization logic, dependency injection, CSS styles, and many more features.
 
 The completed app looks like this:
 
@@ -16,7 +16,7 @@ The completed app looks like this:
 
 Rather than write the app from scratch, let's take a look at the key components in this sample application.
 
-1. `Grid` component. The entire UI of the Weather App is contained in the [`WeatherApp` component](https://github.com/xamarin/MobileBlazorBindings/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherApp.razor), with its main layout established by a `Grid` component.
+1. `Grid` component. The entire UI of the Weather App is contained in the [`WeatherApp` component](https://github.com/Dreamescaper/BlazorBindings.Maui/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherApp.razor), with its main layout established by a `Grid` component.
 
    * The `Grid` component has two main sections to establish its structure: the row/column definitions and the grid cells
 
@@ -57,13 +57,13 @@ Rather than write the app from scratch, let's take a look at the key components 
         </GridCell>
         ```
 
-1. A popular 3rd party component often used in Xamarin.Forms apps is the [`PancakeView` component](https://github.com/sthewissen/Xamarin.Forms.PancakeView). The component has been wrapped to enable it to be used with Blazor syntax in a separate class library project: [Microsoft.MobileBlazorBindings.PancakeView](https://github.com/xamarin/MobileBlazorBindings/tree/master/samples/MobileBlazorBindingsWeather/Microsoft.MobileBlazorBindings.PancakeView). To learn more about how to wrap Xamarin.Forms components for use with Blazor syntax, see [Wrapping Xamarin.Forms components for use with Blazor topic](../advanced/custom-components.md).
+1. A popular 3rd party component often used in Xamarin.Forms apps is the [`PancakeView` component](https://github.com/sthewissen/Xamarin.Forms.PancakeView). The component has been wrapped to enable it to be used with Blazor syntax in a separate class library project: [BlazorBindings.Maui.PancakeView](https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/MobileBlazorBindingsWeather/BlazorBindings.Maui.PancakeView). To learn more about how to wrap Xamarin.Forms components for use with Blazor syntax, see [Wrapping Xamarin.Forms components for use with Blazor topic](../advanced/custom-components.md).
 
-1. Dependency injection is used in the weather app with a [`WeatherService` type](https://github.com/xamarin/MobileBlazorBindings/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherService.cs) that is [registered in the host](https://github.com/xamarin/MobileBlazorBindings/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/App.cs#L16) and consumed in the [`WeatherApp.razor` page](https://github.com/xamarin/MobileBlazorBindings/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherApp.razor#L1).
+1. Dependency injection is used in the weather app with a [`WeatherService` type](https://github.com/Dreamescaper/BlazorBindings.Maui/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherService.cs) that is [registered in the host](https://github.com/Dreamescaper/BlazorBindings.Maui/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/App.cs#L16) and consumed in the [`WeatherApp.razor` page](https://github.com/Dreamescaper/BlazorBindings.Maui/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherApp.razor#L1).
 
    * To learn more, read the [dependency injection topic](../advanced/dependency-injection.md).
 
-1. Component initialization enables running initialization code when a component is run. The weather app uses this to load the initial weather data when the app starts by overriding the [`OnInitialized` method](https://github.com/xamarin/MobileBlazorBindings/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherApp.razor#L140-L144):
+1. Component initialization enables running initialization code when a component is run. The weather app uses this to load the initial weather data when the app starts by overriding the [`OnInitialized` method](https://github.com/Dreamescaper/BlazorBindings.Maui/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherApp.razor#L140-L144):
 
     ```c#
     protected override void OnInitialized()
@@ -75,4 +75,4 @@ Rather than write the app from scratch, let's take a look at the key components 
 
    To learn more, including how to do async initialization, check out the [Blazor lifecycle methods documentation](https://docs.microsoft.com/aspnet/core/blazor/lifecycle).
 
-1. CSS styles are used to apply common properties by element type or by CSS class name. A [CSS file](https://github.com/xamarin/MobileBlazorBindings/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherStyles.css) is included as an embedded resource in the shared project (this is the default setting for CSS files). Learn more about using CSS in Maui Blazor Bindings in the [CSS Styles topic](../ui/css-styles.md).
+1. CSS styles are used to apply common properties by element type or by CSS class name. A [CSS file](https://github.com/Dreamescaper/BlazorBindings.Maui/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherStyles.css) is included as an embedded resource in the shared project (this is the default setting for CSS files). Learn more about using CSS in Maui Blazor Bindings in the [CSS Styles topic](../ui/css-styles.md).

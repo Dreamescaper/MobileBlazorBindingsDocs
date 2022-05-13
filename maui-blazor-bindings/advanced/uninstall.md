@@ -11,12 +11,12 @@ ms.prod: aspnet-core
 To uninstall Experimental Maui Blazor Bindings from your computer, run the following command:
 
 ```shell
-dotnet new -u Microsoft.MobileBlazorBindings.Templates
+dotnet new -u BlazorBindings.Maui.Templates
 ```
 
 This will uninstall the project templates from your computer, making them no longer available for use with the `dotnet new` command. Other content from Experimental Maui Blazor Bindings may be on your computer wherever you already created projects or in various caches.
 
-To verify the templates are uninstalled, run the following command and verify that the `Microsoft.MobileBlazorBindings.Templates` package is gone:
+To verify the templates are uninstalled, run the following command and verify that the `BlazorBindings.Maui.Templates` package is gone:
 
 ```shell
 dotnet new -u

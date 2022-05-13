@@ -11,7 +11,7 @@ ms.prod: aspnet-core
 > [!NOTE]
 > These instructions are Windows-only, but suitable alternatives should work on other operating systems.
 
-1. Clone the repo from <https://github.com/xamarin/MobileBlazorBindings>
+1. Clone the repo from <https://github.com/Dreamescaper/BlazorBindings.Maui>
 1. Open a Visual Studio Developer Command Prompt window
 1. Navigate to the repo root
 1. Run `init.cmd` from the command line to install required assets (a one-time operation)

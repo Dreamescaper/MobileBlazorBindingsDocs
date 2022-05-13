@@ -8,8 +8,8 @@ title: 'Experimental Tizen Support for Maui Blazor Bindings'
 
 To get started building Maui Blazor Bindings native and hybrid applications for Tizen use these samples as a starting point:
 
-* [Blazor Hybrid app with Tizen](https://github.com/xamarin/MobileBlazorBindings/tree/master/samples/HybridApp/HybridApp.Tizen)
-* [Blazor Hybrid app with Tizen and auth](https://github.com/xamarin/MobileBlazorBindings/tree/master/samples/HybridAuthSample/HybridAuthApp.Tizen)
+* [Blazor Hybrid app with Tizen](https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/HybridApp/HybridApp.Tizen)
+* [Blazor Hybrid app with Tizen and auth](https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/HybridAuthSample/HybridAuthApp.Tizen)
 
 ## Prerequisites
 
