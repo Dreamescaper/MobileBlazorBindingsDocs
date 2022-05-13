@@ -47,7 +47,7 @@
 
 <div class="IMPORTANT">
 <h5>Important</h5>
-<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/Dreamescaper/BlazorBindings.Maui">https://github.com/Dreamescaper/BlazorBindings.Maui</a>.</p>
 </div>
 
 <p>This article explains how to update an existing Maui Blazor Bindings Preview 4 project to Maui Blazor Bindings Preview 5. If your project is using an earlier preview, follow the previous migration guides and then proceed to this guide.</p>
@@ -55,7 +55,7 @@
 <h2 id="update-nuget-packages-to-preview-5-versions">Update NuGet packages to Preview 5 versions</h2>
 <p>The following NuGet package references need to be updated in all of your solution's projects:</p>
 <ol>
-<li><code>Microsoft.MobileBlazorBindings</code> version is <code>0.5.50-preview</code></li>
+<li><code>BlazorBindings.Maui</code> version is <code>0.5.50-preview</code></li>
 <li><code>Xamarin.Forms</code> version is <code>4.8.0.1451</code> or greater</li>
 <li><code>Xamarin.Essentials</code> version is <code>1.5.3.2</code> or greater (if used in the project)</li>
 <li><code>Microsoft.Web.WebView2</code> - remove direct references to this package (from the Windows project) because it will be picked up transitively</li>
@@ -136,7 +136,7 @@ if (fileInfo != null &amp;&amp; fileInfo.Exists)
 </li>
 <li><p>For Android:</p>
 <ol>
-<li>In <code>MainActivity.cs</code> add a constructor argument to the <code>App</code> constructor: <code>LoadApplication(new App(new AssetFileProvider(Assets, &quot;wwwroot&quot;)));</code>. Import any required namespaces, such as <code>Microsoft.MobileBlazorBindings.WebView.Android</code>.</li>
+<li>In <code>MainActivity.cs</code> add a constructor argument to the <code>App</code> constructor: <code>LoadApplication(new App(new AssetFileProvider(Assets, &quot;wwwroot&quot;)));</code>. Import any required namespaces, such as <code>BlazorBindings.Maui.WebView.Android</code>.</li>
 <li>Create a folder in the Android project called <code>wwwroot</code> folder and copy the <code>wwwroot/index.html</code> file from the shared UI project there. Then right-click on the file and select Properties. Set its Build Action to <code>None</code> and set <code>Copy if newer</code>.</li>
 </ol>
 </li>

@@ -47,7 +47,7 @@
 
 <div class="IMPORTANT">
 <h5>Important</h5>
-<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/Dreamescaper/BlazorBindings.Maui">https://github.com/Dreamescaper/BlazorBindings.Maui</a>.</p>
 </div>
 
 <p>Controls in Maui Blazor Bindings are abstractions of lower-level controls, thus enabling easier development of cross-platform applications. Most parts of most applications will use only Maui Blazor Bindings controls. Occasionally, access to the lower-level controls is needed for more advanced scenarios, such as accessing device-specific APIs or doing animations.</p>
@@ -63,7 +63,7 @@
 <p>Maui Blazor Bindings controls have a <code>NativeControl</code> property to access the Xamarin.Forms native control counterpart.</p>
 <p>To access the native control in a <code>.razor</code> page:</p>
 <ol>
-<li>Declare a field in the <code>@code{}</code> block of the type of the element. For the built-in components, the element types are in the <code>Microsoft.MobileBlazorBindings.Elements</code> namespace. For a Button control this would be <code>Microsoft.MobileBlazorBindings.Elements.Button incrementButton;</code>.</li>
+<li>Declare a field in the <code>@code{}</code> block of the type of the element. For the built-in components, the element types are in the <code>BlazorBindings.Maui.Elements</code> namespace. For a Button control this would be <code>BlazorBindings.Maui.Elements.Button incrementButton;</code>.</li>
 <li>Use the <code>@ref</code> attribute directive on the control to associate it with the field you created. For example, <code>&lt;Button @ref=&quot;incrementButton&quot; ... /&gt;</code>.</li>
 <li>Use the field's <code>NativeControl</code> property to access the Xamarin.Forms native control and its properties and methods. For example, <code>incrementButton.NativeControl.Rotation = 0;</code>.</li>
 </ol>
@@ -74,7 +74,7 @@
 &lt;/StackLayout&gt;
 
 @code {
-    Microsoft.MobileBlazorBindings.Elements.Button incrementButton;
+    BlazorBindings.Maui.Elements.Button incrementButton;
 
     int counter;
 
@@ -93,7 +93,7 @@
 <h3 id="the-nativecontrol-property-is-null">The NativeControl property is null</h3>
 <p>If the <code>NativeControl</code> property exists but is null then the control either doesn't have a native control, or the <code>NativeControl</code> property was accessed too early and the native control has not yet been created.</p>
 <h3 id="getting-typenamespace-conflicts-between-blazor-controls-and-other-controls-and-elements">Getting type/namespace conflicts between Blazor controls and other controls and elements</h3>
-<p>The various controls and elements of each layer often use the same type names, but in different namespaces. For this reason you need to be careful which namespaces are imported in which files. For example, in the sample above, the <code>Microsoft.MobileBlazorBindings.Elements</code> is not imported (either via a <code>using</code> directive, or in the <code>_Imports.razor</code> file) because that would create conflicts with other namespaces. When using element references, it is recommended to use the fully-qualified namespace name, such as <code>Microsoft.MobileBlazorBindings.Elements.Button</code>.</p>
+<p>The various controls and elements of each layer often use the same type names, but in different namespaces. For this reason you need to be careful which namespaces are imported in which files. For example, in the sample above, the <code>BlazorBindings.Maui.Elements</code> is not imported (either via a <code>using</code> directive, or in the <code>_Imports.razor</code> file) because that would create conflicts with other namespaces. When using element references, it is recommended to use the fully-qualified namespace name, such as <code>BlazorBindings.Maui.Elements.Button</code>.</p>
 <h2 id="more-information">More information</h2>
 <p>Learn more about Blazor component references in the <a href="https://docs.microsoft.com/dotnet/architecture/blazor-for-web-forms-developers/components#capture-component-references">Build reusable UI components with Blazor</a> topic in the Blazor documentation.</p>
 </article>

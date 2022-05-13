@@ -47,7 +47,7 @@
 
 <div class="IMPORTANT">
 <h5>Important</h5>
-<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/Dreamescaper/BlazorBindings.Maui">https://github.com/Dreamescaper/BlazorBindings.Maui</a>.</p>
 </div>
 
 <p>Incorporating dependency injection into an application involves a few steps:</p>
@@ -80,7 +80,7 @@
 <ol>
 <li><p>Constructor injection in custom types also registered in the dependency injection container. To consume a service in this way, add a constructor parameter to your class that uses the service, and when that class is retrieved from the DI container, it will have its parameters populated with other services from the DI container.</p>
 </li>
-<li><p>Consuming services in <code>.razor</code> files is done with the <code>@inject</code> directive, which is used in the <a href="https://github.com/xamarin/MobileBlazorBindings/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherApp.razor#L1"><code>MainPage.razor</code> file</a>:</p>
+<li><p>Consuming services in <code>.razor</code> files is done with the <code>@inject</code> directive, which is used in the <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherApp.razor#L1"><code>MainPage.razor</code> file</a>:</p>
 <pre><code class="lang-c#">@inject WeatherService WeatherService
 </code></pre>
 <p>Learn more about the <code>@inject</code> directive in the <a href="https://docs.microsoft.com/aspnet/core/blazor/dependency-injection">Blazor documentation</a>.</p>

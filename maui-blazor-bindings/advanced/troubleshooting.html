@@ -47,7 +47,7 @@
 
 <div class="IMPORTANT">
 <h5>Important</h5>
-<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/xamarin/MobileBlazorBindings">https://github.com/xamarin/MobileBlazorBindings</a>.</p>
+<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/Dreamescaper/BlazorBindings.Maui">https://github.com/Dreamescaper/BlazorBindings.Maui</a>.</p>
 </div>
 <h2 id="trying-to-run-on-ios-getting-no-ios-code-signing-key-error">Trying to run on iOS, getting &quot;no iOS code signing key&quot; error</h2>
 <p>If you choose to run the iOS project, you might get an error indicating that there are no iOS code signing keys. That could mean you are trying to deploy to a physical iOS device (such as an iPhone) but without the right configuration. If you intend to use the iOS Simulator, iPhoneSimulator target platform is selected.</p>
@@ -65,7 +65,7 @@
 <li><p>Android: In the <code>MainActivity.cs</code> file <code>OnCreate</code> method call <code>BlazorHybridAndroid.Init()</code>:</p>
 <pre><code class="lang-csharp">   protected override void OnCreate(Bundle savedInstanceState)
    {
-       Microsoft.MobileBlazorBindings.WebView.Android.BlazorHybridAndroid.Init();
+       BlazorBindings.Maui.WebView.Android.BlazorHybridAndroid.Init();
    ...
      ```
 
@@ -74,21 +74,21 @@
 <li><p>iOS: In the <code>Main.cs</code> file <code>Main</code> method call <code>BlazorHybridIOS.Init()</code>:</p>
 <pre><code class="lang-csharp">   static void Main(string[] args)
    {
-       Microsoft.MobileBlazorBindings.WebView.iOS.BlazorHybridIOS.Init();
+       BlazorBindings.Maui.WebView.iOS.BlazorHybridIOS.Init();
        ...
 </code></pre>
 </li>
 <li><p>Windows: In the <code>App.cs</code> file <code>MainWindow</code> constructor call <code>BlazorHybridWindows.Init()</code>:</p>
 <pre><code class="lang-csharp">   public MainWindow()
    {
-       Microsoft.MobileBlazorBindings.WebView.Windows.BlazorHybridWindows.Init();
+       BlazorBindings.Maui.WebView.Windows.BlazorHybridWindows.Init();
        ...
 </code></pre>
 </li>
 <li><p>macOS: In the <code>Main.cs</code> file <code>Main</code> method call <code>BlazorHybridMacOS.Init()</code>:</p>
 <pre><code class="lang-csharp">   private static void Main(string[] args)
    {
-       Microsoft.MobileBlazorBindings.WebView.macOS.BlazorHybridMacOS.Init();
+       BlazorBindings.Maui.WebView.macOS.BlazorHybridMacOS.Init();
        ...
 </code></pre>
 </li>
@@ -107,7 +107,7 @@
 <h2 id="css-styles-not-working">CSS styles not working</h2>
 <p>Refer to the <a href="../ui/css-styles.html#troubleshooting">CSS troubleshooting section</a>.</p>
 <h2 id="where-to-go-for-more-solutions">Where to go for more solutions</h2>
-<p>If you're still stuck or have a question, reach out on the <a href="https://github.com/xamarin/MobileBlazorBindings">GitHub repo</a> by logging an issue.</p>
+<p>If you're still stuck or have a question, reach out on the <a href="https://github.com/Dreamescaper/BlazorBindings.Maui">GitHub repo</a> by logging an issue.</p>
 </article>
           </div>
           
