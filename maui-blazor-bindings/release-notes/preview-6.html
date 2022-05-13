@@ -46,23 +46,71 @@
 <h1 id="blazorbindingsmaiu---preview-6">BlazorBindings.Maiu - Preview 6</h1>
 
 <h2 id="about-this-project">About this project</h2>
-<p>This project is a fork of <a href="https://github.com/dotnet/MobileBlazorBindings"> MobileBlazorBindings</a> - experimental project by Microsoft to allow to use Blazor syntax for native controls instead of XAML. That repository hasn't received much of an attention recently, so I decided to fork it and maintain separately. If at any point of time Microsoft developers decide to push that repository moving forward, I'll gladly contribute all of my changes to the original repository.</p>
+<p>This project is a fork of <a href="https://github.com/dotnet/MobileBlazorBindings">MobileBlazorBindings</a> - experimental project by Microsoft to allow to use Blazor syntax for native controls instead of XAML. That repository hasn't received much of an attention recently, so I decided to fork it and maintain separately. If at any point of time Microsoft developers decide to push that repository moving forward, I'll gladly contribute all of my changes to the original repository.</p>
 <h2 id="get-started">Get started</h2>
 <p>To get started building a MAUI app using Blazor syntax run the following command:</p>
-<pre><code>dotnet new -i BlazorBindings.Maui.Templates::
+<pre><code>dotnet new -i BlazorBindings.Maui.Templates::0.6.163-preview
 </code></pre>
 <p>And then create first project by running command:</p>
-<pre><code>dotnet new blazorbindingsmaui -o BlazorBindingsApp
+<pre><code>dotnet new blazorbindingsmaui -o MyBlazorBindingsApp
 </code></pre>
-<h2 id="new-features">New features</h2>
-<p>These are the major new features in the Preview 6 release:</p>
+<h2 id="maui-update">MAUI update</h2>
+<p>First of all, the project is updated to support MAUI instead of Xamarin.Forms. <code>VerticalStackLayout</code> and <code>HorizontalStackLayout</code> controls, which were added in MAUI, are supported as well. With MAUI update, Hot Reload is supported.</p>
+<p><img src="../media/release-notes/rn6-hot-reload.gif" alt="Razor Hot Reload"></p>
+<h2 id="collectionview">CollectionView</h2>
+<p>Bindings for CollectionView control are added in this release. The easiest way to use it is to provide ItemsSource property and to define ItemTemplate.</p>
+<p><code>CatsPage.razor</code></p>
+<pre><code class="lang-xml">&lt;ContentPage&gt;
+    &lt;CollectionView ItemsSource=&quot;CatData.Cats&quot;&gt;
+        &lt;ItemTemplate&gt;
+            &lt;AnimalTemplate Animal=&quot;context&quot; OnClick=&quot;AnimalClicked&quot; /&gt;
+        &lt;/ItemTemplate&gt;
+    &lt;/CollectionView&gt;
+&lt;/ContentPage&gt;
+</code></pre>
+<p><code>AnimalTemplate.razor</code></p>
+<pre><code class="lang-xml">&lt;Grid Padding=&quot;10&quot; ColumnSpacing=&quot;8&quot; RowDefinitions=&quot;Auto, Auto&quot; ColumnDefinitions=&quot;Auto, *&quot;&gt;
+    &lt;TapGestureRecognizer OnTapped=&quot;Details&quot; /&gt;
+
+    &lt;GridCell RowSpan=&quot;2&quot;&gt;
+        &lt;Image Source=&quot;imageSource&quot;
+               Aspect=&quot;Aspect.AspectFill&quot;
+               HeightRequest=&quot;60&quot;
+               WidthRequest=&quot;60&quot; /&gt;
+    &lt;/GridCell&gt;
+
+    &lt;GridCell Column=&quot;1&quot;&gt;
+        &lt;Label Text=&quot;@Animal.Name&quot;
+               FontAttributes=&quot;FontAttributes.Bold&quot; /&gt;
+    &lt;/GridCell&gt;
+
+    &lt;GridCell Row=&quot;1&quot; Column=&quot;1&quot;&gt;
+        &lt;Label Text=&quot;@Animal.Location&quot;
+               FontAttributes=&quot;FontAttributes.Italic&quot;
+               VerticalOptions=&quot;LayoutOptions.End&quot; /&gt;
+    &lt;/GridCell&gt;
+&lt;/Grid&gt;
+</code></pre>
+<img src="../media/release-notes/rn6-collection-view.png" height="600" width="300">
+<h2 id="support-shell-attached-properties">Support Shell attached properties</h2>
+<p>You can set Shell properties for the page using ShellProperties element:</p>
+<pre><code class="lang-xml">&lt;ContentPage&gt;
+    &lt;ShellProperties NavBarIsVisible=&quot;false&quot; /&gt;
+
+    &lt;ScrollView&gt;
+    ...
+</code></pre>
+<p>Keep in mind that this approach could still be revisited (e.g. <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/issues/5">here</a>).</p>
+<h2 id="other-updates">Other updates</h2>
 <ul>
-<li>Update to use MAUI</li>
-<li>CollectionView control support</li>
 <li>Editor control support</li>
 <li>Add support for Brushes and Background property</li>
 <li>Add Page.ToolbarItems property</li>
+<li>Lots of bug fixes</li>
 </ul>
+<h2 id="what-next">What next?</h2>
+<p>In next release it is planned to close the gap further between supported MAUI controls, FlexLayout and AbsoluteLayout specifically. ComponentGenerator improvements are planned as well, to help to create bindings for third party MAUI controls.
+If you have any suggestions or ideas, feel free to log <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/issues">issues</a>!</p>
 </article>
           </div>
           

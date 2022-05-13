@@ -343,6 +343,28 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/media/release-notes/rn6-collection-view.png",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/media/release-notes/rn6-collection-view.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/media/release-notes/rn6-hot-reload.gif",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/media/release-notes/rn6-hot-reload.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "maui-blazor-bindings/migrate/preview1-to-preview2.md",
       "output": {
@@ -396,7 +418,7 @@
       "output": {
         ".html": {
           "relative_path": "maui-blazor-bindings/release-notes/preview-6.html",
-          "hash": "qpJjaU0wBKH/pcnzQheafrSvUdDSiQsvwj/MEWb/TXE="
+          "hash": "ii5ZKzs8moPPG7VVfJyDXzmO4nqP6v7Rq9dJWQCEls8="
         }
       },
       "is_incremental": false,
