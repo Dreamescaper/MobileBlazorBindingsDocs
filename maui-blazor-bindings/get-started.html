@@ -43,12 +43,7 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="creating-an-app-with-experimental-maui-blazor-bindings">Creating an app with Experimental Maui Blazor Bindings</h1>
-
-<div class="IMPORTANT">
-<h5>Important</h5>
-<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/Dreamescaper/BlazorBindings.Maui">https://github.com/Dreamescaper/BlazorBindings.Maui</a>.</p>
-</div>
+<h1 id="creating-an-app-with-maui-blazor-bindings">Creating an app with Maui Blazor Bindings</h1>
 
 <p>Creating an app involves a few steps:</p>
 <ol>
@@ -58,33 +53,21 @@
 <li>Run it!</li>
 </ol>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>Experimental Maui Blazor Bindings requires the following software:</p>
-<ol>
-<li><a href="https://dotnet.microsoft.com/download">.NET Core 3.1 SDK</a></li>
-<li>Visual Studio or Visual Studio for Mac, with the following workloads installed:
-<ul>
-<li>Mobile development with .NET (Xamarin.Forms)</li>
-<li>ASP.NET and web development</li>
-</ul>
-</li>
-<li>Additional requirements to build and run Blazor Hybrid Apps:
-<ul>
-<li>On Windows: install <a href="https://www.microsoftedgeinsider.com/download">Microsoft Edge Canary Channel</a></li>
-<li>On Mac: no additional requirements</li>
-</ul>
-</li>
-</ol>
+<p>Maui Blazor Bindings has the same prerequisites as MAUI itself has, i.e. you need to install Visual Studio Preview with MAUI workload.</p>
 <h2 id="install-the-project-templates">Install the project templates</h2>
 <ol>
 <li><p>Open a command prompt or shell window</p>
 </li>
-<li><p>Install the Experimental Maui Blazor Bindings project templates by running this command:</p>
-<pre><code class="lang-shell">dotnet new -i BlazorBindings.Maui.Templates::0.5.50-preview
+<li><p>Install the Maui Blazor Bindings project templates by running this command:</p>
+<pre><code class="lang-shell">dotnet new -i BlazorBindings.Maui.Templates::0.6.163-preview
 </code></pre>
 </li>
 </ol>
-<h2 id="next-steps">Next steps</h2>
-<p>You're now ready to <a href="walkthroughs/build-first-app.html">build your first app</a> or <a href="walkthroughs/build-first-hybrid-app.html">build your first hybrid app</a>!</p>
+<h2 id="create-your-project">Create your project</h2>
+<p>Create your first project by running command:</p>
+<pre><code>dotnet new blazorbindingsmaui -o MyBlazorBindingsApp
+</code></pre>
+<p>This will create a folder named <code>MyBlazorBindingsApp</code> with the solution file (SLN), which you can open in Visual Studio.</p>
 </article>
           </div>
           

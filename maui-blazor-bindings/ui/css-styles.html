@@ -77,10 +77,10 @@
 </ol>
 <div class="NOTE">
 <h5>Note</h5>
-<p>CSS support requires referencing Xamarin.Forms 4.5 or newer. To update this reference, manage the NuGet packages for the solution and ensure that the solution is using a version of Xamarin.Forms that is 4.5 or newer. Future versions of Maui Blazor Bindings will include this version by default.</p>
+<p>CSS support requires referencing MAUI 4.5 or newer. To update this reference, manage the NuGet packages for the solution and ensure that the solution is using a version of MAUI that is 4.5 or newer. Future versions of Maui Blazor Bindings will include this version by default.</p>
 </div>
 <h2 id="applying-css-to-components">Applying CSS to components</h2>
-<p>CSS styles are declared in the CSS file using standard CSS syntax. Styles are specified using selectors, which allow applying styles based on element type, base class, name, class attribute, and several other means (see below for Xamarin.Forms reference).</p>
+<p>CSS styles are declared in the CSS file using standard CSS syntax. Styles are specified using selectors, which allow applying styles based on element type, base class, name, class attribute, and several other means (see below for MAUI reference).</p>
 <p>In the <code>.razor</code> file on each component that allows CSS styles you can set the class or name via the <code>class</code> and <code>StyleId</code> properties, respectively.</p>
 <div class="NOTE">
 <h5>Note</h5>
@@ -107,7 +107,7 @@ label {
 &lt;Label class=&quot;sadText&quot; Text=&quot;Traffic: bad&quot; /&gt; @* class is specified, so 'label' rule and '.sadText' rules applied *@
 </code></pre>
 <h2 id="supported-css-styles">Supported CSS styles</h2>
-<p>Because the built-in UI components are based on Xamarin.Forms controls, refer to <a href="https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/styles/css/">Styling Xamarin.Forms apps using CSS</a> to learn more about this feature and which styles can be applied to which components.</p>
+<p>Because the built-in UI components are based on MAUI controls, refer to <a href="https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/styles/css/">Styling MAUI apps using CSS</a> to learn more about this feature and which styles can be applied to which components.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="set-build-action-to-embedded-resource">Set Build Action to Embedded resource</h3>
 <p>When adding a new CSS file in Visual Studio, the CSS file should automatically have its <code>Build Action</code> set to <code>Embedded resource</code> to ensure it is included in the built project. If it isn't, right-click on the CSS file, select Properties, and set <code>Build Action</code> to <code>Embedded resource</code>.</p>

@@ -50,7 +50,7 @@
 <p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/Dreamescaper/BlazorBindings.Maui">https://github.com/Dreamescaper/BlazorBindings.Maui</a>.</p>
 </div>
 
-<p>The completed Weather app sample is available <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/MobileBlazorBindingsWeather">here</a>. The sample uses a 3rd party Xamarin.Forms component, the <code>Grid</code> component, two-way bindings, component initialization logic, dependency injection, CSS styles, and many more features.</p>
+<p>The completed Weather app sample is available <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/MobileBlazorBindingsWeather">here</a>. The sample uses a 3rd party MAUI component, the <code>Grid</code> component, two-way bindings, component initialization logic, dependency injection, CSS styles, and many more features.</p>
 <p>The completed app looks like this:</p>
 <p><a href="media/weather-app/weather-app-expanded.png#lightbox"> <img src="media/weather-app/weather-app-inline.png" alt="Weather App running in the Android Emulator"> </a></p>
 <p>Rather than write the app from scratch, let's take a look at the key components in this sample application.</p>
@@ -70,7 +70,7 @@
 <p>Learn more about the properties here:</p>
 <ul>
 <li><a href="https://docs.microsoft.com/dotnet/api/xamarin.forms.columndefinition">ColumnDefinition</a></li>
-<li><a href="https://docs.microsoft.com/dotnet/api/Xamarin.Forms.RowDefinition">RowDefinition</a></li>
+<li><a href="https://docs.microsoft.com/dotnet/api/MAUI.RowDefinition">RowDefinition</a></li>
 </ul>
 </li>
 <li><p>The content of the Grid contains several <code>&lt;GridCell&gt;</code> components that can have a <code>Row</code>, <code>Column</code>, <code>RowSpan</code>, and <code>ColumnSpan</code> property, and contain a single item representing the cells contents. All of these properties are optional. For example, this <code>GridCell</code> will be on row index 6, column index 0, and no row/column span:</p>
@@ -91,7 +91,7 @@
 </li>
 </ul>
 </li>
-<li><p>A popular 3rd party component often used in Xamarin.Forms apps is the <a href="https://github.com/sthewissen/Xamarin.Forms.PancakeView"><code>PancakeView</code> component</a>. The component has been wrapped to enable it to be used with Blazor syntax in a separate class library project: <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/MobileBlazorBindingsWeather/BlazorBindings.Maui.PancakeView">BlazorBindings.Maui.PancakeView</a>. To learn more about how to wrap Xamarin.Forms components for use with Blazor syntax, see <a href="../advanced/custom-components.html">Wrapping Xamarin.Forms components for use with Blazor topic</a>.</p>
+<li><p>A popular 3rd party component often used in MAUI apps is the <a href="https://github.com/sthewissen/MAUI.PancakeView"><code>PancakeView</code> component</a>. The component has been wrapped to enable it to be used with Blazor syntax in a separate class library project: <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/MobileBlazorBindingsWeather/BlazorBindings.Maui.PancakeView">BlazorBindings.Maui.PancakeView</a>. To learn more about how to wrap MAUI components for use with Blazor syntax, see <a href="../advanced/custom-components.html">Wrapping MAUI components for use with Blazor topic</a>.</p>
 </li>
 <li><p>Dependency injection is used in the weather app with a <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherService.cs"><code>WeatherService</code> type</a> that is <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/App.cs#L16">registered in the host</a> and consumed in the <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/blob/master/samples/MobileBlazorBindingsWeather/MobileBlazorBindingsWeather/WeatherApp.razor#L1"><code>WeatherApp.razor</code> page</a>.</p>
 <ul>

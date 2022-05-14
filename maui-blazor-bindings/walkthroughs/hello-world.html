@@ -59,7 +59,7 @@
 <p>These are the files in the shared project:</p>
 <ul>
 <li><code>_Imports.razor</code> - Contains common directives that are applied to all other <code>.razor</code> files in this folder and its sub-folders. Sub-folders can have their own <code>_Imports.razor</code> files with additional directives. The most common directive type in this file is the <code>@using</code> directive, which is used to import a namespace into <code>.razor</code> files, exactly the same as a C# <code>using</code> statement.</li>
-<li><code>App.cs</code> - Contains the main UI entry point of the application, represented by a class that derives from the <a href="https://docs.microsoft.com/dotnet/api/xamarin.forms.application"><code>Xamarin.Forms.Application</code></a> base class. The constructor of this class instantiates a <a href="https://docs.microsoft.com/aspnet/core/fundamentals/host/generic-host">Generic Host</a>, adds services to the host (the default project has none), and then uses the host to add a Blazor component named <code>HelloWorld</code> to the application element (<code>this</code>).</li>
+<li><code>App.cs</code> - Contains the main UI entry point of the application, represented by a class that derives from the <a href="https://docs.microsoft.com/dotnet/api/xamarin.forms.application"><code>MAUI.Application</code></a> base class. The constructor of this class instantiates a <a href="https://docs.microsoft.com/aspnet/core/fundamentals/host/generic-host">Generic Host</a>, adds services to the host (the default project has none), and then uses the host to add a Blazor component named <code>HelloWorld</code> to the application element (<code>this</code>).</li>
 <li><code>Counter.razor</code> - Contains a Blazor Component named <code>Counter</code>.</li>
 <li><code>HelloWorld.razor</code> - Contains a Blazor Component named <code>HelloWorld</code>.</li>
 </ul>
@@ -82,7 +82,7 @@
 
 &lt;/Frame&gt;
 </code></pre>
-<p>The HTML-like tags represent UI components that match the Xamarin.Forms components and their properties and events. Some properties have computed values, such as the <code>Label</code> component's <code>Text</code> property, which has its value set to a value computed by C# code, which is denoted by the <code>@( ... )</code> expression block.</p>
+<p>The HTML-like tags represent UI components that match the MAUI components and their properties and events. Some properties have computed values, such as the <code>Label</code> component's <code>Text</code> property, which has its value set to a value computed by C# code, which is denoted by the <code>@( ... )</code> expression block.</p>
 <p>When an event handler is run, such as the <code>Button</code> component's <code>OnClick</code> event, the component automatically re-renders, which enables the UI to update without any additional logic. More advanced scenarios can control which components re-render and when.</p>
 </li>
 <li><p>The code that implements any event handlers or other component functionality, wrapped in an <code>@code { ... }</code> block:</p>

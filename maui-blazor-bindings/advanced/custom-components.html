@@ -50,18 +50,18 @@
 <p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/Dreamescaper/BlazorBindings.Maui">https://github.com/Dreamescaper/BlazorBindings.Maui</a>.</p>
 </div>
 
-<p>You can write reusable custom components either using Blazor components or by wrapping existing Xamarin.Forms components.</p>
+<p>You can write reusable custom components either using Blazor components or by wrapping existing MAUI components.</p>
 <h2 id="blazor-components">Blazor components</h2>
 <p>You can create a reusable Blazor component by writing a <code>.razor</code> file just like you would in an application. The component can be shipped as a NuGet package so that it is easily reusable in other projects.</p>
 <p>To learn more about component libraries, check out the <a href="https://docs.microsoft.com/aspnet/core/blazor/class-libraries&amp;tabs=visual-studio">ASP.NET Core Razor components class libraries</a>.</p>
 <p>More details coming soon!</p>
-<h2 id="wrapping-xamarinforms-components">Wrapping Xamarin.Forms components</h2>
-<p>To make a Xamarin.Forms element available in Blazor markup you need to implement two types of classes:</p>
+<h2 id="wrapping-maui-components">Wrapping MAUI components</h2>
+<p>To make a MAUI element available in Blazor markup you need to implement two types of classes:</p>
 <ol>
 <li>A component representing the markup that the developer will use in the <code>.razor</code> file. This type will need to derive from <code>NativeControlComponentBase</code> or one of its derived classes.</li>
 <li>An element handler representing the UI component that will be created when the component is used. This type will either implement the <code>IXamarinFormsElementHandler</code> interface or derive from one of the existing handler types that implement the interface.</li>
 </ol>
-<p>An example that shows how to wrap the popular <a href="https://github.com/sthewissen/Xamarin.Forms.PancakeView"><code>PancakeView</code> component</a> is available <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/MobileBlazorBindingsWeather/BlazorBindings.Maui.PancakeView">here</a>.</p>
+<p>An example that shows how to wrap the popular <a href="https://github.com/sthewissen/MAUI.PancakeView"><code>PancakeView</code> component</a> is available <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/MobileBlazorBindingsWeather/BlazorBindings.Maui.PancakeView">here</a>.</p>
 <p>The component uses a static constructor to register the component mapping to the element handler, as seen <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/blob/master/samples/MobileBlazorBindingsWeather/BlazorBindings.Maui.PancakeView/Elements/PancakeView.cs#L11-L15">here</a>.</p>
 </article>
           </div>

@@ -55,17 +55,17 @@
 <p>Applications built with Maui Blazor Bindings have a few layers of controls:</p>
 <ol>
 <li>The Maui Blazor Bindings controls, such as <code>&lt;Label /&gt;</code> and <code>&lt;StackLayout /&gt;</code>.</li>
-<li>The native Xamarin.Forms controls, such as <code>Xamarin.Forms.Label</code> and <code>Xamarin.Forms.StackLayout</code>.</li>
+<li>The native MAUI controls, such as <code>MAUI.Label</code> and <code>MAUI.StackLayout</code>.</li>
 <li>The native OS controls, such as Android's <code>TextView</code> and iOS's <code>UILabel</code>.</li>
 </ol>
 <p>Each layer of controls creates the next layer, if needed. Some controls exist only at one level and are often either containers or layouts that contain other controls. Other controls are conceptual controls to add additional functionality to part of the application and have no lower-level representation. For example, the <code>StyleSheet</code> control only serves to load a CSS style sheet and has no lower-level control.</p>
-<h2 id="accessing-native-xamarinforms-controls-from-blazor-components">Accessing native Xamarin.Forms controls from Blazor components</h2>
-<p>Maui Blazor Bindings controls have a <code>NativeControl</code> property to access the Xamarin.Forms native control counterpart.</p>
+<h2 id="accessing-native-maui-controls-from-blazor-components">Accessing native MAUI controls from Blazor components</h2>
+<p>Maui Blazor Bindings controls have a <code>NativeControl</code> property to access the MAUI native control counterpart.</p>
 <p>To access the native control in a <code>.razor</code> page:</p>
 <ol>
 <li>Declare a field in the <code>@code{}</code> block of the type of the element. For the built-in components, the element types are in the <code>BlazorBindings.Maui.Elements</code> namespace. For a Button control this would be <code>BlazorBindings.Maui.Elements.Button incrementButton;</code>.</li>
 <li>Use the <code>@ref</code> attribute directive on the control to associate it with the field you created. For example, <code>&lt;Button @ref=&quot;incrementButton&quot; ... /&gt;</code>.</li>
-<li>Use the field's <code>NativeControl</code> property to access the Xamarin.Forms native control and its properties and methods. For example, <code>incrementButton.NativeControl.Rotation = 0;</code>.</li>
+<li>Use the field's <code>NativeControl</code> property to access the MAUI native control and its properties and methods. For example, <code>incrementButton.NativeControl.Rotation = 0;</code>.</li>
 </ol>
 <p>Here is a complete example that shows how to apply a rotation animation to a button when it is pressed:</p>
 <pre><code class="lang-xml">&lt;StackLayout&gt;

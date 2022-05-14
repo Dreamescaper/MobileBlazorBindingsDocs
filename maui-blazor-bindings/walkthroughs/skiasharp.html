@@ -51,7 +51,7 @@
 </div>
 
 <p>Skia is a 2D graphics library maintained by Google that can be used in .NET applications using the <a href="https://github.com/mono/SkiaSharp">SkiaSharp</a> library. SkiaSharp is available in Maui Blazor Bindings apps using the <code>BlazorBindings.Maui.SkiaSharp</code> NuGet package, which is built on top of <code>SkiaSharp.Views.Forms</code>.</p>
-<p>This guide covers the basics of how to add a Skia Sharp Canvas to a Razor Component for use in a Maui Blazor Bindings app, all other API are exactly the same and are covered in <a href="https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/">SkiaSharp Graphics in Xamarin.Forms</a>.</p>
+<p>This guide covers the basics of how to add a Skia Sharp Canvas to a Razor Component for use in a Maui Blazor Bindings app, all other API are exactly the same and are covered in <a href="https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/">SkiaSharp Graphics in MAUI</a>.</p>
 <h2 id="setup">Setup</h2>
 <p>To get started install the following NuGet packages:</p>
 <ol>
@@ -140,7 +140,7 @@
     }
 </code></pre>
 <p><a href="media/skiasharp/skiasharp-expanded.png#lightbox"> <img src="media/skiasharp/skiasharp-inline.png" alt="SkiaSharp Canvas inside a Maui Blazor Bindings App running on an iPhone Simulator"> </a></p>
-<p>That's all you need to get SkiaSharp running in a Maui Blazor Bindings app. From here on, everything is the same as in the <a href="https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/">Xamarin.Forms SkiaSharp docs</a>. For a sample of SkiaSharp in Mobile Bindings check out the <code>SkiaCanvasDemo.razor</code> and <code>SkiaCanvasDemo.razor.cs</code> in the <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/ControlGallery/ControlGallery/Views">Controls Gallery Sample</a>.</p>
+<p>That's all you need to get SkiaSharp running in a Maui Blazor Bindings app. From here on, everything is the same as in the <a href="https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/">MAUI SkiaSharp docs</a>. For a sample of SkiaSharp in Mobile Bindings check out the <code>SkiaCanvasDemo.razor</code> and <code>SkiaCanvasDemo.razor.cs</code> in the <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/ControlGallery/ControlGallery/Views">Controls Gallery Sample</a>.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>If you get an error about missing libraries such as <code>Error: framework not found libSkiaSharp</code>, check that you installed the platform-specific NuGet package into each platform-specific project (such as iOS, Android, and Windows) as noted in the <a href="#setup">setup</a> section.</p>
 </article>

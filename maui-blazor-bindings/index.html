@@ -43,10 +43,13 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="experimental-maui-blazor-bindings">Experimental Maui Blazor Bindings</h1>
+<h1 id="maui-blazor-bindings">Maui Blazor Bindings</h1>
 
-<p>Experimental Maui Blazor Bindings enable developers to build native and hybrid mobile apps using C# and .NET for Android, iOS, Windows, macOS, and Tizen using familiar web programming patterns. Experimental Maui Blazor Bindings uses Razor syntax to define UI components and behaviors of an application. The underlying UI components are based on Xamarin.Forms native UI components and in hybrid apps they are mixed with HTML elements.</p>
-<p>Blazor runs on <a href="https://docs.microsoft.com/dotnet/standard/net-standard">.NET Standard 2.0</a> so you can share your .NET code with most other .NET apps.</p>
+<p>Maui Blazor Bindings enable developers to build native and hybrid mobile apps using C# and .NET for Android, iOS, Windows, macOS, and Tizen using familiar web programming patterns. Maui Blazor Bindings uses Razor syntax to define UI components and behaviors of an application. The underlying UI components are based on MAUI native UI components and in hybrid apps they are mixed with HTML elements.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Documentation is not fully updated for MAUI, sorry for that!</p>
+</div>
 <p>With Maui Blazor Bindings it is easy to build a native UI with labels, buttons, and other native UI components:</p>
 <pre><code class="lang-xml">&lt;StackLayout&gt;
     &lt;Label FontSize=&quot;30&quot;
@@ -66,64 +69,10 @@
 </code></pre>
 <p>And here it is running in the Android Emulator:</p>
 <p><a href="media/index/hello-world-expanded.png#lightbox"> <img src="media/index/hello-world-inline.png" alt="Simple native app running in the Android Emulator"> </a></p>
-<p>And you can build hybrid apps that mix native UI and HTML UI in the same screen, all sharing the same app logic and state:</p>
-<ul>
-<li><p><code>/Main.razor</code>: (native UI)</p>
-<pre><code class="lang-xml">@inject CounterState CounterState
-
-&lt;ContentView&gt;
-    &lt;StackLayout&gt;
-
-        &lt;StackLayout Margin=&quot;new Thickness(20)&quot;&gt;
-            &lt;Label Text=&quot;@($&quot;You pressed {CounterState.CurrentCount} times&quot;)&quot; FontSize=&quot;30&quot; /&gt;
-            &lt;Button Text=&quot;Increment from native&quot; OnClick=&quot;@CounterState.IncrementCount&quot; Padding=&quot;10&quot; /&gt;
-        &lt;/StackLayout&gt;
-
-        &lt;BlazorWebView ContentRoot=&quot;WebUI/wwwroot&quot; VerticalOptions=&quot;LayoutOptions.FillAndExpand&quot;&gt;
-            &lt;FirstBlazorHybridApp.WebUI.App /&gt;
-        &lt;/BlazorWebView&gt;
-
-    &lt;/StackLayout&gt;
-&lt;/ContentView&gt;
-
-@code {
-    // initialization code
-}
-</code></pre>
-</li>
-<li><p><code>/WebUI/App.razor</code>: (HTML UI)</p>
-<pre><code class="lang-xml">@inject CounterState CounterState
-
-&lt;div style=&quot;text-align: center; background-color: lightblue;&quot;&gt;
-    &lt;div&gt;
-        &lt;span style=&quot;font-size: 30px; font-weight: bold;&quot;&gt;
-            You pressed @CounterState.CurrentCount times
-        &lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-        &lt;button style=&quot;margin: 20px;&quot; @onclick=&quot;ClickMe&quot;&gt;Increment from HTML&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-@code
-{
-    private void ClickMe()
-    {
-        CounterState.IncrementCount();
-    }
-
-    // initialization code
-}
-</code></pre>
-</li>
-</ul>
-<p>And here it is running in the iOS Simulator, with native UI on top, and HTML UI on the bottom, sharing app logic and state:</p>
-<p><a href="media/index/ios-hybrid-expanded.png#lightbox"> <img src="media/index/ios-hybrid-inline.png" alt="Simple hybrid app running in the iOS Simulator"> </a></p>
 <p>To build your first apps, check out these topics:</p>
 <ul>
 <li><a href="get-started.html">Get Started</a> to set up your development environment.</li>
 <li><a href="walkthroughs/build-first-app.html">Build your first app</a> using native UI components.</li>
-<li><a href="walkthroughs/build-first-hybrid-app.html">Build your first hybrid app</a> using a mix of native UI components and HTML UI.</li>
 </ul>
 <p>And when you're ready for more, check out the walkthroughs:</p>
 <ul>
@@ -141,6 +90,8 @@
 <li><a href="contribute/roadmap.html">Roadmap</a></li>
 <li><a href="contribute/feedback.html">Feedback</a></li>
 </ul>
+<h3 id="about-this-project">About this project</h3>
+<p>This project is a fork of <a href="https://github.com/dotnet/MobileBlazorBindings">MobileBlazorBindings</a> - experimental project by Microsoft to allow to use Blazor syntax for native controls instead of XAML. That repository hasn't received much of an attention recently, so I decided to fork it and maintain separately. If at any point of time Microsoft developers decide to push that repository moving forward, I'll gladly contribute all of my changes to the original repository.</p>
 </article>
           </div>
           
