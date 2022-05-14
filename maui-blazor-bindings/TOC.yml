@@ -4,8 +4,6 @@
   href: get-started.md
 - name: Walkthroughs
   items:
-  - name: Build your first app
-    href: walkthroughs/build-first-app.md
   - name: Hello World
     href: walkthroughs/hello-world.md
   - name: Todo App

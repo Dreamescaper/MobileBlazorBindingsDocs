@@ -4,11 +4,12 @@ ms.topic: article
 ms.prod: aspnet-core
 ---
 
-# Experimental Maui Blazor Bindings
+# Maui Blazor Bindings
 
-Experimental Maui Blazor Bindings enable developers to build native and hybrid mobile apps using C# and .NET for Android, iOS, Windows, macOS, and Tizen using familiar web programming patterns. Experimental Maui Blazor Bindings uses Razor syntax to define UI components and behaviors of an application. The underlying UI components are based on MAUI native UI components and in hybrid apps they are mixed with HTML elements.
+Maui Blazor Bindings enable developers to build native and hybrid mobile apps using C# and .NET for Android, iOS, Windows, macOS, and Tizen using familiar web programming patterns. Maui Blazor Bindings uses Razor syntax to define UI components and behaviors of an application. The underlying UI components are based on MAUI native UI components and in hybrid apps they are mixed with HTML elements.
 
-Blazor runs on [.NET Standard 2.0](https://docs.microsoft.com/dotnet/standard/net-standard) so you can share your .NET code with most other .NET apps.
+> [!NOTE]
+> Documentation is not fully updated for MAUI, sorry for that!
 
 With Maui Blazor Bindings it is easy to build a native UI with labels, buttons, and other native UI components:
 
@@ -34,69 +35,10 @@ And here it is running in the Android Emulator:
 
 [ ![Simple native app running in the Android Emulator](./media/index/hello-world-inline.png) ](./media/index/hello-world-expanded.png#lightbox)
 
-And you can build hybrid apps that mix native UI and HTML UI in the same screen, all sharing the same app logic and state:
-
-* `/Main.razor`: (native UI)
-
-    ```xml
-    @inject CounterState CounterState
-
-    <ContentView>
-        <StackLayout>
-
-            <StackLayout Margin="20">
-                <Label Text="@($"You pressed {CounterState.CurrentCount} times")" FontSize="30" />
-                <Button Text="Increment from native" OnClick="@CounterState.IncrementCount" Padding="10" />
-            </StackLayout>
-
-            <BlazorWebView ContentRoot="WebUI/wwwroot" VerticalOptions="LayoutOptions.FillAndExpand">
-                <FirstBlazorHybridApp.WebUI.App />
-            </BlazorWebView>
-
-        </StackLayout>
-    </ContentView>
-
-    @code {
-        // initialization code
-    }
-    ```
-
-* `/WebUI/App.razor`: (HTML UI)
-
-    ```xml
-    @inject CounterState CounterState
-
-    <div style="text-align: center; background-color: lightblue;">
-        <div>
-            <span style="font-size: 30px; font-weight: bold;">
-                You pressed @CounterState.CurrentCount times
-            </span>
-        </div>
-        <div>
-            <button style="margin: 20px;" @onclick="ClickMe">Increment from HTML</button>
-        </div>
-    </div>
-
-    @code
-    {
-        private void ClickMe()
-        {
-            CounterState.IncrementCount();
-        }
-
-        // initialization code
-    }
-    ```
-
-And here it is running in the iOS Simulator, with native UI on top, and HTML UI on the bottom, sharing app logic and state:
-
-[ ![Simple hybrid app running in the iOS Simulator](./media/index/ios-hybrid-inline.png) ](./media/index/ios-hybrid-expanded.png#lightbox)
-
 To build your first apps, check out these topics:
 
 * [Get Started](get-started.md) to set up your development environment.
 * [Build your first app](walkthroughs/build-first-app.md) using native UI components.
-* [Build your first hybrid app](walkthroughs/build-first-hybrid-app.md) using a mix of native UI components and HTML UI.
 
 And when you're ready for more, check out the walkthroughs:
 
@@ -113,3 +55,8 @@ And finally, if you'd like to contribute, check out these topics:
 
 * [Roadmap](contribute/roadmap.md)
 * [Feedback](contribute/feedback.md)
+
+
+### About this project
+
+This project is a fork of [MobileBlazorBindings](https://github.com/dotnet/MobileBlazorBindings) - experimental project by Microsoft to allow to use Blazor syntax for native controls instead of XAML. That repository hasn't received much of an attention recently, so I decided to fork it and maintain separately. If at any point of time Microsoft developers decide to push that repository moving forward, I'll gladly contribute all of my changes to the original repository. 
