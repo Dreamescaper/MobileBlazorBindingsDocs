@@ -4,7 +4,7 @@ ms.topic: article
 ms.prod: aspnet-core
 ---
 
-# Integrating Experimental Maui Blazor Bindings into an existing Xamarin.Forms App
+# Integrating Experimental Maui Blazor Bindings into an existing MAUI App
 
 [!INCLUDE [experiment-warning](../includes/experiment-warning.md)]
 

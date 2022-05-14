@@ -17,7 +17,7 @@ For more information see the [announcement blog](https://aka.ms/mbb-preview5-blo
 The following NuGet package references need to be updated in all of your solution's projects:
 
 1. `BlazorBindings.Maui` version is `0.5.50-preview`
-1. `Xamarin.Forms` version is `4.8.0.1451` or greater
+1. `MAUI` version is `4.8.0.1451` or greater
 1. `Xamarin.Essentials` version is `1.5.3.2` or greater (if used in the project)
 1. `Microsoft.Web.WebView2` - remove direct references to this package (from the Windows project) because it will be picked up transitively
 
@@ -132,7 +132,7 @@ In Preview 4 and earlier the Grid had `<Layout>` and `<Contents>` sections, and 
             <Switch IsToggled="true" />
         </GridCell>
         <GridCell Row="1" Column="1">
-            <Label Text="Use awesome Xamarin.Forms features" FontSize="20" />
+            <Label Text="Use awesome MAUI features" FontSize="20" />
         </GridCell>
         <GridCell Row="2" Column="0">
             <Switch IsToggled="true" />
@@ -155,7 +155,7 @@ Starting in Preview5 the `<Layout>` and `<Content>` sections are removed, and al
         <Switch IsToggled="true" />
     </GridCell>
     <GridCell Row="1" Column="1">
-        <Label Text="Use awesome Xamarin.Forms features" FontSize="20" />
+        <Label Text="Use awesome MAUI features" FontSize="20" />
     </GridCell>
     <GridCell Row="2" Column="0">
         <Switch IsToggled="true" />

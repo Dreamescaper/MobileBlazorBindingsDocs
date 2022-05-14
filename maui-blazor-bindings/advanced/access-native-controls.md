@@ -15,20 +15,20 @@ Controls in Maui Blazor Bindings are abstractions of lower-level controls, thus 
 Applications built with Maui Blazor Bindings have a few layers of controls:
 
 1. The Maui Blazor Bindings controls, such as `<Label />` and `<StackLayout />`.
-2. The native Xamarin.Forms controls, such as `Xamarin.Forms.Label` and `Xamarin.Forms.StackLayout`.
+2. The native MAUI controls, such as `MAUI.Label` and `MAUI.StackLayout`.
 3. The native OS controls, such as Android's `TextView` and iOS's `UILabel`.
 
 Each layer of controls creates the next layer, if needed. Some controls exist only at one level and are often either containers or layouts that contain other controls. Other controls are conceptual controls to add additional functionality to part of the application and have no lower-level representation. For example, the `StyleSheet` control only serves to load a CSS style sheet and has no lower-level control.
 
-## Accessing native Xamarin.Forms controls from Blazor components
+## Accessing native MAUI controls from Blazor components
 
-Maui Blazor Bindings controls have a `NativeControl` property to access the Xamarin.Forms native control counterpart.
+Maui Blazor Bindings controls have a `NativeControl` property to access the MAUI native control counterpart.
 
 To access the native control in a `.razor` page:
 
 1. Declare a field in the `@code{}` block of the type of the element. For the built-in components, the element types are in the `BlazorBindings.Maui.Elements` namespace. For a Button control this would be `BlazorBindings.Maui.Elements.Button incrementButton;`.
 1. Use the `@ref` attribute directive on the control to associate it with the field you created. For example, `<Button @ref="incrementButton" ... />`.
-1. Use the field's `NativeControl` property to access the Xamarin.Forms native control and its properties and methods. For example, `incrementButton.NativeControl.Rotation = 0;`.
+1. Use the field's `NativeControl` property to access the MAUI native control and its properties and methods. For example, `incrementButton.NativeControl.Rotation = 0;`.
 
 Here is a complete example that shows how to apply a rotation animation to a button when it is pressed:
 

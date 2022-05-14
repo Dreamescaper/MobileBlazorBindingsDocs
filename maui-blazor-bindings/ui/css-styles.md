@@ -38,11 +38,11 @@ To add CSS to a Maui Blazor Bindings project:
     ```
 
 > [!NOTE]
-> CSS support requires referencing Xamarin.Forms 4.5 or newer. To update this reference, manage the NuGet packages for the solution and ensure that the solution is using a version of Xamarin.Forms that is 4.5 or newer. Future versions of Maui Blazor Bindings will include this version by default.
+> CSS support requires referencing MAUI 4.5 or newer. To update this reference, manage the NuGet packages for the solution and ensure that the solution is using a version of MAUI that is 4.5 or newer. Future versions of Maui Blazor Bindings will include this version by default.
 
 ## Applying CSS to components
 
-CSS styles are declared in the CSS file using standard CSS syntax. Styles are specified using selectors, which allow applying styles based on element type, base class, name, class attribute, and several other means (see below for Xamarin.Forms reference).
+CSS styles are declared in the CSS file using standard CSS syntax. Styles are specified using selectors, which allow applying styles based on element type, base class, name, class attribute, and several other means (see below for MAUI reference).
 
 In the `.razor` file on each component that allows CSS styles you can set the class or name via the `class` and `StyleId` properties, respectively.
 
@@ -77,7 +77,7 @@ Example Razor file snippet:
 
 ## Supported CSS styles
 
-Because the built-in UI components are based on Xamarin.Forms controls, refer to [Styling Xamarin.Forms apps using CSS](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/styles/css/) to learn more about this feature and which styles can be applied to which components.
+Because the built-in UI components are based on MAUI controls, refer to [Styling MAUI apps using CSS](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/styles/css/) to learn more about this feature and which styles can be applied to which components.
 
 ## Troubleshooting
 

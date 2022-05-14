@@ -6,7 +6,7 @@ ms.prod: aspnet-core
 
 # Experimental Maui Blazor Bindings
 
-Experimental Maui Blazor Bindings enable developers to build native and hybrid mobile apps using C# and .NET for Android, iOS, Windows, macOS, and Tizen using familiar web programming patterns. Experimental Maui Blazor Bindings uses Razor syntax to define UI components and behaviors of an application. The underlying UI components are based on Xamarin.Forms native UI components and in hybrid apps they are mixed with HTML elements.
+Experimental Maui Blazor Bindings enable developers to build native and hybrid mobile apps using C# and .NET for Android, iOS, Windows, macOS, and Tizen using familiar web programming patterns. Experimental Maui Blazor Bindings uses Razor syntax to define UI components and behaviors of an application. The underlying UI components are based on MAUI native UI components and in hybrid apps they are mixed with HTML elements.
 
 Blazor runs on [.NET Standard 2.0](https://docs.microsoft.com/dotnet/standard/net-standard) so you can share your .NET code with most other .NET apps.
 
@@ -44,7 +44,7 @@ And you can build hybrid apps that mix native UI and HTML UI in the same screen,
     <ContentView>
         <StackLayout>
 
-            <StackLayout Margin="new Thickness(20)">
+            <StackLayout Margin="20">
                 <Label Text="@($"You pressed {CounterState.CurrentCount} times")" FontSize="30" />
                 <Button Text="Increment from native" OnClick="@CounterState.IncrementCount" Padding="10" />
             </StackLayout>

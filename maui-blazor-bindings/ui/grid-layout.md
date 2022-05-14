@@ -37,7 +37,7 @@ The follow example shows a grid with three rows and two columns:
         <Switch IsToggled="true" />
     </GridCell>
     <GridCell Row="1" Column="1">
-        <Label Text="Use awesome Xamarin.Forms features" FontSize="20" />
+        <Label Text="Use awesome MAUI features" FontSize="20" />
     </GridCell>
     <GridCell Row="2" Column="0">
         <Switch IsToggled="true" />
@@ -74,7 +74,7 @@ The following example shows a grid with three rows and two columns:
             <Switch IsToggled="true" />
         </GridCell>
         <GridCell Row="1" Column="1">
-            <Label Text="Use awesome Xamarin.Forms features" FontSize="20" />
+            <Label Text="Use awesome MAUI features" FontSize="20" />
         </GridCell>
         <GridCell Row="2" Column="0">
             <Switch IsToggled="true" />
@@ -88,4 +88,4 @@ The following example shows a grid with three rows and two columns:
 
 ## More information
 
-The Maui Blazor Bindings Grid component is based on the Xamarin.Forms grid. More information on the Xamarin.Forms grid is available in the [Xamarin.Forms Grid topic](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/layouts/grid).
+The Maui Blazor Bindings Grid component is based on the MAUI grid. More information on the MAUI grid is available in the [MAUI Grid topic](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/layouts/grid).

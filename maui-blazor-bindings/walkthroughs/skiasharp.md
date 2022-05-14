@@ -11,7 +11,7 @@ ms.prod: aspnet-core
 
 Skia is a 2D graphics library maintained by Google that can be used in .NET applications using the [SkiaSharp](https://github.com/mono/SkiaSharp) library. SkiaSharp is available in Maui Blazor Bindings apps using the `BlazorBindings.Maui.SkiaSharp` NuGet package, which is built on top of `SkiaSharp.Views.Forms`.
 
-This guide covers the basics of how to add a Skia Sharp Canvas to a Razor Component for use in a Maui Blazor Bindings app, all other API are exactly the same and are covered in [SkiaSharp Graphics in Xamarin.Forms](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/).
+This guide covers the basics of how to add a Skia Sharp Canvas to a Razor Component for use in a Maui Blazor Bindings app, all other API are exactly the same and are covered in [SkiaSharp Graphics in MAUI](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/).
 
 ## Setup
 
@@ -117,7 +117,7 @@ Or you could draw a line graph along with a face with this code:
 
 [ ![SkiaSharp Canvas inside a Maui Blazor Bindings App running on an iPhone Simulator](./media/skiasharp/skiasharp-inline.png) ](./media/skiasharp/skiasharp-expanded.png#lightbox)
 
-That's all you need to get SkiaSharp running in a Maui Blazor Bindings app. From here on, everything is the same as in the [Xamarin.Forms SkiaSharp docs](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/). For a sample of SkiaSharp in Mobile Bindings check out the `SkiaCanvasDemo.razor` and `SkiaCanvasDemo.razor.cs` in the [Controls Gallery Sample](https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/ControlGallery/ControlGallery/Views).
+That's all you need to get SkiaSharp running in a Maui Blazor Bindings app. From here on, everything is the same as in the [MAUI SkiaSharp docs](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/graphics/skiasharp/). For a sample of SkiaSharp in Mobile Bindings check out the `SkiaCanvasDemo.razor` and `SkiaCanvasDemo.razor.cs` in the [Controls Gallery Sample](https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/ControlGallery/ControlGallery/Views).
 
 ## Troubleshooting
 

@@ -21,7 +21,7 @@ Experimental Maui Blazor Bindings requires the following software:
 
 1. [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download)
 1. Visual Studio or Visual Studio for Mac, with the following workloads installed:
-   * Mobile development with .NET (Xamarin.Forms)
+   * Mobile development with .NET (MAUI)
    * ASP.NET and web development
 1. Additional requirements to build and run Blazor Hybrid Apps:
    * On Windows: install [Microsoft Edge Canary Channel](https://www.microsoftedgeinsider.com/download)

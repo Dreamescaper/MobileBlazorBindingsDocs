@@ -19,7 +19,7 @@ dotnet new blazorbindingsmaui -o MyBlazorBindingsApp
 
 ## MAUI update
 
-First of all, the project is updated to support MAUI instead of Xamarin.Forms. `VerticalStackLayout` and `HorizontalStackLayout` controls, which were added in MAUI, are supported as well. With MAUI update, Hot Reload is supported.
+First of all, the project is updated to support MAUI instead of MAUI. `VerticalStackLayout` and `HorizontalStackLayout` controls, which were added in MAUI, are supported as well. With MAUI update, Hot Reload is supported.
 
 ![Razor Hot Reload](../media/release-notes/rn6-hot-reload.gif)
 

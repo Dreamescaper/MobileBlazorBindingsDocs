@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 
 [!INCLUDE [experiment-warning](../includes/experiment-warning.md)]
 
-There are several different approaches to navigation in Maui Blazor Bindings. They are based on Xamarin.Forms navigation patterns such as Master/Detail, TabbedPage, Navigation Page, and Shell.
+There are several different approaches to navigation in Maui Blazor Bindings. They are based on MAUI navigation patterns such as Master/Detail, TabbedPage, Navigation Page, and Shell.
 
 Shell Navigation Manager is designed to feel familiar to Blazor developers. The routes are added using the `@page` directive with the same format, including parameters, and the navigation manager is accessed via dependency injection.
 
-Internally it is implemented using Xamarin.Forms Shell URI Navigation. Shell has support for top tabs, bottom tabs, hamburger/flyout, stack, modal and URI-based navigation. These can all be mixed together or used in isolation, depending on what your app needs.
+Internally it is implemented using MAUI Shell URI Navigation. Shell has support for top tabs, bottom tabs, hamburger/flyout, stack, modal and URI-based navigation. These can all be mixed together or used in isolation, depending on what your app needs.
 
 ![Demonstration of Shell Navigation in the Xaminals demo shown on an iPhone.](./media/shell-navigation/shell.gif)
 
