@@ -1,8 +1,8 @@
-# BlazorBindings.Maiu - Preview 6
+# BlazorBindings.Maui - Preview 6
 
 ## About this project
 
-This project is a fork of [MobileBlazorBindings](https://github.com/dotnet/MobileBlazorBindings) - experimental project by Microsoft to allow to use Blazor syntax for native controls instead of XAML. That repository hasn't received much of an attention recently, so I decided to fork it and maintain separately. If at any point of time Microsoft developers decide to push that repository moving forward, I'll gladly contribute all of my changes to the original repository. 
+[This project](https://github.com/Dreamescaper/BlazorBindings.Maui) is a fork of [MobileBlazorBindings](https://github.com/dotnet/MobileBlazorBindings) - experimental project by Microsoft to allow to use Blazor syntax for native controls instead of XAML. That repository hasn't received much of an attention recently, so I decided to fork it and maintain separately. If at any point of time Microsoft developers decide to push that repository moving forward, I'll gladly contribute all of my changes to the original repository. 
 
 ## Get started
 
@@ -19,7 +19,7 @@ dotnet new blazorbindingsmaui -o MyBlazorBindingsApp
 
 ## MAUI update
 
-First of all, the project is updated to support MAUI instead of MAUI. `VerticalStackLayout` and `HorizontalStackLayout` controls, which were added in MAUI, are supported as well. With MAUI update, Hot Reload is supported.
+First of all, the project is updated to support MAUI instead of Xamarin.Forms. `VerticalStackLayout` and `HorizontalStackLayout` controls, which were added in MAUI, are supported as well. With MAUI update, Hot Reload is supported.
 
 ![Razor Hot Reload](../media/release-notes/rn6-hot-reload.gif)
 

@@ -6,7 +6,7 @@ ms.prod: aspnet-core
 
 # Maui Blazor Bindings
 
-Maui Blazor Bindings enable developers to build native and hybrid mobile apps using C# and .NET for Android, iOS, Windows, macOS, and Tizen using familiar web programming patterns. Maui Blazor Bindings uses Razor syntax to define UI components and behaviors of an application. The underlying UI components are based on MAUI native UI components and in hybrid apps they are mixed with HTML elements.
+[Maui Blazor Bindings](https://github.com/Dreamescaper/BlazorBindings.Maui) enable developers to build native and hybrid mobile apps using C# and .NET for Android, iOS, Windows, macOS, and Tizen using familiar web programming patterns. Maui Blazor Bindings uses Razor syntax to define UI components and behaviors of an application. The underlying UI components are based on MAUI native UI components and in hybrid apps they are mixed with HTML elements.
 
 > [!NOTE]
 > Documentation is not fully updated for MAUI, sorry for that!
