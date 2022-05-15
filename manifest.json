@@ -292,7 +292,7 @@
       "output": {
         ".html": {
           "relative_path": "maui-blazor-bindings/index.html",
-          "hash": "BTg0k2i5G8HS6Lj9SmsJiTl0gWvJW0eTUbhpQJEnWNY="
+          "hash": "mlyEbzB+Llp7SZiBjLk7lXB7x86GwJzbqrB1UpjEjo8="
         }
       },
       "is_incremental": false,
@@ -418,7 +418,7 @@
       "output": {
         ".html": {
           "relative_path": "maui-blazor-bindings/release-notes/preview-6.html",
-          "hash": "Sm3UXfU3zUM3myUnUbb+UYbfpooryUgLNjlhJeAx91c="
+          "hash": "5xXABc/fSv38rqrCpnD3VhxFGBEMRsGx44cBXDZ+K5k="
         }
       },
       "is_incremental": false,
