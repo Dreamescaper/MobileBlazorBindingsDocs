@@ -20,7 +20,7 @@
       "output": {
         ".html": {
           "relative_path": "maui-blazor-bindings/TOC.html",
-          "hash": "sxKdRZAT3cBksdqV28csjrZKI4hxjP5phw/KtSl9Swc="
+          "hash": "4TLo3bWytwscpiIw32quPBzfjR75U/PnTm/wRyJfg1w="
         }
       },
       "is_incremental": false,
@@ -280,7 +280,7 @@
       "output": {
         ".html": {
           "relative_path": "maui-blazor-bindings/get-started.html",
-          "hash": "NGmWpV/gvPbxwsPE+tORPXvYNbLxNolZinn74TdCO4w="
+          "hash": "t2WqRAoco5do+1iEVwasuHSqYvbvoS+6iRb31saVJI0="
         }
       },
       "is_incremental": false,
@@ -343,28 +343,6 @@
       "version": ""
     },
     {
-      "type": "Resource",
-      "source_relative_path": "maui-blazor-bindings/media/release-notes/rn6-collection-view.png",
-      "output": {
-        "resource": {
-          "relative_path": "maui-blazor-bindings/media/release-notes/rn6-collection-view.png"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "maui-blazor-bindings/media/release-notes/rn6-hot-reload.gif",
-      "output": {
-        "resource": {
-          "relative_path": "maui-blazor-bindings/media/release-notes/rn6-hot-reload.gif"
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
       "type": "Conceptual",
       "source_relative_path": "maui-blazor-bindings/migrate/preview1-to-preview2.md",
       "output": {
@@ -413,12 +391,74 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn6-collection-view.png",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn6-collection-view.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn6-hot-reload.gif",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn6-hot-reload.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn7-absolute-layout.gif",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn7-absolute-layout.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn7-flex-layout.png",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn7-flex-layout.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
       "source_relative_path": "maui-blazor-bindings/release-notes/preview-6.md",
       "output": {
         ".html": {
           "relative_path": "maui-blazor-bindings/release-notes/preview-6.html",
           "hash": "5xXABc/fSv38rqrCpnD3VhxFGBEMRsGx44cBXDZ+K5k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/release-notes/preview-7.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/release-notes/preview-7.html",
+          "hash": "YPWAIcc3NBlPpBbXHFYdLWf1+WkI/254/zLmv1LjDEU="
         }
       },
       "is_incremental": false,
@@ -908,7 +948,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 37,
+          "total_file_count": 38,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

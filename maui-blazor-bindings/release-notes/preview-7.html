@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>BlazorBindings.Maui - Preview 7 </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="BlazorBindings.Maui - Preview 7 ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="blazorbindingsmaui---preview-7">BlazorBindings.Maui - Preview 7</h1>
+
+<p>Following MAUI Global Availability release, BlazorBindings.Maui is updated as well, adding a bunch of features and improvements. Take a look at <a href="get-started.md">Get Started</a> to check it out!</p>
+<h2 id="shell-navigation-with-object-parameters">Shell navigation with object parameters</h2>
+<p>ShellNavigationManager is updated to support passing object parameters during navigation.</p>
+<pre><code class="lang-xml">@page &quot;/beardetails&quot;
+
+&lt;ContentPage&gt;
+...
+&lt;/ContentPage&gt;
+
+@code {
+    [Parameter] public Animal Bear { get;set; }
+}
+</code></pre>
+<pre><code class="lang-xml">&lt;Button Text=&quot;Go to Bear details&quot; OnClick=&quot;GoToBearDetails&quot; /&gt;
+
+@code {
+    [Inject] ShellNavigationManager Navigation {get; set; }
+
+    Animal bearDetails;
+
+    ...
+
+    async Task GoToBearDetails()
+    {
+        await Navigation.GoToAsync(&quot;/beardetails&quot;, new Dictionary&lt;string, object&gt;
+        {
+            [&quot;Bear&quot;] = bearDetails;
+        });
+    }
+}
+</code></pre>
+<h2 id="attached-properties-support">Attached properties support</h2>
+<p>There is no built-in support for attached properties in Blazor so far, which makes it a bit hard with MAUI, where attached properties are used heavily. In previous versions they were supported using either parent (e.g. <code>GridCell</code>) or child (e.g. <code>ShellProperties</code>) elements, but in some cases such approach leads to very verbose markup. In this update support for attached properties is added via Blazor parameter with <code>CaptureUnmatchedValues = true</code>. Properties for the following types are supported - Grid, Shell, FlexLayout, AbsoluteLayout.</p>
+<pre><code class="lang-xml">&lt;ContentPage Title=&quot;Shell Properties&quot;
+             Shell.NavBarIsVisible=&quot;true&quot;
+             Shell.TabBarIsVisible=&quot;false&quot;
+             Shell.TitleColor=&quot;@Colors.Green&quot;&gt;
+...
+&lt;/ContentPage&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This approach is not perfect. Such properties have no IntelliSense support or compile time validation, they are basically <code>&lt;string, object&gt;</code> pairs. Therefore, this approach might be revised in future.</p>
+</div>
+<h2 id="absolute-layout">Absolute Layout</h2>
+<p>With attached properties support, is became possible to add two layouts previously missing. First one is AbsoluteLayout, which is used to position and size children using explicit values.</p>
+<pre><code class="lang-xml">&lt;AbsoluteLayout HeightRequest=&quot;200&quot;&gt;
+    &lt;BoxView Color=&quot;Colors.Green&quot;
+             CornerRadius=&quot;10&quot;
+             AbsoluteLayout.LayoutBounds=@(new Rect(_greenX, _greenY, 20, 20))
+             AbsoluteLayout.LayoutFlags=&quot;@AbsoluteLayoutFlags.PositionProportional&quot; /&gt;
+
+    &lt;BoxView Color=&quot;Colors.Blue&quot;
+             CornerRadius=&quot;8&quot;
+             AbsoluteLayout.LayoutBounds=@(new Rect(_blueX, _blueY, 16, 16))
+             AbsoluteLayout.LayoutFlags=&quot;@AbsoluteLayoutFlags.PositionProportional&quot; /&gt;
+&lt;/AbsoluteLayout&gt;
+
+&lt;Slider Minimum=&quot;0&quot; Maximum=&quot;1&quot; ValueChanged=&quot;SliderValueChanged&quot; /&gt;
+
+@code {
+    double _greenX;
+    double _greenY;
+    double _blueX;
+    double _blueY;
+
+    void SliderValueChanged(double value)
+    {
+        _blueX = value;
+        _greenX = value;
+
+        _greenY = (-Math.Cos(_blueX * 10) + 1) / 2;
+        _blueY = (-Math.Cos(_blueX * 20) + 1) / 2;
+    }
+}
+</code></pre>
+<p><img src="media/rn7-absolute-layout.gif" alt="AbsoluteLayout"></p>
+<h2 id="flex-layout">Flex Layout</h2>
+<p>FlexLayout is another layout control which is supported with BlazorBindings.Maui now.</p>
+<pre><code class="lang-xml">&lt;FlexLayout HeightRequest=&quot;300&quot;&gt;
+    &lt;FlexLayout Wrap=&quot;FlexWrap.Wrap&quot; FlexLayout.Grow=&quot;1&quot;&gt;
+        @foreach (var color in _colors)
+        {
+            &lt;BoxView Color=&quot;color&quot; HeightRequest=&quot;50&quot; WidthRequest=&quot;50&quot; Margin=&quot;5&quot; /&gt;
+        }
+    &lt;/FlexLayout&gt;
+
+    &lt;BoxView FlexLayout.Basis=&quot;50&quot;
+             FlexLayout.Order=&quot;-1&quot;
+             Color=&quot;Colors.Blue&quot; /&gt;
+
+    &lt;BoxView FlexLayout.Basis=&quot;50&quot;
+             Color=&quot;Colors.Green&quot; /&gt;
+&lt;/FlexLayout&gt;
+
+@code {
+    Color[] _colors = new[] {
+        Colors.AliceBlue,
+        Colors.Aqua,
+        Colors.Azure,
+        Colors.Beige,
+        Colors.Bisque,
+        Colors.Black,
+        Colors.Blue,
+        Colors.Brown,
+        Colors.BurlyWood,
+        Colors.Crimson,
+        Colors.DarkGray,
+        Colors.CornflowerBlue,
+        Colors.DarkOliveGreen,
+        Colors.Fuchsia,
+        Colors.AliceBlue,
+        Colors.DarkSeaGreen
+    };
+}
+</code></pre>
+<p><img src="media/rn7-flex-layout.png" alt="FlexLayout"></p>
+<h2 id="what-next">What next?</h2>
+<p>In next release it is planned to add support to CarouselView and RefreshView controls. ComponentGenerator improvements are planned as well, to help to create bindings for third party MAUI controls.
+If you have any suggestions or ideas, you are welcome log <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/issues">issues</a>!</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/maui-blazor-bindings/release-notes/preview-7.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
