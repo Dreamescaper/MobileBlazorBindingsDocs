@@ -45,23 +45,11 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="grid-layout">Grid Layout</h1>
 
-<div class="IMPORTANT">
-<h5>Important</h5>
-<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/Dreamescaper/BlazorBindings.Maui">https://github.com/Dreamescaper/BlazorBindings.Maui</a>.</p>
-</div>
-
 <p>The Grid is a layout that organizes its children into rows and columns, which can have proportional or absolute sizes. By default, a <code>Grid</code> contains one row and one column. In addition, a <code>Grid</code> can be used as a parent layout that contains other child layouts.</p>
 <p>The Grid layout should not be confused with tables, and is not intended to present tabular data. Unlike HTML tables, a <code>Grid</code> is intended for laying out content.</p>
 <p>To use the Grid you will need to define its <em>Layout</em> of columns and rows, and its <em>Contents</em> to display.</p>
 <p>The <em>layout</em> of the grid is defined using <code>ColumnDefinitions</code> and <code>RowDefinitions</code> to declare the sizes of the columns and rows. The <em>contents</em> of the grid define which controls go in which cells and are wrapped in a <code>&lt;GridCell&gt;</code> component to specify the column, row, column span, and row span.</p>
-<p>The properties and syntax for defining a grid's layout and contents changed after Preview 4 (version <code>0.4.74-preview</code>). Refer to the appropriate section below depending on the version you are using.</p>
-<h2 id="grid-syntax-for-latest-versions-preview-5-and-later">Grid syntax for latest versions (Preview 5 and later)</h2>
-<p>Starting with Preview 5 the syntax for the Grid component has been simplified:</p>
-<ol>
-<li>The <code>&lt;Layout&gt;</code> and <code>&lt;Contents&gt;</code> sections from the <code>&lt;Grid&gt;</code> have been removed</li>
-<li>The row and column definitions are now defined as comma-separated strings instead of as individual collection items</li>
-<li>The <code>&lt;GridCell&gt;</code> components are direct children of the <code>&lt;Grid&gt;</code> component</li>
-</ol>
+<h2 id="grid-syntax">Grid syntax</h2>
 <p>The follow example shows a grid with three rows and two columns:</p>
 <pre><code class="lang-xml">&lt;Grid VerticalOptions=&quot;LayoutOptions.FillAndExpand&quot; RowDefinitions=&quot;Auto, Auto, Auto&quot; ColumnDefinitions=&quot;Auto, Auto&quot;&gt;
     &lt;GridCell Row=&quot;0&quot; Column=&quot;0&quot; ColumnSpan=&quot;2&quot;&gt;
@@ -79,40 +67,6 @@
     &lt;GridCell Row=&quot;2&quot; Column=&quot;1&quot;&gt;
         &lt;Label Text=&quot;Delight our customers&quot; FontSize=&quot;20&quot; /&gt;
     &lt;/GridCell&gt;
-&lt;/Grid&gt;
-</code></pre>
-<h2 id="grid-syntax-for-preview-4-and-earlier">Grid syntax for Preview 4 and earlier</h2>
-<p>In Preview 4 and earlier the <code>Grid</code> component has two child properties:</p>
-<ol>
-<li>A <code>Layout</code> child property where you can define the <code>ColumnDefinition</code> and <code>RowDefinition</code> elements</li>
-<li>A <code>Contents</code> child property where you can define the contents of the grid's cells</li>
-</ol>
-<p>The following example shows a grid with three rows and two columns:</p>
-<pre><code class="lang-xml">&lt;Grid VerticalOptions=&quot;LayoutOptions.FillAndExpand&quot;&gt;
-    &lt;Layout&gt;
-        &lt;RowDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
-        &lt;RowDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
-        &lt;RowDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
-        &lt;ColumnDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
-        &lt;ColumnDefinition GridUnitType=&quot;GridUnitType.Auto&quot; /&gt;
-    &lt;/Layout&gt;
-    &lt;Contents&gt;
-        &lt;GridCell Row=&quot;0&quot; Column=&quot;0&quot; ColumnSpan=&quot;2&quot;&gt;
-            &lt;Label BackgroundColor=&quot;Color.LightBlue&quot; Text=&quot;Todo items&quot; FontSize=&quot;20&quot; /&gt;
-        &lt;/GridCell&gt;
-        &lt;GridCell Row=&quot;1&quot; Column=&quot;0&quot;&gt;
-            &lt;Switch IsToggled=&quot;true&quot; /&gt;
-        &lt;/GridCell&gt;
-        &lt;GridCell Row=&quot;1&quot; Column=&quot;1&quot;&gt;
-            &lt;Label Text=&quot;Use awesome MAUI features&quot; FontSize=&quot;20&quot; /&gt;
-        &lt;/GridCell&gt;
-        &lt;GridCell Row=&quot;2&quot; Column=&quot;0&quot;&gt;
-            &lt;Switch IsToggled=&quot;true&quot; /&gt;
-        &lt;/GridCell&gt;
-        &lt;GridCell Row=&quot;2&quot; Column=&quot;1&quot;&gt;
-            &lt;Label Text=&quot;Delight our customers&quot; FontSize=&quot;20&quot; /&gt;
-        &lt;/GridCell&gt;
-    &lt;/Contents&gt;
 &lt;/Grid&gt;
 </code></pre>
 <h2 id="more-information">More information</h2>
