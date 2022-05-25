@@ -1,10 +1,10 @@
 # BlazorBindings.Maui - Preview 7
 
-Following MAUI Global Availability release, BlazorBindings.Maui is updated as well, adding a bunch of features and improvements. Take a look at [Get Started](../get-started.md) to check it out!
+Following the MAUI Global Availability release, BlazorBindings.Maui is updated as well, adding a bunch of features and improvements. Take a look at [Get Started](../get-started.md) page to check it out!
 
 ## Shell navigation with object parameters
 
-ShellNavigationManager is updated to support passing object parameters during navigation.
+ShellNavigationManager is updated to support passing object parameters during the navigation.
 ```xml
 @page "/beardetails"
 
@@ -38,7 +38,7 @@ ShellNavigationManager is updated to support passing object parameters during na
 ```
 
 ## Attached properties support
-There is no built-in support for attached properties in Blazor so far, which makes it a bit hard with MAUI, where attached properties are used heavily. In previous versions they were supported using either parent (e.g. `GridCell`) or child (e.g. `ShellProperties`) elements, but in some cases such approach leads to very verbose markup. In this update support for attached properties is added via Blazor parameter with `CaptureUnmatchedValues = true`. Properties for the following types are supported - Grid, Shell, FlexLayout, AbsoluteLayout.
+There is no built-in support for the attached properties in Blazor so far, which makes it a bit hard with MAUI, where attached properties are used heavily. In the previous versions they were supported using either parent (e.g. `GridCell`) or child (e.g. `ShellProperties`) elements, but in some cases such approach leads to a very verbose markup. In this update support for the attached properties is added via Blazor parameter with `CaptureUnmatchedValues = true`. Properties for the following types are supported - Grid, Shell, FlexLayout, AbsoluteLayout.
 ```xml
 <ContentPage Title="Shell Properties"
              Shell.NavBarIsVisible="true"
@@ -51,7 +51,7 @@ There is no built-in support for attached properties in Blazor so far, which mak
 > This approach is not perfect. Such properties have no IntelliSense support or compile time validation, they are basically `<string, object>` pairs. Therefore, this approach might be revised in future.
 
 ## Absolute Layout
-With attached properties support, is became possible to add two layouts previously missing. First one is AbsoluteLayout, which is used to position and size children using explicit values.
+With the attached properties support, is became possible to add two layouts previously missing. First one is AbsoluteLayout, which is used to position and size children using explicit values.
 ```xml
 <AbsoluteLayout HeightRequest="200">
     <BoxView Color="Colors.Green"
@@ -130,5 +130,5 @@ FlexLayout is another layout control which is supported with BlazorBindings.Maui
 
 ## What next?
 
-In next release it is planned to add support to CarouselView and RefreshView controls. ComponentGenerator improvements are planned as well, to help to create bindings for third party MAUI controls.
+In the next release it is planned to add support for the CarouselView and RefreshView controls. ComponentGenerator improvements are planned as well, to help to create bindings for third party MAUI controls.
 If you have any suggestions or ideas, you are welcome log [issues](https://github.com/Dreamescaper/BlazorBindings.Maui/issues)!

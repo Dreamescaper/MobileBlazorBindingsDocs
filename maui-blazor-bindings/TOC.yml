@@ -32,8 +32,6 @@
     href: advanced/references.md
   - name: Dependency Injection
     href: advanced/dependency-injection.md
-  - name: Backend-specific services
-    href: advanced/backend-specific-services.md
   - name: Custom components
     href: advanced/custom-components.md
   - name: Access native controls
@@ -42,12 +40,8 @@
     href: advanced/xamarin-essentials.md
   - name: Integrate into existing app
     href: advanced/integrate-into-existing-app.md
-  - name: Debug hybrid apps
-    href: advanced/debug-hybrid-apps.md
   - name: Architecture
     href: advanced/architecture.md
-  - name: Advanced template options
-    href: advanced/template-options.md
   - name: Uninstall
     href: advanced/uninstall.md
   - name: Troubleshooting
@@ -60,11 +54,5 @@
     href: release-notes/preview-7.md
 - name: Contribute
   items:
-  - name: Build from source
-    href: contribute/build-from-source.md
-  - name: Use nightly builds
-    href: contribute/nightly-builds.md
-  - name: Roadmap
-    href: contribute/roadmap.md
   - name: Feedback
     href: contribute/feedback.md
