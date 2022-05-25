@@ -56,6 +56,8 @@
   items:
   - name: Preview 6
     href: release-notes/preview-6.md
+  - name: Preview 7
+    href: release-notes/preview-7.md
 - name: Contribute
   items:
   - name: Build from source
