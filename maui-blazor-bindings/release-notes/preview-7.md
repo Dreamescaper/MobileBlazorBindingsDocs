@@ -1,6 +1,6 @@
 # BlazorBindings.Maui - Preview 7
 
-Following MAUI Global Availability release, BlazorBindings.Maui is updated as well, adding a bunch of features and improvements. Take a look at [Get Started](get-started.md) to check it out!
+Following MAUI Global Availability release, BlazorBindings.Maui is updated as well, adding a bunch of features and improvements. Take a look at [Get Started](../get-started.md) to check it out!
 
 ## Shell navigation with object parameters
 

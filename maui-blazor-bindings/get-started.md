@@ -8,7 +8,7 @@ ms.prod: aspnet-core
 
 Creating an app involves a few steps:
 
-1. Create a new Experimental Maui Blazor Bindings mobile app project from the `dotnet new` templates
+1. Create a new Maui Blazor Bindings mobile app project from the `dotnet new` templates
 2. Open the new project in an editor such as Visual Studio
 3. Write your app
 4. Run it!
