@@ -21,7 +21,7 @@ dotnet new blazorbindingsmaui -o MyBlazorBindingsApp
 
 First of all, the project is updated to support MAUI instead of Xamarin.Forms. `VerticalStackLayout` and `HorizontalStackLayout` controls, which were added in MAUI, are supported as well. With MAUI update, Hot Reload is supported.
 
-![Razor Hot Reload](../media/release-notes/rn6-hot-reload.gif)
+![Razor Hot Reload](media/rn6-hot-reload.gif)
 
 ## CollectionView
 
@@ -62,7 +62,7 @@ Bindings for CollectionView control are added in this release. The easiest way t
     </GridCell>
 </Grid>
 ```
-<img src="../media/release-notes/rn6-collection-view.png" height=600 width=300 />
+<img src="media/rn6-collection-view.png" height=600 width=300 />
 
 ## Support Shell attached properties
 
