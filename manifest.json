@@ -435,6 +435,50 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn8-radio-buttons.gif",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn8-radio-buttons.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn8-refresh-view-with-collection-view.gif",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn8-refresh-view-with-collection-view.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn8-refresh-view.gif",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn8-refresh-view.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn8-shapes.gif",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn8-shapes.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "maui-blazor-bindings/release-notes/preview-6.md",
       "output": {
@@ -453,6 +497,18 @@
         ".html": {
           "relative_path": "maui-blazor-bindings/release-notes/preview-7.html",
           "hash": "S/xfeodpBXuQdOGnu24JCOEg4D1YJqIo3WUvxRXRxTc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/release-notes/preview-8.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/release-notes/preview-8.html",
+          "hash": "zQXqsQDnPQsAKqPKECiqH3z98I4qi356oTJTQMWmc6I="
         }
       },
       "is_incremental": false,
@@ -942,7 +998,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 38,
+          "total_file_count": 39,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

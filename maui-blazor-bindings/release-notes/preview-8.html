@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>BlazorBindings.Maui - Preview 8 </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="BlazorBindings.Maui - Preview 8 ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="blazorbindingsmaui---preview-8">BlazorBindings.Maui - Preview 8</h1>
+
+<p>Another BlazorBindings.Maui update, which includes the support for multiple MAUI controls and some improvements. Take a look at <a href="../get-started.html">Get Started</a> page to check it out!</p>
+<h2 id="radiobuttons">RadioButtons</h2>
+<p><code>RadioButton</code> control is supported now. You can wrap them in <code>RadioButtonGroup</code> component to be able to bind selected value easily.</p>
+<pre><code class="lang-xml">&lt;RadioButtonGroup @bind-SelectedValue=&quot;selectedIntValue&quot;&gt;
+    &lt;RadioButton Value=&quot;24&quot; /&gt;
+    &lt;RadioButton Value=&quot;25&quot; /&gt;
+    &lt;RadioButton Value=&quot;26&quot; /&gt;
+&lt;/RadioButtonGroup&gt;
+
+
+@code {
+    int? selectedIntValue;
+}
+</code></pre>
+<p><img src="media/rn8-radio-buttons.gif" alt="RadioButtons"></p>
+<h2 id="carouselview">CarouselView</h2>
+<p>Another collection control is supported now, which allows to present data in a scrollable layout.</p>
+<pre><code class="lang-xml">&lt;CarouselView ItemsSource=&quot;items&quot;
+              Loop=&quot;false&quot;
+              @bind-CurrentItem=&quot;currentItem&quot;
+              @bind-Position=&quot;currentPosition&quot;&gt;
+
+    &lt;ItemTemplate&gt;
+        &lt;Frame BackgroundColor=&quot;Colors.LightPink&quot;
+               CornerRadius=&quot;10&quot;
+               HeightRequest=&quot;300&quot;
+               WidthRequest=&quot;300&quot;&gt;
+
+            &lt;VerticalStackLayout&gt;
+                &lt;Label HorizontalOptions=&quot;LayoutOptions.Center&quot;&gt;@context.Name&lt;/Label&gt;
+                &lt;Image Source=&quot;context.Image&quot; /&gt;
+            &lt;/VerticalStackLayout&gt;
+        &lt;/Frame&gt;
+    &lt;/ItemTemplate&gt;
+&lt;/CarouselView&gt;
+</code></pre>
+<h2 id="refreshview">RefreshView</h2>
+<p><code>RefreshView</code> is a container control that provides pull to refresh functionality for scrollable content. You can provide <code>OnRefreshing</code> callback parameter value to perform your refresh actions. Refresh indication will be hidden automatically after refresh action is executed.</p>
+<pre><code class="lang-xml">    &lt;RefreshView OnRefreshing=&quot;Refresh&quot;&gt;
+        &lt;ScrollView&gt;
+            &lt;VerticalStackLayout&gt;
+                &lt;Label&gt;Last refresh time: @_refreshTime&lt;/Label&gt;
+                &lt;Label&gt;Page was refreshed @_refreshCount times.&lt;/Label&gt;
+            &lt;/VerticalStackLayout&gt;
+        &lt;/ScrollView&gt;
+    &lt;/RefreshView&gt;
+
+@code {
+    DateTime _refreshTime;
+    int _refreshCount = 0;
+
+    public async Task Refresh()
+    {
+        await Task.Delay(2000);
+        _refreshTime = DateTime.Now;
+        _refreshCount++;
+    }
+}
+</code></pre>
+<p><img src="media/rn8-refresh-view.gif" alt="RefreshView"></p>
+<p>You can also take a look at the <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/blob/main/samples/ControlGallery/Views/Collections/CollectionView/InfiniteScrollPage.razor">following sample page</a>, which uses RefreshView with a CollectionView.</p>
+<p><img src="media/rn8-refresh-view-with-collection-view.gif" alt="RefreshView with a CollectionView"></p>
+<h2 id="shapes">Shapes</h2>
+<p>Preview 8 adds the support for the following shape controls:</p>
+<ul>
+<li>Ellipse</li>
+<li>Line</li>
+<li>Polygon</li>
+<li>Polyline</li>
+<li>Rectangle</li>
+</ul>
+<pre><code class="lang-xml">&lt;Ellipse FillColor=&quot;Colors.Coral&quot;
+         WidthRequest=&quot;EllipseWidth&quot;
+         HeightRequest=&quot;50&quot; /&gt;
+
+&lt;Ellipse StrokeColor=&quot;Colors.Red&quot;
+         StrokeThickness=&quot;CircleThickness&quot;
+         WidthRequest=&quot;150&quot;
+         HeightRequest=&quot;150&quot; /&gt;
+
+&lt;Line X1=&quot;LineX1&quot;
+      Y1=&quot;0&quot;
+      X2=&quot;0&quot;
+      Y2=&quot;120&quot;
+      StrokeColor=&quot;Colors.DarkBlue&quot;
+      StrokeDashArray=&quot;1,1&quot;
+      StrokeDashOffset=&quot;6&quot; /&gt;
+
+&lt;Polygon Points=&quot;0,48 0,144 96,150 100,0 192,0 192,96 50,96 48,192 150,200 144,48&quot;
+         FillColor=&quot;Colors.Black&quot;
+         FillRule=&quot;FillRule.Nonzero&quot;
+         StrokeColor=&quot;Colors.Yellow&quot;
+         StrokeThickness=&quot;PolygonThickness&quot; /&gt;
+
+@code {
+    double _value = 10;
+
+    double PolygonThickness =&gt; 3 + _value;
+    double LineX1 =&gt; 40 + 5 * _value;
+    double CircleThickness =&gt; 4 + _value / 5;
+    double EllipseWidth =&gt; 150 + _value;
+}
+</code></pre>
+<p><img src="media/rn8-shapes.gif" alt="Shapes"></p>
+<h2 id="breaking-changes">Breaking changes</h2>
+<h3 id="flyoutpage-updates">FlyoutPage updates</h3>
+<p>While using the <code>Shell</code> app is the recommended approach, some people still prefer to use <code>FlyoutPage</code> as your MainPage. <code>Flyout</code> and <code>Detail</code> properties require <code>Page</code> child now, matching how it is used in MAUI itself. You can take a look at the <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/main/samples/FlyoutPageSample/Views">following sample</a> for details.</p>
+<h3 id="pickeritemdisplaybinding">Picker.ItemDisplayBinding</h3>
+<p><code>Picker</code> <code>ItemDisplayBinding</code> property type is changed from <code>string</code> to <code>Func&lt;T, string&gt;</code>.</p>
+<pre><code class="lang-xml">&lt;Picker ItemsSource=&quot;Models&quot;
+        Title=&quot;Select a model&quot;
+        ItemDisplayBinding=&quot;i =&gt; i.Name&quot;
+        @bind-SelectedItem=&quot;SelectedModel&quot; /&gt;
+</code></pre>
+<h2 id="samples">Samples</h2>
+<ul>
+<li><a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/main/samples/ControlGallery">ControlGallery sample</a> is reworked to have a cleaner structure. If you need the examples of how to use BlazorBindings.Maui elements, including the once added in the latest update, check it out!</li>
+<li><a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/main/samples/FlyoutPageSample">FlyoutPage sample</a> is added to demostrate how to use FlyoutPage (instead of the regular Shell application).</li>
+<li><a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/main/samples/FluxorSample">Fluxor sample</a> shows how to use BlazorBindings.Maui with <a href="https://github.com/mrpmorris/Fluxor">Fluxor</a> - popular state management tool.</li>
+</ul>
+<h2 id="other">Other</h2>
+<ul>
+<li>Performance improvements, mostly around <code>CollectionView</code>.</li>
+<li>Add the support for <code>Shell</code> <code>ItemTemplate</code> and <code>MenuItemTemplate</code> properties.</li>
+</ul>
+<h2 id="what-next">What next?</h2>
+<p>In the next update ComponentGenerator improvements are planned to help to create bindings for third party MAUI controls. Performance improvements are planned as well.
+If you have any suggestions or ideas, you are welcome log <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/issues">issues</a>!</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/maui-blazor-bindings/release-notes/preview-8.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
