@@ -1,5 +1,5 @@
 ---
-title: 'Experimental Maui Blazor Bindings'
+title: 'Maui Blazor Bindings'
 ms.topic: article
 ms.prod: aspnet-core
 ---
@@ -39,21 +39,11 @@ To build your first apps, check out these topics:
 
 * [Get Started](get-started.md) to set up your development environment.
 * [Build your first app](walkthroughs/build-first-app.md) using native UI components.
+* You can take a look at [ControlGallery](https://github.com/Dreamescaper/BlazorBindings.Maui/tree/main/samples/ControlGallery) sample with examples of usage for the most controls. For example, you can take a look at [RadioButton](https://github.com/Dreamescaper/BlazorBindings.Maui/blob/main/samples/ControlGallery/Views/SetValues/RadioButtonPage.razor) usage example.
 
-And when you're ready for more, check out the walkthroughs:
-
-* [Todo App](walkthroughs/todo-app.md)
-* [Weather App](walkthroughs/weather-app.md)
-
-Then some of the advanced topics:
-
-* [Dependency injection](advanced/dependency-injection.md) - register and share services between parts of the application
-* [Writing custom components](advanced/custom-components.md) - build reusable components in your apps
-* [Xamarin.Essentials](advanced/xamarin-essentials.md) - provides developers with cross-platform APIs for their mobile applications
 
 And finally, if you'd like to contribute, check out these topics:
 
-* [Roadmap](contribute/roadmap.md)
 * [Feedback](contribute/feedback.md)
 
 
