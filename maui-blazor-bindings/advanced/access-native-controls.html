@@ -91,7 +91,7 @@
 <h3 id="no-nativecontrol-property">No NativeControl property</h3>
 <p>Not all Maui Blazor Bindings controls have native controls, in which case there is either no <code>NativeControl</code> property, or the property exists but always returns <code>null</code>.</p>
 <h3 id="the-nativecontrol-property-is-null">The NativeControl property is null</h3>
-<p>If the <code>NativeControl</code> property exists but is null then the control either doesn't have a native control, or the <code>NativeControl</code> property was accessed too early and the native control has not yet been created.</p>
+<p>If the <code>NativeControl</code> property exists but is null then the control either doesn't have a native control.</p>
 <h3 id="getting-typenamespace-conflicts-between-blazor-controls-and-other-controls-and-elements">Getting type/namespace conflicts between Blazor controls and other controls and elements</h3>
 <p>The various controls and elements of each layer often use the same type names, but in different namespaces. For this reason you need to be careful which namespaces are imported in which files. For example, in the sample above, the <code>BlazorBindings.Maui.Elements</code> is not imported (either via a <code>using</code> directive, or in the <code>_Imports.razor</code> file) because that would create conflicts with other namespaces. When using element references, it is recommended to use the fully-qualified namespace name, such as <code>BlazorBindings.Maui.Elements.Button</code>.</p>
 <h2 id="more-information">More information</h2>

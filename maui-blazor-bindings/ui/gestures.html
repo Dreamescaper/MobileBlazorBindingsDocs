@@ -67,14 +67,9 @@
     void OnLabelTapped()
     {
         count++;
-        StateHasChanged();
     }
 }
 </code></pre>
-<div class="NOTE">
-<h5>Note</h5>
-<p>The event handler code ends with calling <code>StateHasChanged()</code> to tell Blazor to re-render the component. Otherwise the count will be incremented and the change will not be shown.</p>
-</div>
 <h2 id="supported-gestures">Supported gestures</h2>
 <p>The following example shows the syntax of the supported gestures and their respective events:</p>
 <pre><code class="lang-xml">&lt;ContentView&gt;
@@ -96,40 +91,62 @@
     void OnLabelTapped()
     {
         // TODO: Response to tap gesture
-
-        StateHasChanged();
     }
 
     void OnLabelPanned(PanUpdatedEventArgs e)
     {
         // TODO: Response to pan gesture
-
         // Check e.StatusType, e.TotalX, and e.TotalY
-
-        StateHasChanged();
     }
 
     void OnLabelSwiped(SwipedEventArgs e)
     {
         // TODO: Response to swipe gesture
-
         // Check e.Direction
-
-        StateHasChanged();
     }
 
     void OnLabelPinched(PinchGestureUpdatedEventArgs e)
     {
         // TODO: Response to pinch gesture
-
         // Check e.Scale, e.ScaleOrigin, and e.Status
-
-        StateHasChanged();
     }
 }
 </code></pre>
+<h2 id="gesture-events">Gesture events</h2>
+<p>Alternatively, instead of adding a gesture recognizer, you can use gesture events in simple cases.</p>
+<pre><code class="lang-xml">&lt;Frame OnTap=&quot;OnTap&quot;
+       OnDoubleTap=&quot;OnDoubleTap&quot;
+       OnPanUpdate=&quot;OnPanUpdate&quot;&gt;
+
+    &lt;Label&gt;@status&lt;/Label&gt;
+&lt;/Frame&gt;
+
+@code {
+    string status = &quot;Pending&quot;;
+
+    void OnTap() =&gt; status = &quot;Tapped&quot;;
+    void OnDoubleTap() =&gt; status = &quot;Double Tapped&quot;;
+
+    async Task OnPanUpdate(PanUpdatedEventArgs args)
+    {
+        // ...
+    }
+}
+</code></pre>
+<p>Supported gesture events:</p>
+<ul>
+<li>OnTap</li>
+<li>OnDoubleTap</li>
+<li>OnSwipe</li>
+<li>OnPinchUpdate</li>
+<li>OnPanUpdate</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Gesture events are implemented using Gesture Recognizers.</p>
+</div>
 <h2 id="more-information">More information</h2>
-<p>See the <a href="https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/gestures/">MAUI gestures documentation</a> for more information and examples.</p>
+<p>See the <a href="https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/gestures/tap">MAUI gestures documentation</a> for more information and examples.</p>
 </article>
           </div>
           
