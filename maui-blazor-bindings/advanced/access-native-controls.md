@@ -61,7 +61,7 @@ Not all Maui Blazor Bindings controls have native controls, in which case there 
 
 ### The NativeControl property is null
 
-If the `NativeControl` property exists but is null then the control either doesn't have a native control, or the `NativeControl` property was accessed too early and the native control has not yet been created.
+If the `NativeControl` property exists but is null then the control either doesn't have a native control.
 
 ### Getting type/namespace conflicts between Blazor controls and other controls and elements
 

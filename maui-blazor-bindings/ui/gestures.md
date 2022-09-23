@@ -32,13 +32,9 @@ The following sample adds a tap gesture to a `Label` component and updates its t
     void OnLabelTapped()
     {
         count++;
-        StateHasChanged();
     }
 }
 ```
-
-> [!NOTE]
-> The event handler code ends with calling `StateHasChanged()` to tell Blazor to re-render the component. Otherwise the count will be incremented and the change will not be shown.
 
 ## Supported gestures
 
@@ -64,39 +60,63 @@ The following example shows the syntax of the supported gestures and their respe
     void OnLabelTapped()
     {
         // TODO: Response to tap gesture
-
-        StateHasChanged();
     }
 
     void OnLabelPanned(PanUpdatedEventArgs e)
     {
         // TODO: Response to pan gesture
-
         // Check e.StatusType, e.TotalX, and e.TotalY
-
-        StateHasChanged();
     }
 
     void OnLabelSwiped(SwipedEventArgs e)
     {
         // TODO: Response to swipe gesture
-
         // Check e.Direction
-
-        StateHasChanged();
     }
 
     void OnLabelPinched(PinchGestureUpdatedEventArgs e)
     {
         // TODO: Response to pinch gesture
-
         // Check e.Scale, e.ScaleOrigin, and e.Status
-
-        StateHasChanged();
     }
 }
 ```
 
+## Gesture events
+
+Alternatively, instead of adding a gesture recognizer, you can use gesture events in simple cases.
+
+```xml
+<Frame OnTap="OnTap"
+       OnDoubleTap="OnDoubleTap"
+       OnPanUpdate="OnPanUpdate">
+
+    <Label>@status</Label>
+</Frame>
+
+@code {
+    string status = "Pending";
+
+    void OnTap() => status = "Tapped";
+    void OnDoubleTap() => status = "Double Tapped";
+
+    async Task OnPanUpdate(PanUpdatedEventArgs args)
+    {
+        // ...
+    }
+}
+```
+
+Supported gesture events:
+- OnTap
+- OnDoubleTap
+- OnSwipe
+- OnPinchUpdate
+- OnPanUpdate
+
+> [!NOTE]
+> Gesture events are implemented using Gesture Recognizers.
+
 ## More information
 
-See the [MAUI gestures documentation](https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/gestures/) for more information and examples.
+See the [MAUI gestures documentation](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/gestures/tap) for more information and examples.

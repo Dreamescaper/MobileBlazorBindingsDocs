@@ -40,4 +40,4 @@ The follow example shows a grid with three rows and two columns:
 
 ## More information
 
-The Maui Blazor Bindings Grid component is based on the MAUI grid. More information on the MAUI grid is available in the [MAUI Grid topic](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/layouts/grid).
+The Maui Blazor Bindings Grid component is based on the MAUI grid. More information on the MAUI grid is available in the [MAUI Grid topic](https://learn.microsoft.com/en-us/dotnet/maui/user-interface/layouts/grid).

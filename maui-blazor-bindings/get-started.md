@@ -23,7 +23,7 @@ Maui Blazor Bindings has the same prerequisites as MAUI itself has, i.e. you nee
 1. Install the Maui Blazor Bindings project templates by running this command:
 
     ```shell
-    dotnet new -i BlazorBindings.Maui.Templates::0.8.31-preview
+    dotnet new -i BlazorBindings.Maui.Templates::0.9.2-preview
     ```
 
 ## Create your project
