@@ -479,6 +479,28 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn9-gesture-events.gif",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn9-gesture-events.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn9-shadows.png",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn9-shadows.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "maui-blazor-bindings/release-notes/preview-6.md",
       "output": {
@@ -515,9 +537,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "maui-blazor-bindings/release-notes/preview-9.md",
       "output": {
