@@ -58,5 +58,7 @@
     href: release-notes/preview-9.md
 - name: Contribute
   items:
+  - name: Nightly builds
+    href: contribute/nightly-builds.md
   - name: Feedback
     href: contribute/feedback.md
