@@ -45,11 +45,6 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="use-nightly-builds">Use nightly builds</h1>
 
-<div class="IMPORTANT">
-<h5>Important</h5>
-<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/Dreamescaper/BlazorBindings.Maui">https://github.com/Dreamescaper/BlazorBindings.Maui</a>.</p>
-</div>
-
 <p>Nightly builds of Maui Blazor Bindings enable you to use the absolute latest updates in your project. These changes are not yet part of an official release, which might mean that they are less polished and less tested.</p>
 <p>If you're using official releases (including previews) from NuGet.org, this step is not needed.</p>
 <p>If you want to use the most recent build of Maui Blazor Bindings, read ahead.</p>
@@ -66,7 +61,7 @@
 <pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;configuration&gt;
   &lt;packageSources&gt;
-    &lt;add key=&quot;mobileblazorbindings-nightly&quot; value=&quot;https://pkgs.dev.azure.com/dnceng/public/_packaging/mobileblazorbindings-nightly/nuget/v3/index.json&quot; /&gt;
+  	&lt;add key=&quot;blazorbinding nightly&quot; value=&quot;https://www.myget.org/F/blazorbindings/api/v3/index.json&quot; /&gt;
   &lt;/packageSources&gt;
 &lt;/configuration&gt;
 </code></pre>
@@ -76,8 +71,6 @@
 <h5>Tip</h5>
 <p>If the configuration file already exists, just add the <code>&lt;add ... /&gt;</code> tag to the end of the list of package sources.</p>
 </div>
-<h2 id="browse-the-nightly-feed">Browse the nightly feed</h2>
-<p>To browse the feed and see which packages are available, navigate to the <a href="https://dev.azure.com/dnceng/public/_packaging?_a=feed&amp;feed=mobileblazorbindings-nightly"><code>mobileblazorbindings-nightly</code> package feed</a></p>
 <h2 id="more-information">More information</h2>
 <p>To learn more about NuGet configuration settings, refer to these resources:</p>
 <ul>
