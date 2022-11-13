@@ -502,6 +502,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/release-notes/preview-10.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/release-notes/preview-10.html",
+          "hash": "D0kBK2V2LfZEcF5jFlc5ZM2kbYbhiY45ciEeYh8ayB8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "maui-blazor-bindings/release-notes/preview-6.md",
       "output": {
         ".html": {
@@ -1032,7 +1044,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 40,
+          "total_file_count": 41,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
