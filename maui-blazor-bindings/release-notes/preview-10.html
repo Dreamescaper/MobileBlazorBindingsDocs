@@ -45,16 +45,93 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="blazorbindingsmaui---preview-10">BlazorBindings.Maui - Preview 10</h1>
 
-<p>Another BlazorBindings.Maui update, which adds .NET 7 support, shadows, and other improvements. Take a look at <a href="../get-started.html">Get Started</a> page to check it out!</p>
+<p>Another BlazorBindings.Maui update, which adds .NET 7 support, component generator improvements, and others. Take a look at <a href="../get-started.html">Get Started</a> page to check it out!</p>
 <h2 id="net-7-support">.NET 7 support</h2>
+<p>BlazorBindings.Maui is updated to use .NET 7. .NET 6 projects are not supported anymore.</p>
 <h2 id="navigation-improvements">Navigation improvements</h2>
+<p>Previously, the only supported way for navigation was URI-based Shell navigation. But it has its limitations:</p>
+<ul>
+<li>It can be used with Shell-based applications only.</li>
+<li>Cannot pass arbitrary parameters, only the ones based on URL path.</li>
+<li>Hard to use with modals.</li>
+<li>Inconvinient in some cases.</li>
+</ul>
+<p>In Preview 10 <code>INavigation</code> type is added, which allows you to perform regular navigation in addition to URI-based.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can use regular navigation for Shell-based applications as well.</p>
+</div>
+<p>For instance, let's say you have the following page component:
+<code>TargetPage.razor</code></p>
+<pre><code class="lang-xml">&lt;ContentPage Title=&quot;Target Page&quot;&gt;
+    &lt;VerticalStackLayout&gt;
+        &lt;Label&gt;Hello, @UserName&lt;/Label&gt;
+    &lt;/VerticalStackLayout&gt;
+&lt;/ContentPage&gt;
+
+@code {
+    [Parameter] public string UserName {get; set;} 
+}
+</code></pre>
+<p>You can use the following code in your main page component to navigate to <code>TargetPage</code>:</p>
+<pre><code class="lang-xml">@inject INavigation Navigation;
+
+/* MainPage content */
+&lt;Button Text=&quot;Go to target page&quot; OnClick=&quot;NavigateToTargetPage&quot; /&gt;
+
+@code {
+    Task NavigateToTargetPage() =&gt; Navigation.PushAsync&lt;TargetPage&gt;(new()
+    {
+        [nameof(TargetPage.UserName)] = &quot;Jayne Cobb&quot;
+    });
+}
+</code></pre>
+<p>You can also perform modal navigation via <code>PushModalAsync</code> method:</p>
+<pre><code class="lang-xml">@code {
+    Task NavigateToTargetModalPage() =&gt; Navigation.PushModalAsync&lt;TargetPage&gt;(new()
+    {
+        [nameof(TargetPage.UserName)] = &quot;Jayne Cobb&quot;
+    });
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can read more about navigation stack and modal navigation in MAUI <a href="https://learn.microsoft.com/en-us/dotnet/maui/user-interface/pages/navigationpage?view=net-maui-7.0#push-pages-to-the-modal-stack">here</a>.</p>
+</div>
+<p>In addition to that, <code>INavigation</code> provides overloads, which accept <code>RenderFragment</code> argument. This allows to use a bit exotic, but easier to read syntax:</p>
+<pre><code class="lang-xml">@code {
+    Task NavigateViaRenderFragment() =&gt; Navigation.PushAsync(
+        @&lt;TargetPage UserName=&quot;Jayne Cobb&quot; /&gt;);
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This syntax is only available in .razor files, not in regular .cs files.</p>
+</div>
 <h2 id="shell-properties">Shell properties</h2>
+<p>Previously, it was possible to set Shell attached properties to a certain Page via Blazor &quot;unmatched&quot; values (read <a href="./preview-7.html#attached-properties-support">here</a>).</p>
+<pre><code class="lang-xml">&lt;ContentPage Title=&quot;Shell Properties&quot;
+             Shell.NavBarIsVisible=&quot;true&quot;
+             Shell.TabBarIsVisible=&quot;false&quot;
+             Shell.TitleColor=&quot;@Colors.Green&quot;&gt;
+...
+&lt;/ContentPage&gt;
+</code></pre>
+<p>However, this approach is quite limited and not user-friendly - not all properties are possible to set this way (e.g. TitleView), it missed InteliSense or any compile-time validation, etc. Because of that, some mostly used attached properties are added to <code>ContentPage</code> component as regular properties:</p>
+<pre><code class="lang-xml">&lt;ContentPage Title=&quot;Shell Properties&quot;
+            NavBarIsVisible=&quot;true&quot;
+            TabBarIsVisible=&quot;false&quot;
+            TitleColor=&quot;@Colors.Green&quot;&gt;
+...
+&lt;/ContentPage&gt;
+</code></pre>
 <h2 id="component-generator-improvements">Component generator improvements</h2>
+<p>ComponentGenerator is updated to support generating <code>DataTemplate</code> and <code>ElementTemplate</code> properties (with <code>RenderFragment</code> type), generic properties and <code>Brush</code> properties. Most of the components in <code>BlazorBindings.Maui</code> are created using this generator, therefore it allowed to add some properties missed before.</p>
 <h2 id="breaking-changes">Breaking changes</h2>
 <h3 id="generated-components-should-be-re-generated">Generated components should be re-generated</h3>
 <p>Due to some internal changes, components created by component generated from previous version will probably not work. Simply re-generating them should be sufficient.</p>
 <h3 id="shellnavigationmanager-is-deprecated">ShellNavigationManager is deprecated</h3>
-<p>Since INavigationService contains all ShellNavigationManager functionality, INavigationService should be used instead. ShellNavigationManager is deprecated and will be removed in the next version.</p>
+<p>Since <code>INavigation</code> contains all <code>ShellNavigationManager</code> functionality, <code>INavigation</code> should be used instead. <code>ShellNavigationManager</code> is deprecated and will be removed in the next version.</p>
 <h2 id="what-next">What next?</h2>
 <p>Getting closer to a stable release, it is planned to make final breaking changes, stabilize the API, improve the documentation and test coverage.
 Generator improvements are planned as well, specifically to include properties documentation.</p>

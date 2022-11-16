@@ -20,7 +20,7 @@
       "output": {
         ".html": {
           "relative_path": "maui-blazor-bindings/TOC.html",
-          "hash": "mVMpFDovnebjNyuQYUb3qrrhbMDnYlDEdEdySolO1wc="
+          "hash": "AKBv6ySfoOgx5907dTawkjy900eBqZf3aybtWDEkgOs="
         }
       },
       "is_incremental": false,
@@ -280,7 +280,7 @@
       "output": {
         ".html": {
           "relative_path": "maui-blazor-bindings/get-started.html",
-          "hash": "lsokovy+GmNcIRJBd3qZigFFQRXLcciAloEqEd6qhKg="
+          "hash": "Dzyef4N921PZZay0z+a/MV2OaxicV1fR/tYCVRkOtVo="
         }
       },
       "is_incremental": false,
@@ -501,12 +501,15 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
       "source_relative_path": "maui-blazor-bindings/release-notes/preview-10.md",
       "output": {
         ".html": {
           "relative_path": "maui-blazor-bindings/release-notes/preview-10.html",
-          "hash": "D0kBK2V2LfZEcF5jFlc5ZM2kbYbhiY45ciEeYh8ayB8="
+          "hash": "dP3faaMTv8fOyBMBqpIIxwTbLtk9o+8l+VWeLsMb6Jw="
         }
       },
       "is_incremental": false,
