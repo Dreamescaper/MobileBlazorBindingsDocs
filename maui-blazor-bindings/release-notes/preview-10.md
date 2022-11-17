@@ -11,8 +11,8 @@ BlazorBindings.Maui is updated to use .NET 7. .NET 6 projects are not supported 
 Previously, the only supported way for navigation was URI-based Shell navigation. But it has its limitations:
 - It can be used with Shell-based applications only.
 - Cannot pass arbitrary parameters, only the ones based on URL path.
-- Hard to use with modals.
-- Inconvinient in some cases.
+- Hard to use with modal navigation.
+- Inconvenient in some cases.
 
 In Preview 10 `INavigation` type is added, which allows you to perform regular navigation in addition to URI-based.
 
@@ -82,7 +82,7 @@ Previously, it was possible to set Shell attached properties to a certain Page v
 ...
 </ContentPage>
 ```
- However, this approach is quite limited and not user-friendly - not all properties are possible to set this way (e.g. TitleView), it missed InteliSense or any compile-time validation, etc. Because of that, some mostly used attached properties are added to `ContentPage` component as regular properties:
+ However, this approach is quite limited and not user-friendly - not all properties are possible to set this way (e.g. TitleView), it misses IntelliSense or any compile-time validation, etc. Because of that, some mostly used attached properties are added to `ContentPage` component as regular properties:
  ```xml
 <ContentPage Title="Shell Properties"
              NavBarIsVisible="true"
@@ -108,7 +108,8 @@ Since `INavigation` contains all `ShellNavigationManager` functionality, `INavig
 
 ## What next?
 
-Getting closer to a stable release, it is planned to make final breaking changes, stabilize the API, improve the documentation and test coverage.
-Generator improvements are planned as well, specifically to include properties documentation.
+- Getting closer to a stable release, it is planned to make final breaking changes, stabilize the API, improve the documentation and test coverage.
+- Generator improvements are planned as well, specifically to include properties documentation.
+- Supporting Maps controls, which were added in MAUI for .NET 7.
 
 If you have any suggestions or ideas, you are welcome log [issues](https://github.com/Dreamescaper/BlazorBindings.Maui/issues)!
