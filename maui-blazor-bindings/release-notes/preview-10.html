@@ -53,8 +53,8 @@
 <ul>
 <li>It can be used with Shell-based applications only.</li>
 <li>Cannot pass arbitrary parameters, only the ones based on URL path.</li>
-<li>Hard to use with modals.</li>
-<li>Inconvinient in some cases.</li>
+<li>Hard to use with modal navigation.</li>
+<li>Inconvenient in some cases.</li>
 </ul>
 <p>In Preview 10 <code>INavigation</code> type is added, which allows you to perform regular navigation in addition to URI-based.</p>
 <div class="NOTE">
@@ -117,7 +117,7 @@
 ...
 &lt;/ContentPage&gt;
 </code></pre>
-<p>However, this approach is quite limited and not user-friendly - not all properties are possible to set this way (e.g. TitleView), it missed InteliSense or any compile-time validation, etc. Because of that, some mostly used attached properties are added to <code>ContentPage</code> component as regular properties:</p>
+<p>However, this approach is quite limited and not user-friendly - not all properties are possible to set this way (e.g. TitleView), it misses IntelliSense or any compile-time validation, etc. Because of that, some mostly used attached properties are added to <code>ContentPage</code> component as regular properties:</p>
 <pre><code class="lang-xml">&lt;ContentPage Title=&quot;Shell Properties&quot;
             NavBarIsVisible=&quot;true&quot;
             TabBarIsVisible=&quot;false&quot;
@@ -133,8 +133,11 @@
 <h3 id="shellnavigationmanager-is-deprecated">ShellNavigationManager is deprecated</h3>
 <p>Since <code>INavigation</code> contains all <code>ShellNavigationManager</code> functionality, <code>INavigation</code> should be used instead. <code>ShellNavigationManager</code> is deprecated and will be removed in the next version.</p>
 <h2 id="what-next">What next?</h2>
-<p>Getting closer to a stable release, it is planned to make final breaking changes, stabilize the API, improve the documentation and test coverage.
-Generator improvements are planned as well, specifically to include properties documentation.</p>
+<ul>
+<li>Getting closer to a stable release, it is planned to make final breaking changes, stabilize the API, improve the documentation and test coverage.</li>
+<li>Generator improvements are planned as well, specifically to include properties documentation.</li>
+<li>Supporting Maps controls, which were added in MAUI for .NET 7.</li>
+</ul>
 <p>If you have any suggestions or ideas, you are welcome log <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/issues">issues</a>!</p>
 </article>
           </div>
