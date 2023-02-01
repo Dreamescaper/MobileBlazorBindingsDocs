@@ -45,24 +45,46 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="custom-components">Custom components</h1>
 
-<div class="IMPORTANT">
-<h5>Important</h5>
-<p>This project is an experimental release. We hope you try out Experimental Maui Blazor Bindings and provide feedback at <a href="https://github.com/Dreamescaper/BlazorBindings.Maui">https://github.com/Dreamescaper/BlazorBindings.Maui</a>.</p>
-</div>
-
 <p>You can write reusable custom components either using Blazor components or by wrapping existing MAUI components.</p>
 <h2 id="blazor-components">Blazor components</h2>
 <p>You can create a reusable Blazor component by writing a <code>.razor</code> file just like you would in an application. The component can be shipped as a NuGet package so that it is easily reusable in other projects.</p>
 <p>To learn more about component libraries, check out the <a href="https://docs.microsoft.com/aspnet/core/blazor/class-libraries&amp;tabs=visual-studio">ASP.NET Core Razor components class libraries</a>.</p>
-<p>More details coming soon!</p>
 <h2 id="wrapping-maui-components">Wrapping MAUI components</h2>
-<p>To make a MAUI element available in Blazor markup you need to implement two types of classes:</p>
-<ol>
-<li>A component representing the markup that the developer will use in the <code>.razor</code> file. This type will need to derive from <code>NativeControlComponentBase</code> or one of its derived classes.</li>
-<li>An element handler representing the UI component that will be created when the component is used. This type will either implement the <code>IXamarinFormsElementHandler</code> interface or derive from one of the existing handler types that implement the interface.</li>
-</ol>
-<p>An example that shows how to wrap the popular <a href="https://github.com/sthewissen/MAUI.PancakeView"><code>PancakeView</code> component</a> is available <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/master/samples/MobileBlazorBindingsWeather/BlazorBindings.Maui.PancakeView">here</a>.</p>
-<p>The component uses a static constructor to register the component mapping to the element handler, as seen <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/blob/master/samples/MobileBlazorBindingsWeather/BlazorBindings.Maui.PancakeView/Elements/PancakeView.cs#L11-L15">here</a>.</p>
+<p>To make a MAUI element available in Blazor markup you can use ComponentGenerator tool.
+First, you need to install it:</p>
+<pre><code>dotnet tool install --global BlazorBindings.Maui.ComponentGenerator
+</code></pre>
+<p>You can specify which controls to process by adding assembly attributes to your project. Create a file <code>/Properties/GenerateComponentAttributes.cs</code> (or any other .cs file), and put GenerateComponent assembly attributes there. For example, here how you can add an attribute to generate component for CommunityToolkit's <a href="https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/views/drawingview">DrawingView</a>:</p>
+<pre><code class="lang-csharp">using BlazorBindings.Maui.ComponentGenerator;
+
+[assembly: GenerateComponent(typeof(CommunityToolkit.Maui.Views.DrawingView))]
+</code></pre>
+<p>Now, you need to run the generator tool in the project folder:</p>
+<pre><code>dotnet generate-maui-blazor-components
+</code></pre>
+<p>You can customize the generation by setting the attribute's parameters:</p>
+<p><strong>Exclude</strong><br>
+Exclude members from generation (either because the generated member is incorrect, or because if conflicts with other members).</p>
+<pre><code>[assembly: GenerateComponent(typeof(ToggleSwitch), 
+    Exclude = new[] { nameof(ToggleSwitch.Toggled) }]
+</code></pre>
+<p><strong>PropertyChangedEvents</strong><br>
+<code>EventCallback</code> properties are usually generated based on control's events. However, if your control has some properties with two-way binding, you can force generation explicitly:</p>
+<pre><code>[assembly: GenerateComponent(typeof(ToggleSwitch),
+    PropertyChangedEvents = new[] { nameof(ToggleSwitch.IsOn) })]
+</code></pre>
+<p><strong>GenericProperties</strong><br>
+If your control has some non-generic properties (e.g. <code>object</code> or <code>IEnumerable</code>), you can make them generic (e.g. <code>T</code> or <code>IEnumerable&lt;T&gt;</code>) in the generated component (the component itself will be generated as generic as well). It can also be applied to templates as well (template property will have <code>RenderFragment&lt;T&gt;</code> type).</p>
+<pre><code>[assembly: GenerateComponent(typeof(Sharpnado.CollectionView.CollectionView),
+    GenericProperties = new[] { nameof(Sharpnado.CollectionView.CollectionView.ItemsSource) })]
+</code></pre>
+<p>In case you want to have it with a certian generic argument (e.g. <code>RenderFragment&lt;MenuItem&gt;</code>), you can specify the type after a colon (you'll need to specify full type name).</p>
+<pre><code>[assembly: GenerateComponent(typeof(CalendarView),
+    GenericProperties = new[] {
+        $&quot;{nameof(CalendarView.DayNameTemplate)}:XCalendar.Core.Interfaces.ICalendarDay&quot;,
+        $&quot;{nameof(CalendarView.DayTemplate)}:XCalendar.Core.Interfaces.ICalendarDay&quot;,
+    })]
+</code></pre>
 </article>
           </div>
           
