@@ -33,7 +33,9 @@ Now, you need to run the generator tool in the project folder:
 ```
 dotnet generate-maui-blazor-components
 ```
-
+  
+### Generator configuration
+  
 You can customize the generation by setting the attribute's parameters:
 
 **Exclude**  
@@ -66,3 +68,5 @@ In case you want to have it with a certian generic argument (e.g. `RenderFragmen
     })]
 ```
 
+### Sample
+You take a look at [a sample project](https://github.com/Dreamescaper/BlazorBindings.Maui/blob/main/samples/ThirdPartyControlsSample/Properties/Elements.cs) with generated components for `AlohaKit` and `CommunityToolkit` libraries.
