@@ -62,6 +62,7 @@ First, you need to install it:</p>
 <p>Now, you need to run the generator tool in the project folder:</p>
 <pre><code>dotnet generate-maui-blazor-components
 </code></pre>
+<h3 id="generator-configuration">Generator configuration</h3>
 <p>You can customize the generation by setting the attribute's parameters:</p>
 <p><strong>Exclude</strong><br>
 Exclude members from generation (either because the generated member is incorrect, or because if conflicts with other members).</p>
@@ -85,6 +86,8 @@ If your control has some non-generic properties (e.g. <code>object</code> or <co
         $&quot;{nameof(CalendarView.DayTemplate)}:XCalendar.Core.Interfaces.ICalendarDay&quot;,
     })]
 </code></pre>
+<h3 id="sample">Sample</h3>
+<p>You take a look at <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/blob/main/samples/ThirdPartyControlsSample/Properties/Elements.cs">a sample project</a> with generated components for <code>AlohaKit</code> and <code>CommunityToolkit</code> libraries.</p>
 </article>
           </div>
           
