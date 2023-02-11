@@ -35,6 +35,16 @@ The easiest way to access nightly builds of Maui Blazor Bindings is with a `nuge
 > [!TIP]
 > If the configuration file already exists, just add the `<add ... />` tag to the end of the list of package sources.
 
+## Installing nightly component generator
+
+You need to know the exact version you want to install (e.g. '0.11.39-preview'). In order to update component generator to the latest version, execute the following:
+```
+dotnet tool update BlazorBindings.Maui.ComponentGenerator --global --add-source https://www.myget.org/F/blazorbindings/api/v3/index.json --version 0.11.39-preview
+```
+
+> [!TIP]
+> If you don't have component generator installed, you can use `install` option instead of `update`.
+
 ## More information
 
 To learn more about NuGet configuration settings, refer to these resources:
