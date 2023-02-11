@@ -71,6 +71,14 @@
 <h5>Tip</h5>
 <p>If the configuration file already exists, just add the <code>&lt;add ... /&gt;</code> tag to the end of the list of package sources.</p>
 </div>
+<h2 id="installing-nightly-component-generator">Installing nightly component generator</h2>
+<p>You need to know the exact version you want to install (e.g. '0.11.39-preview'). In order to update component generator to the latest version, execute the following:</p>
+<pre><code>dotnet tool update BlazorBindings.Maui.ComponentGenerator --global --add-source https://www.myget.org/F/blazorbindings/api/v3/index.json --version 0.11.39-preview
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you don't have component generator installed, you can use <code>install</code> option instead of <code>update</code>.</p>
+</div>
 <h2 id="more-information">More information</h2>
 <p>To learn more about NuGet configuration settings, refer to these resources:</p>
 <ul>
