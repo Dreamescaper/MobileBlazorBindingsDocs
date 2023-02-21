@@ -87,14 +87,59 @@ Another BlazorBindings.Maui update.
 ```
 ![TableView](media/rn11-table-view.png)
 
+### ListView
+
+```xml
+<ListView ItemsSource="items" SelectionMode="ListViewSelectionMode.None">
+    <ItemTemplate>
+        <ImageCell Text="@context.Name" Detail="@context.Type" ImageSource="@context.ImageUrl">
+            <ContextActions>
+                <MenuItem Text="Remove" IsDestructive="true" OnClick="() => RemoveItem(context)" />
+            </ContextActions>
+        </ImageCell>
+    </ItemTemplate>
+</ListView>
+```
+![ListView](media/rn11-list-view.png)
+
 
 ## Behaviors
+
+```xml
+<ContentPage Title="CommunityToolkit.Behaviors">
+    <Behaviors>
+        <StatusBarBehavior StatusBarColor="Colors.Green" />
+    </Behaviors>
+
+    ...
+</ContentPage>
+```
+![Behavior](media/rn11-behavior.png)
+
+## BlazorBindingsApplication
+
+Previously, you had to use `MauiBlazorBindingsRenderer` instance to add BlazorBindings component to your application. However, `MauiBlazorBindingsRenderer` is not recommended to be used from the application code, as it is a low level implementation detail.
+This release brings an easy to use `BlazorBindingsApplication` type, which accept your root component type as a generic argument.
+
+You can either inherit your App type from BlazorBindingsApplication, if you need to customize Application in any way:
+```csharp    
+public class App : BlazorBindingsApplication<AppShell>
+    {
+        public App(IServiceProvider services) : base(services)
+        {
+            // Do whatever you need (e.g. add resources).
+        }
+    }
+```
+
+Or you can use this type directly in simple cases:
+```csharp
+builder.UseMauiApp<BlazorBindingsApplication<AppShell>>();
+``` 
 
 ## Root Wrapper
 
 ## Error Boundaries
-
-## BlazorBindingsApplication
 
 ## Entry is generic
 
