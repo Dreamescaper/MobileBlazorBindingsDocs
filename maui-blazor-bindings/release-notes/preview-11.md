@@ -6,6 +6,8 @@ Another BlazorBindings.Maui update.
 
 ### SearchBar
 
+SearchBar is a user input control used to initiating a search.
+
 ```xml
 <SearchBar @bind-Text="_searchQuery" @bind-Text:after="UpdateSearchResults" />
 <CollectionView ItemsSource="_displayedItems" />
@@ -23,6 +25,8 @@ Another BlazorBindings.Maui update.
 ![SearchBar](media/rn11-searchbar.gif)
 
 ### IndicatorView
+
+IndicatorView is a control that displays indicators that represent the number of items, and current position, in a CarouselView.
 
 ```xml
 <CarouselView IndicatorView="() => indicatorView">
@@ -44,6 +48,8 @@ Another BlazorBindings.Maui update.
 ![IndicatorView](media/rn11-indicator-view.gif)
 
 ### SwipeView
+
+SwipeView is a container control that wraps around an item of content, and provides context menu items that are revealed by a swipe gesture.
 
 ```xml
 @foreach (var item in _items)
@@ -74,6 +80,8 @@ Another BlazorBindings.Maui update.
 
 ### TableView
 
+TableView displays a table of scrollable items that can be grouped into sections. A TableView is typically used for displaying items where each row has a different appearance, such as presenting a table of settings.
+
 ```xml
     <TableView>
         <TableRoot>
@@ -88,6 +96,8 @@ Another BlazorBindings.Maui update.
 ![TableView](media/rn11-table-view.png)
 
 ### ListView
+
+ListView displays a scrollable vertical list of selectable data items. While ListView manages the appearance of the list, the appearance of each item in the list is defined by a DataTemplate that uses a Cell to display items.
 
 ```xml
 <ListView ItemsSource="items" SelectionMode="ListViewSelectionMode.None">
@@ -104,6 +114,9 @@ Another BlazorBindings.Maui update.
 
 
 ## Behaviors
+
+While Behaviors concept is a bit foreign with Blazor, it is an important part of the ecosystem in Maui, therefore this update brings the support for Behaviors. While there are no Behavior components in out of the box, you can create bindings for the behaviors that you need using [component generator](../advanced/custom-components.md#wrapping-maui-components).
+Here's the example for [StatusBarBehavior](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/behaviors/statusbar-behavior) from .NET MAUI Community Toolkit (you can take a look at the full sample [here](https://github.com/Dreamescaper/BlazorBindings.Maui/tree/main/samples/ThirdPartyControlsSample)).
 
 ```xml
 <ContentPage Title="CommunityToolkit.Behaviors">
@@ -215,8 +228,21 @@ Here's an example of such wrapper component:
 > [!NOTE]
 > You'll need to create your ErrorBoundary type, implementing ErrorBoundaryBase. You can take a look [here](https://github.com/Dreamescaper/BlazorBindings.Maui/blob/main/samples/ControlGallery/Views/ErrorBoundaries/ErrorBoundary.cs) for an example.
 
-
 ## Entry is generic
+
+Entry component is generic now, which allows binding the value to non-string properties, like `int` or `decimal`.
+```xml
+<Label>Int entry: @_int</Label>
+<Entry @bind-Text="_int" Keyboard="Keyboard.Numeric" />
+
+@code{
+    int _int;
+}
+```
+
+> [!NOTE]
+> While this change will not cause any troubles in most cases (since Blazor is able to infer generic argument from `@bind` directive),
+> it still might cause compilation errors in some cases. You can add `T="string"` attribute value to resolve that.
 
 ## Other changes
 - Component Generator adds XML documentation now.
@@ -226,4 +252,4 @@ Here's an example of such wrapper component:
 - `NativeControlComponentBase.ElementHandler` is protected now.
 - Control components do not inherit `ComponentBase` anymore.
 - Default error page is removed. Application will crash in case of unhandled exceptions now.
-- 
+- Entry component is generic now (see above).
