@@ -391,6 +391,95 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "maui-blazor-bindings/release-notes/1-0.md",
+      "output": {
+        ".html": {
+          "relative_path": "maui-blazor-bindings/release-notes/1-0.html",
+          "hash": "hrVICBe3clyvkG8BLjlBu/DYoKCDnbbH03a9egceg10="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn11-behavior.png",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn11-behavior.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn11-error-boundary.gif",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn11-error-boundary.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn11-indicator-view.gif",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn11-indicator-view.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn11-list-view.png",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn11-list-view.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn11-searchbar.gif",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn11-searchbar.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn11-swipe-view.gif",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn11-swipe-view.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "maui-blazor-bindings/release-notes/media/rn11-table-view.png",
+      "output": {
+        "resource": {
+          "relative_path": "maui-blazor-bindings/release-notes/media/rn11-table-view.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Resource",
       "source_relative_path": "maui-blazor-bindings/release-notes/media/rn6-collection-view.png",
       "output": {
@@ -1047,7 +1136,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 41,
+          "total_file_count": 42,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

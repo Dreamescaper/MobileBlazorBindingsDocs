@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>BlazorBindings.Maui - 1.0 </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="BlazorBindings.Maui - 1.0 ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="blazorbindingsmaui---10">BlazorBindings.Maui - 1.0</h1>
+
+<p>This release is one of the biggest ones so far, and I have decided that BlazorBindings.Maui is stable enough for a 1.0 release! Take a look at <a href="../get-started.html">Get Started</a> page to check it out!</p>
+<ul>
+<li><a href="#new-controls-supported">New controls supported</a>
+<ul>
+<li><a href="#searchbar">SearchBar</a></li>
+<li><a href="#indicatorview">IndicatorView</a></li>
+<li><a href="#swipeview">SwipeView</a></li>
+<li><a href="#tableview">TableView</a></li>
+<li><a href="#listview">ListView</a></li>
+</ul>
+</li>
+<li><a href="#behaviors">Behaviors</a></li>
+<li><a href="#blazorbindingsapplication">BlazorBindingsApplication</a></li>
+<li><a href="#root-wrapper">Root Wrapper</a></li>
+<li><a href="#error-boundaries">Error Boundaries</a></li>
+<li><a href="#entry-is-generic">Entry is generic</a></li>
+<li><a href="#other-changes">Other changes</a></li>
+<li><a href="#breaking-changes">Breaking changes</a></li>
+<li><a href="#what-s-next-">What's next?</a></li>
+</ul>
+<h2 id="new-controls-supported">New controls supported</h2>
+<p>This update brings the support to 5 more controls. Also, all Maui built-in controls are supported now (however, not all the functionality is supported for some controls yet).
+You can take a look at <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/main/samples/ControlGallery">ControlGallery</a> sample to find the examples of usage for those (and other) controls.</p>
+<h3 id="searchbar">SearchBar</h3>
+<p>SearchBar is a user input control used to initiating a search.</p>
+<pre><code class="lang-xml">&lt;SearchBar @bind-Text=&quot;_searchQuery&quot; @bind-Text:after=&quot;UpdateSearchResults&quot; /&gt;
+&lt;CollectionView ItemsSource=&quot;_displayedItems&quot; /&gt;
+
+@code {
+    string _searchQuery;
+    string[] _displayedItems;
+
+    async Task UpdateSearchResults()
+    {
+        _displayedItems = await /* retrieve items */;
+    }
+}
+</code></pre>
+<p><img src="media/rn11-searchbar.gif" alt="SearchBar"></p>
+<h3 id="indicatorview">IndicatorView</h3>
+<p>IndicatorView is a control that displays indicators that represent the number of items, and current position, in a CarouselView.</p>
+<pre><code class="lang-xml">&lt;CarouselView IndicatorView=&quot;() =&gt; indicatorView&quot;&gt;
+    &lt;ItemTemplate&gt;
+        ...
+    &lt;/ItemTemplate&gt;
+&lt;/CarouselView&gt;
+
+&lt;IndicatorView @ref=&quot;indicatorView&quot;
+               HorizontalOptions=&quot;LayoutOptions.Center&quot;
+               IndicatorColor=&quot;Colors.DarkGray&quot;
+               SelectedIndicatorColor=&quot;Colors.LightGray&quot; /&gt;
+
+@code {
+    IndicatorView indicatorView;
+}
+
+</code></pre>
+<p><img src="media/rn11-indicator-view.gif" alt="IndicatorView"></p>
+<h3 id="swipeview">SwipeView</h3>
+<p>SwipeView is a container control that wraps around an item of content, and provides context menu items that are revealed by a swipe gesture.</p>
+<pre><code class="lang-xml">@foreach (var item in _items)
+{
+    &lt;SwipeView&gt;
+        &lt;RightItems&gt;
+            &lt;SwipeItems&gt;
+                &lt;SwipeItem BackgroundColor=&quot;Colors.Yellow&quot;
+                       Text=&quot;Favorite&quot;
+                       OnInvoked=&quot;() =&gt; MakeFavorite(item)&quot; /&gt;
+
+                &lt;SwipeItem BackgroundColor=&quot;Colors.Red&quot;
+                       Text=&quot;Remove&quot;
+                       IsDestructive=&quot;true&quot;
+                       OnInvoked=&quot;() =&gt; Remove(item)&quot; /&gt;
+            &lt;/SwipeItems&gt;
+        &lt;/RightItems&gt;
+
+        &lt;ChildContent&gt;
+            &lt;ContentView BackgroundColor=&quot;Colors.Green&quot; Padding=&quot;8&quot;&gt;
+                &lt;Label&gt;@item&lt;/Label&gt;
+            &lt;/ContentView&gt;
+        &lt;/ChildContent&gt;
+    &lt;/SwipeView&gt;
+}
+</code></pre>
+<p><img src="media/rn11-swipe-view.gif" alt="SwipeView"></p>
+<h3 id="tableview">TableView</h3>
+<p>TableView displays a table of scrollable items that can be grouped into sections. A TableView is typically used for displaying items where each row has a different appearance, such as presenting a table of settings.</p>
+<pre><code class="lang-xml">    &lt;TableView&gt;
+        &lt;TableRoot&gt;
+            &lt;TableSection Title=&quot;Cells examples&quot;&gt;
+                &lt;TextCell Text=&quot;Click me&quot; Detail=&quot;Tapping makes something happen.&quot; OnTapped=&quot;OnCellTapped&quot; /&gt;
+                &lt;EntryCell Label=&quot;Enter your name:&quot; @bind-Text=&quot;entryText&quot; /&gt;
+                &lt;SwitchCell Text=&quot;Click to toggle:&quot; @bind-On=&quot;switchOn&quot; /&gt;
+            &lt;/TableSection&gt;
+        &lt;/TableRoot&gt;
+    &lt;/TableView&gt;
+</code></pre>
+<p><img src="media/rn11-table-view.png" alt="TableView"></p>
+<h3 id="listview">ListView</h3>
+<p>ListView displays a scrollable vertical list of selectable data items. While ListView manages the appearance of the list, the appearance of each item in the list is defined by a DataTemplate that uses a Cell to display items.</p>
+<pre><code class="lang-xml">&lt;ListView ItemsSource=&quot;items&quot; SelectionMode=&quot;ListViewSelectionMode.None&quot;&gt;
+    &lt;ItemTemplate&gt;
+        &lt;ImageCell Text=&quot;@context.Name&quot; Detail=&quot;@context.Type&quot; ImageSource=&quot;@context.ImageUrl&quot;&gt;
+            &lt;ContextActions&gt;
+                &lt;MenuItem Text=&quot;Remove&quot; IsDestructive=&quot;true&quot; OnClick=&quot;() =&gt; RemoveItem(context)&quot; /&gt;
+            &lt;/ContextActions&gt;
+        &lt;/ImageCell&gt;
+    &lt;/ItemTemplate&gt;
+&lt;/ListView&gt;
+</code></pre>
+<p><img src="media/rn11-list-view.png" alt="ListView"></p>
+<h2 id="behaviors">Behaviors</h2>
+<p>While Behaviors concept is a bit foreign with Blazor, it is an important part of the ecosystem in Maui, therefore this update brings the support for Behaviors. While there are no Behavior components in out of the box, you can create bindings for the behaviors that you need using <a href="../advanced/custom-components.html#wrapping-maui-components">component generator</a>.
+Here's the example for <a href="https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/behaviors/statusbar-behavior">StatusBarBehavior</a> from .NET MAUI Community Toolkit (you can take a look at the full sample <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/main/samples/ThirdPartyControlsSample">here</a>).</p>
+<pre><code class="lang-xml">&lt;ContentPage Title=&quot;CommunityToolkit.Behaviors&quot;&gt;
+    &lt;Behaviors&gt;
+        &lt;StatusBarBehavior StatusBarColor=&quot;Colors.Green&quot; /&gt;
+    &lt;/Behaviors&gt;
+
+    ...
+&lt;/ContentPage&gt;
+</code></pre>
+<p><img src="media/rn11-behavior.png" alt="Behavior"></p>
+<h2 id="blazorbindingsapplication">BlazorBindingsApplication</h2>
+<p>Previously, you had to use <code>MauiBlazorBindingsRenderer</code> instance to add BlazorBindings component to your application. However, <code>MauiBlazorBindingsRenderer</code> is not recommended to be used from the application code, as it is a low level implementation detail.
+This release brings an easy to use <code>BlazorBindingsApplication</code> type, which accept your root component type as a generic argument.</p>
+<p>You can either inherit your App type from BlazorBindingsApplication, if you need to customize the Application in any way:</p>
+<pre><code class="lang-csharp">public class App : BlazorBindingsApplication&lt;AppShell&gt;
+    {
+        public App(IServiceProvider services) : base(services)
+        {
+            // Do whatever you need (e.g. add resources).
+        }
+    }
+</code></pre>
+<p>Or you can use this type directly in simple cases:</p>
+<pre><code class="lang-csharp">builder.UseMauiApp&lt;BlazorBindingsApplication&lt;AppShell&gt;&gt;();
+</code></pre>
+<h2 id="root-wrapper">Root Wrapper</h2>
+<p>Generally, BlazorBindings' renderer creates separate render trees for each page - that includes MainPage and navigations (both regular and modals). However, in some cases it might be useful to have a <em>wrapping</em> component - e.g. to define global cascading parameters, or to update all the pages on some theme changed.</p>
+<p>Now it is possible to do that via <code>BlazorBindingsApplication</code>'s <code>WrapperComponentType</code> property.</p>
+<p>For instance, here's an example of a wrapping component <code>Root.razor</code>, which adds a global cascading value, and updates the UI based on some event:</p>
+<pre><code class="lang-xml">@inject AppState AppState
+
+&lt;CascadingValue Value=&quot;123&quot; Name=&quot;test&quot;&gt;
+    @ChildContent
+&lt;/CascadingValue&gt;
+
+@code {
+    [Parameter] public RenderFragment ChildContent { get; set; }
+
+    protected override void OnInitialized() 
+    {
+        AppState.ThemeChanged += InvokeAsync(() =&gt; StateHasChanged());
+    }
+}
+</code></pre>
+<p>Now, it is set as a wrapper component by overriding <code>WrapperComponentType</code> property:</p>
+<pre><code class="lang-csharp">public class App : BlazorBindingsApplication&lt;AppShell&gt;
+{
+    public App(IServiceProvider services) : base(services) { }
+
+    public override Type WrapperComponentType =&gt; typeof(Root);
+}
+</code></pre>
+<h2 id="error-boundaries">Error Boundaries</h2>
+<p>One of use cases for wrapper components is to allow to set a global <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/fundamentals/handle-errors?view=aspnetcore-7.0#error-boundaries">error boundary</a>. It allows to handle any exception, display a nice error page, and return back to the application (instead of simply crashing the application).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Error boundaries do not allow to <em>ignore</em> exceptions based on some conditions, and leaving the user on a current page. Error boundary content <em>is always</em> replaced with an error content if any exception occurs.</p>
+</div>
+<p>Here's an example of such wrapper component:</p>
+<pre><code class="lang-xml">&lt;ErrorBoundary @ref=&quot;_errorBoundary&quot;&gt;
+    &lt;ChildContent&gt;
+        @ChildContent
+    &lt;/ChildContent&gt;
+
+    &lt;ErrorContent&gt;
+        &lt;ContentPage Title=&quot;Error&quot;&gt;
+            &lt;VerticalStackLayout Margin=&quot;8&quot; Spacing=&quot;8&quot;&gt;
+                &lt;Label Text=&quot;Oops!&quot; HorizontalOptions=&quot;LayoutOptions.Center&quot; FontSize=&quot;20&quot; /&gt;
+                &lt;Label Text=&quot;Unexpected error has occured:&quot; /&gt;
+                &lt;Label&gt;@context.Message&lt;/Label&gt;
+
+                &lt;Button Text=&quot;Return&quot; OnClick=&quot;Recover&quot; /&gt;
+            &lt;/VerticalStackLayout&gt;
+        &lt;/ContentPage&gt;
+    &lt;/ErrorContent&gt;
+
+&lt;/ErrorBoundary&gt;
+
+@code {
+    [Parameter] public RenderFragment ChildContent { get; set; }
+
+    ErrorBoundary _errorBoundary;
+
+    void Recover() {
+        _errorBoundary.Recover();
+    }
+}
+</code></pre>
+<p><img src="media/rn11-error-boundary.gif" alt="Error Boundary"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You'll need to create your ErrorBoundary type, implementing ErrorBoundaryBase. You can take a look <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/blob/main/samples/ControlGallery/Views/ErrorBoundaries/ErrorBoundary.cs">here</a> for an example.</p>
+</div>
+<h2 id="entry-is-generic">Entry is generic</h2>
+<p>Entry component is generic now, which allows binding the value to non-string properties, like <code>int</code> or <code>decimal</code>.</p>
+<pre><code class="lang-xml">&lt;Label&gt;Int entry: @_int&lt;/Label&gt;
+&lt;Entry @bind-Text=&quot;_int&quot; Keyboard=&quot;Keyboard.Numeric&quot; /&gt;
+
+@code{
+    int _int;
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>While this change will not cause any troubles in most cases (since Blazor is able to infer generic argument from <code>@bind</code> directive),
+it still might cause compilation errors in some cases. You can add <code>T=&quot;string&quot;</code> attribute value to resolve that.</p>
+</div>
+<h2 id="other-changes">Other changes</h2>
+<ul>
+<li>Component Generator adds XML documentation now.</li>
+</ul>
+<h2 id="breaking-changes">Breaking changes</h2>
+<ul>
+<li><code>NativeControlComponentBase.ElementHandler</code> is protected now.</li>
+<li>Control components do not inherit <code>ComponentBase</code> anymore.</li>
+<li>Default error page is removed. Application will crash in case of unhandled exceptions now.</li>
+<li><code>MauiBlazorBindingsRenderer</code> does not support rendering the component to non-Application parent.</li>
+<li>Some methods, which are not stable yet, have <a href="https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2252">[RequiresPreviewFeatures]</a> attribute now.</li>
+<li>Entry component is generic now (see above).</li>
+</ul>
+<h2 id="whats-next">What's next?</h2>
+<ul>
+<li>Shell URL navigation improvements.</li>
+<li>Supporting DataTemplateSelectors.</li>
+<li>Supporting Maps controls, which were added in MAUI for .NET 7.</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Dreamescaper/MobileBlazorBindingsDocs/blob/main/maui-blazor-bindings/release-notes/1-0.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
