@@ -63,10 +63,10 @@
 <li><a href="#entry-is-generic">Entry is generic</a></li>
 <li><a href="#other-changes">Other changes</a></li>
 <li><a href="#breaking-changes">Breaking changes</a></li>
-<li><a href="#what-s-next-">What's next?</a></li>
+<li><a href="#whats-next">What's next?</a></li>
 </ul>
 <h2 id="new-controls-supported">New controls supported</h2>
-<p>This update brings the support to 5 more controls. Also, all Maui built-in controls are supported now (however, not all the functionality is supported for some controls yet).
+<p>This update brings the support to five more controls. That alse means that all Maui built-in controls are supported now (however, not all the functionality is supported for some controls yet).
 You can take a look at <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/main/samples/ControlGallery">ControlGallery</a> sample to find the examples of usage for those (and other) controls.</p>
 <h3 id="searchbar">SearchBar</h3>
 <p>SearchBar is a user input control used to initiating a search.</p>
@@ -157,8 +157,8 @@ You can take a look at <a href="https://github.com/Dreamescaper/BlazorBindings.M
 </code></pre>
 <p><img src="media/rn11-list-view.png" alt="ListView"></p>
 <h2 id="behaviors">Behaviors</h2>
-<p>While Behaviors concept is a bit foreign with Blazor, it is an important part of the ecosystem in Maui, therefore this update brings the support for Behaviors. While there are no Behavior components in out of the box, you can create bindings for the behaviors that you need using <a href="../advanced/custom-components.html#wrapping-maui-components">component generator</a>.
-Here's the example for <a href="https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/behaviors/statusbar-behavior">StatusBarBehavior</a> from .NET MAUI Community Toolkit (you can take a look at the full sample <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/main/samples/ThirdPartyControlsSample">here</a>).</p>
+<p>While Behaviors concept is a bit foreign with Blazor, it is an important part of the Maui ecosystem, therefore this update brings the support for Behaviors. While there are no Behavior components provided out of the box, you can create bindings for the behaviors that you need using <a href="../advanced/custom-components.html#wrapping-maui-components">component generator</a>.
+Here's the example for <a href="https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/behaviors/statusbar-behavior">StatusBarBehavior</a> from the MAUI Community Toolkit (you can take a look at the full sample <a href="https://github.com/Dreamescaper/BlazorBindings.Maui/tree/main/samples/ThirdPartyControlsSample">here</a>).</p>
 <pre><code class="lang-xml">&lt;ContentPage Title=&quot;CommunityToolkit.Behaviors&quot;&gt;
     &lt;Behaviors&gt;
         &lt;StatusBarBehavior StatusBarColor=&quot;Colors.Green&quot; /&gt;
@@ -171,7 +171,7 @@ Here's the example for <a href="https://learn.microsoft.com/en-us/dotnet/communi
 <h2 id="blazorbindingsapplication">BlazorBindingsApplication</h2>
 <p>Previously, you had to use <code>MauiBlazorBindingsRenderer</code> instance to add BlazorBindings component to your application. However, <code>MauiBlazorBindingsRenderer</code> is not recommended to be used from the application code, as it is a low level implementation detail.
 This release brings an easy to use <code>BlazorBindingsApplication</code> type, which accept your root component type as a generic argument.</p>
-<p>You can either inherit your App type from BlazorBindingsApplication, if you need to customize the Application in any way:</p>
+<p>You can inherit your App type from BlazorBindingsApplication, if you need to customize the Application in any way:</p>
 <pre><code class="lang-csharp">public class App : BlazorBindingsApplication&lt;AppShell&gt;
     {
         public App(IServiceProvider services) : base(services)
@@ -184,7 +184,7 @@ This release brings an easy to use <code>BlazorBindingsApplication</code> type, 
 <pre><code class="lang-csharp">builder.UseMauiApp&lt;BlazorBindingsApplication&lt;AppShell&gt;&gt;();
 </code></pre>
 <h2 id="root-wrapper">Root Wrapper</h2>
-<p>Generally, BlazorBindings' renderer creates separate render trees for each page - that includes MainPage and navigations (both regular and modals). However, in some cases it might be useful to have a <em>wrapping</em> component - e.g. to define global cascading parameters, or to update all the pages on some theme changed.</p>
+<p>Generally, BlazorBindings' renderer creates separate render trees for each page - that includes MainPage and navigations (both regular and modals). However, in some cases it might be useful to have a component, which wraps any rendered subtree - e.g. to define global cascading parameters, or to update all the pages on some theme changed.</p>
 <p>Now it is possible to do that via <code>BlazorBindingsApplication</code>'s <code>WrapperComponentType</code> property.</p>
 <p>For instance, here's an example of a wrapping component <code>Root.razor</code>, which adds a global cascading value, and updates the UI based on some event:</p>
 <pre><code class="lang-xml">@inject AppState AppState
@@ -214,7 +214,7 @@ This release brings an easy to use <code>BlazorBindingsApplication</code> type, 
 <p>One of use cases for wrapper components is to allow to set a global <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/fundamentals/handle-errors?view=aspnetcore-7.0#error-boundaries">error boundary</a>. It allows to handle any exception, display a nice error page, and return back to the application (instead of simply crashing the application).</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Error boundaries do not allow to <em>ignore</em> exceptions based on some conditions, and leaving the user on a current page. Error boundary content <em>is always</em> replaced with an error content if any exception occurs.</p>
+<p>Error boundaries do not allow you to <em>ignore</em> exceptions based on some conditions, and leave the user on a current page. Error boundary content is <em>always</em> replaced with an error content if any exception occurs.</p>
 </div>
 <p>Here's an example of such wrapper component:</p>
 <pre><code class="lang-xml">&lt;ErrorBoundary @ref=&quot;_errorBoundary&quot;&gt;
@@ -262,7 +262,7 @@ This release brings an easy to use <code>BlazorBindingsApplication</code> type, 
 </code></pre>
 <div class="NOTE">
 <h5>Note</h5>
-<p>While this change will not cause any troubles in most cases (since Blazor is able to infer generic argument from <code>@bind</code> directive),
+<p>While this change should not cause any troubles in most cases (since Blazor is able to infer generic argument from the <code>@bind</code> directive),
 it still might cause compilation errors in some cases. You can add <code>T=&quot;string&quot;</code> attribute value to resolve that.</p>
 </div>
 <h2 id="other-changes">Other changes</h2>
@@ -271,6 +271,7 @@ it still might cause compilation errors in some cases. You can add <code>T=&quot
 </ul>
 <h2 id="breaking-changes">Breaking changes</h2>
 <ul>
+<li>Due to some internal changes, components created via Component Generator have to be regenerated.</li>
 <li><code>NativeControlComponentBase.ElementHandler</code> is protected now.</li>
 <li>Control components do not inherit <code>ComponentBase</code> anymore.</li>
 <li>Default error page is removed. Application will crash in case of unhandled exceptions now.</li>
@@ -283,6 +284,7 @@ it still might cause compilation errors in some cases. You can add <code>T=&quot
 <li>Shell URL navigation improvements.</li>
 <li>Supporting DataTemplateSelectors.</li>
 <li>Supporting Maps controls, which were added in MAUI for .NET 7.</li>
+<li>Improving the documentation.</li>
 </ul>
 </article>
           </div>
