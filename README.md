@@ -14,6 +14,11 @@ You can find the published docs here: https://dreamescaper.github.io/MobileBlazo
   * [Preview 4 - July 2020](https://devblogs.microsoft.com/aspnet/hybrid-blazor-apps-in-mobile-blazor-bindings-july-update/)
   * [Preview 5 - October 2020](https://devblogs.microsoft.com/dotnet/unified-ui-mobile-blazor-bindings-preview-5/)
   * [Preview 6 - May 2022](https://dreamescaper.github.io/MobileBlazorBindingsDocs/maui-blazor-bindings/release-notes/preview-6.html)
+  * [Preview 7 - May 2022](https://dreamescaper.github.io/MobileBlazorBindingsDocs/maui-blazor-bindings/release-notes/preview-7.html)
+  * [Preview 8 - July 2022](https://dreamescaper.github.io/MobileBlazorBindingsDocs/maui-blazor-bindings/release-notes/preview-8.html)
+  * [Preview 9 - September 2022](https://dreamescaper.github.io/MobileBlazorBindingsDocs/maui-blazor-bindings/release-notes/preview-9.html)
+  * [Preview 10 - November 2022](https://dreamescaper.github.io/MobileBlazorBindingsDocs/maui-blazor-bindings/release-notes/preview-10.html)
+  * [1.0 - May 2023](https://dreamescaper.github.io/MobileBlazorBindingsDocs/maui-blazor-bindings/release-notes/1-0.html)
 
 ## Microsoft Open Source Code of Conduct
 
